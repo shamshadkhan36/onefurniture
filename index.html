@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Furniture | Premium Furniture for Modern Living</title>
+    <meta name="description"
+        content="Discover elegant, warm, and luxurious furniture at One Furniture. Transform your home with our premium collection of sofas, beds, and more.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">One<span>Furniture</span></a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Collection</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
+                <a href="#" class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        <nav class="mobile-nav-links">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About Us</a>
+            <a href="#products">Collection</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+            <img src="images/hero.png" alt="Luxury Sofa in Modern Living Room">
+        </div>
+        <div class="hero-content reveal">
+            <p class="subtitle">Elegance in Every Detail</p>
+            <h1>Premium Furniture <br>for Modern Living</h1>
+            <p class="hero-description">Curated collections combining minimalist design with timeless luxury to
+                transform your space into a sanctuary.</p>
+            <a href="#products" class="btn btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Shop by Category</h2>
+                <a href="#" class="link-btn">View All Categories <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="category-grid">
+                <!-- Category 1: Sofas -->
+                <a href="#" class="category-card reveal" style="transition-delay: 0.1s;">
+                    <div class="category-img">
+                        <img src="images/cat-sofas.png" alt="Sofas">
+                    </div>
+                    <div class="category-info">
+                        <h3>Sofas</h3>
+                        <p>Discover Comfort</p>
+                    </div>
+                </a>
+                <!-- Category 2: Beds -->
+                <a href="#" class="category-card reveal" style="transition-delay: 0.2s;">
+                    <div class="category-img">
+                        <img src="images/cat-beds.png" alt="Beds">
+                    </div>
+                    <div class="category-info">
+                        <h3>Beds</h3>
+                        <p>Restful Nights</p>
+                    </div>
+                </a>
+                <!-- Category 3: Dining Tables -->
+                <a href="#" class="category-card reveal" style="transition-delay: 0.3s;">
+                    <div class="category-img">
+                        <img src="images/cat-dining.png" alt="Dining Tables">
+                    </div>
+                    <div class="category-info">
+                        <h3>Dining Tables</h3>
+                        <p>Gather Around</p>
+                    </div>
+                </a>
+                <!-- Category 4: Wardrobes -->
+                <a href="#" class="category-card reveal" style="transition-delay: 0.4s;">
+                    <div class="category-img">
+                        <img src="images/cat-wardrobes.png" alt="Wardrobes">
+                    </div>
+                    <div class="category-info">
+                        <h3>Wardrobes</h3>
+                        <p>Elegant Storage</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container about-container">
+            <div class="about-image-wrapper reveal">
+                <div class="about-image">
+                    <img src="images/about.png" alt="About One Furniture">
+                </div>
+                <div class="experience-badge">
+                    <span class="number">15+</span>
+                    <span class="text">Years of<br>Excellence</span>
+                </div>
+            </div>
+            <div class="about-content reveal" style="transition-delay: 0.2s;">
+                <p class="subtitle">Our Story</p>
+                <h2>Crafting Timeless Elegance for Your Home</h2>
+                <p>At One Furniture, we believe that your home should be a reflection of your finest tastes. Born from a
+                    passion for exceptional craftsmanship and modern aesthetics, our pieces blend the minimalism of
+                    Scandinavian design with the warmth of luxury boutique furniture.</p>
+                <p>Every piece is thoughtfully designed using sustainably sourced materials, featuring soft wood tones,
+                    rich fabrics, and clean lines to bring harmony to your living spaces.</p>
+                <a href="#" class="btn btn-outline">Read Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="products section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <p class="subtitle">Curated For You</p>
+                <h2>Featured Collection</h2>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card reveal">
+                    <div class="product-img">
+                        <img src="images/prod-sofa.png" alt="Minimalist Beige Sofa">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Sofas</p>
+                        <h3 class="product-title"><a href="#">Minimalist Beige Sofa</a></h3>
+                        <p class="product-price">$1,299</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card reveal" style="transition-delay: 0.1s;">
+                    <div class="product-img">
+                        <img src="images/prod-chair.png" alt="Lounge Chair Walnut">
+                        <span class="badge new">New</span>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Chairs</p>
+                        <h3 class="product-title"><a href="#">Lounge Chair Walnut</a></h3>
+                        <p class="product-price">$649</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card reveal" style="transition-delay: 0.2s;">
+                    <div class="product-img">
+                        <img src="images/prod-dining.png" alt="Solid Wood Dining Table">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Dining Tables</p>
+                        <h3 class="product-title"><a href="#">Solid Wood Dining Table</a></h3>
+                        <p class="product-price">$1,899</p>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card reveal" style="transition-delay: 0.3s;">
+                    <div class="product-img">
+                        <img src="images/prod-bed.png" alt="Cream Velvet Bed">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Beds</p>
+                        <h3 class="product-title"><a href="#">Cream Velvet Bed</a></h3>
+                        <p class="product-price">$2,199</p>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card reveal" style="transition-delay: 0.4s;">
+                    <div class="product-img">
+                        <img src="images/prod-cabinet.png" alt="Modern Oak Cabinet">
+                        <span class="badge sale">On Sale</span>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Storage</p>
+                        <h3 class="product-title"><a href="#">Modern Oak Cabinet</a></h3>
+                        <p class="product-price"><span class="old-price">$1,200</span> $999</p>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="product-card reveal" style="transition-delay: 0.5s;">
+                    <div class="product-img">
+                        <img src="images/prod-coffee.png" alt="Accent Coffee Table">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Add to Cart"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="action-btn" title="Add to Wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Tables</p>
+                        <h3 class="product-title"><a href="#">Accent Coffee Table</a></h3>
+                        <p class="product-price">$450</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-40">
+                <a href="#" class="btn btn-outline">Explore All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial section-padding">
+        <div class="container testimonial-container reveal">
+            <div class="testimonial-content">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <blockquote>
+                    "The quality and elegance of One Furniture completely transformed my living room. Their pieces bring
+                    that perfect blend of warmth and modern luxury I was looking for. An absolute showroom experience."
+                </blockquote>
+                <div class="client-info">
+                    <img src="images/client.png" alt="Client Avatar" class="client-avatar">
+                    <div class="client-details">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Interior Designer</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="#" class="logo footer-logo">One<span>Furniture</span></a>
+                    <p>Elevating modern living with premium furniture designs. Experience luxury, comfort, and
+                        exceptional craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#">Our Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Luxury Avenue, Design District, NY 10001</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> hello@onefurniture.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 One Furniture. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-amex"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
