@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Furniture | Premium Furniture for Modern Living</title>
+    <title>The One Interior | Premium Interior Design Company</title>
     <meta name="description"
-        content="Discover elegant, warm, and luxurious furniture at One Furniture. Transform your home with our premium collection of sofas, beds, and more.">
-    <!-- Google Fonts -->
+        content="The One Interior — a premium interior design company crafting timeless, luxurious spaces. We design residential, commercial, and hospitality interiors that inspire.">
+    <!-- Google Fonts — DM Serif Display + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
         rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -21,331 +21,1147 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- ===================== NAVBAR ===================== -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">One<span>Furniture</span></a>
+            <a href="#" class="logo">The One<span>Interior</span></a>
             <nav class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#categories">Categories</a>
-                <a href="#about">About Us</a>
-                <a href="#products">Collection</a>
+                <a href="#services">Services</a>
+                <a href="#about">Studio</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
             <div class="nav-actions">
-                <a href="#" class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#" class="icon-btn"><i class="fa-regular fa-heart"></i></a>
-                <a href="#" class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></a>
-                <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+                <a href="tel:+15551234567" class="icon-btn" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="close-menu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <!-- ===================== FULLSCREEN OVERLAY MENU ===================== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo">The One Interior</span>
+            <button class="close-menu" id="closeMenu" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
         <nav class="mobile-nav-links">
             <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#about">About Us</a>
-            <a href="#products">Collection</a>
+            <a href="#services">Services</a>
+            <a href="#about">Studio</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="mobile-menu-footer">
+            <p>© 2026 The One Interior</p>
+            <div class="mobile-menu-social">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- ===================== HERO ===================== -->
     <section id="home" class="hero">
         <div class="hero-image">
             <div class="hero-overlay"></div>
-            <img src="images/hero.png" alt="Luxury Sofa in Modern Living Room">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&auto=format&fit=crop"
+                alt="Luxury Interior Design — The One Interior">
         </div>
         <div class="hero-content reveal">
-            <p class="subtitle">Elegance in Every Detail</p>
-            <h1>Premium Furniture <br>for Modern Living</h1>
-            <p class="hero-description">Curated collections combining minimalist design with timeless luxury to
-                transform your space into a sanctuary.</p>
-            <a href="#products" class="btn btn-primary">Explore Collection</a>
+            <p class="hero-eyebrow">Interior Design Studio</p>
+            <h1>We Design Spaces<br>That <em>Inspire</em></h1>
+            <p class="hero-description">From luxurious residences to bespoke commercial spaces — we craft interiors that
+                reflect your personality and elevate everyday living.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="link-btn">Get a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <!-- Stats strip -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Years of Excellence</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">850+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">38</span>
+                <span class="stat-label">Design Awards</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Countries Served</span>
+            </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="categories section-padding">
+    <!-- ===================== TICKER STRIP ===================== -->
+    <div class="ticker-strip">
+        <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-item"><span class="dot"></span>Residential Design</div>
+            <div class="ticker-item"><span class="dot"></span>Commercial Interiors</div>
+            <div class="ticker-item"><span class="dot"></span>Turnkey Projects</div>
+            <div class="ticker-item"><span class="dot"></span>Space Planning</div>
+            <div class="ticker-item"><span class="dot"></span>3D Visualization</div>
+            <div class="ticker-item"><span class="dot"></span>Renovation & Fit-out</div>
+            <div class="ticker-item"><span class="dot"></span>Hospitality Design</div>
+            <div class="ticker-item"><span class="dot"></span>Custom Furniture</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item"><span class="dot"></span>Residential Design</div>
+            <div class="ticker-item"><span class="dot"></span>Commercial Interiors</div>
+            <div class="ticker-item"><span class="dot"></span>Turnkey Projects</div>
+            <div class="ticker-item"><span class="dot"></span>Space Planning</div>
+            <div class="ticker-item"><span class="dot"></span>3D Visualization</div>
+            <div class="ticker-item"><span class="dot"></span>Renovation & Fit-out</div>
+            <div class="ticker-item"><span class="dot"></span>Hospitality Design</div>
+            <div class="ticker-item"><span class="dot"></span>Custom Furniture</div>
+        </div>
+    </div>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Shop by Category</h2>
-                <a href="#" class="link-btn">View All Categories <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="section-header-left">
+                    <span class="section-label">What We Do</span>
+                    <h2>Our Services</h2>
+                </div>
+                <p class="section-desc">Our professionals provide complete design solutions.</p>
             </div>
-            <div class="category-grid">
-                <!-- Category 1: Sofas -->
-                <a href="#" class="category-card reveal" style="transition-delay: 0.1s;">
-                    <div class="category-img">
-                        <img src="images/cat-sofas.png" alt="Sofas">
+
+            <div class="services-grid">
+                <div class="service-item reveal" style="transition-delay:0.04s;">
+                    <div class="service-num">01</div>
+                    <div class="service-body">
+                        <h3>Residential Design</h3>
+                        <p>Bespoke living spaces that feel like home — from single rooms to complete villas and
+                            apartments.</p>
                     </div>
-                    <div class="category-info">
-                        <h3>Sofas</h3>
-                        <p>Discover Comfort</p>
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-item reveal" style="transition-delay:0.08s;">
+                    <div class="service-num">02</div>
+                    <div class="service-body">
+                        <h3>Commercial Interiors</h3>
+                        <p>Office spaces, retail outlets, and showrooms designed to impress clients and boost
+                            productivity.</p>
                     </div>
-                </a>
-                <!-- Category 2: Beds -->
-                <a href="#" class="category-card reveal" style="transition-delay: 0.2s;">
-                    <div class="category-img">
-                        <img src="images/cat-beds.png" alt="Beds">
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-item reveal" style="transition-delay:0.12s;">
+                    <div class="service-num">03</div>
+                    <div class="service-body">
+                        <h3>Hospitality Design</h3>
+                        <p>Hotels, restaurants, and lounges crafted to deliver unforgettable guest experiences.</p>
                     </div>
-                    <div class="category-info">
-                        <h3>Beds</h3>
-                        <p>Restful Nights</p>
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-item reveal" style="transition-delay:0.16s;">
+                    <div class="service-num">04</div>
+                    <div class="service-body">
+                        <h3>Turnkey Solutions</h3>
+                        <p>End-to-end project management — from concept to completion, we handle everything seamlessly.
+                        </p>
                     </div>
-                </a>
-                <!-- Category 3: Dining Tables -->
-                <a href="#" class="category-card reveal" style="transition-delay: 0.3s;">
-                    <div class="category-img">
-                        <img src="images/cat-dining.png" alt="Dining Tables">
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-item reveal" style="transition-delay:0.20s;">
+                    <div class="service-num">05</div>
+                    <div class="service-body">
+                        <h3>Space Planning & 3D</h3>
+                        <p>Detailed space planning and photorealistic 3D renders so you see your space before it's
+                            built.</p>
                     </div>
-                    <div class="category-info">
-                        <h3>Dining Tables</h3>
-                        <p>Gather Around</p>
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-item reveal" style="transition-delay:0.24s;">
+                    <div class="service-num">06</div>
+                    <div class="service-body">
+                        <h3>Renovation & Fit-out</h3>
+                        <p>Transform existing spaces with precision renovation, custom joinery, and premium finishing.
+                        </p>
                     </div>
-                </a>
-                <!-- Category 4: Wardrobes -->
-                <a href="#" class="category-card reveal" style="transition-delay: 0.4s;">
-                    <div class="category-img">
-                        <img src="images/cat-wardrobes.png" alt="Wardrobes">
-                    </div>
-                    <div class="category-info">
-                        <h3>Wardrobes</h3>
-                        <p>Elegant Storage</p>
-                    </div>
-                </a>
+                    <a href="#contact" class="service-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===================== ABOUT / STUDIO ===================== -->
     <section id="about" class="about section-padding">
         <div class="container about-container">
-            <div class="about-image-wrapper reveal">
+            <div class="about-image-wrapper reveal-left">
                 <div class="about-image">
-                    <img src="images/about.png" alt="About One Furniture">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=85&auto=format&fit=crop"
+                        alt="The One Interior Studio">
                 </div>
                 <div class="experience-badge">
                     <span class="number">15+</span>
                     <span class="text">Years of<br>Excellence</span>
                 </div>
             </div>
-            <div class="about-content reveal" style="transition-delay: 0.2s;">
-                <p class="subtitle">Our Story</p>
-                <h2>Crafting Timeless Elegance for Your Home</h2>
-                <p>At One Furniture, we believe that your home should be a reflection of your finest tastes. Born from a
-                    passion for exceptional craftsmanship and modern aesthetics, our pieces blend the minimalism of
-                    Scandinavian design with the warmth of luxury boutique furniture.</p>
-                <p>Every piece is thoughtfully designed using sustainably sourced materials, featuring soft wood tones,
-                    rich fabrics, and clean lines to bring harmony to your living spaces.</p>
-                <a href="#" class="btn btn-outline">Read Our Story</a>
+            <div class="about-content reveal" style="transition-delay: 0.15s;">
+                <span class="section-label">Our Studio</span>
+                <h2>Passionate About<br><em>Design</em></h2>
+                <p>At The One Interior, design is not just work — it is our passion. We believe everyone deserves to
+                    live beautifully, and we strive to make that possible by creating spaces where new ideas, advanced
+                    techniques, and the finest craftsmanship combine.</p>
+                <p>Our multidisciplinary team of architects, designers, and project managers works closely with every
+                    client to deliver interiors that are as functional as they are beautiful.</p>
+
+                <div class="about-metrics">
+                    <div class="metric-item">
+                        <div class="metric-num">850+</div>
+                        <div class="metric-label">Projects Delivered</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-num">98%</div>
+                        <div class="metric-label">Client Satisfaction</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-num">45+</div>
+                        <div class="metric-label">Design Experts</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-num">38</div>
+                        <div class="metric-label">Design Awards</div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-outline">Work With Us</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section id="products" class="products section-padding bg-light">
+    <!-- ===================== PROCESS ===================== -->
+    <section class="process section-padding bg-light">
         <div class="container">
             <div class="section-header text-center reveal">
-                <p class="subtitle">Curated For You</p>
-                <h2>Featured Collection</h2>
+                <div class="section-header-left" style="width:100%">
+                    <span class="section-label" style="justify-content:center;">How We Work</span>
+                    <h2>Our Design Process</h2>
+                </div>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal" style="transition-delay:0.05s;">
+                    <div class="process-icon"><i class="fa-regular fa-comments"></i></div>
+                    <div class="process-num">01</div>
+                    <h3>Consultation</h3>
+                    <p>We begin with a detailed meeting to understand your vision, lifestyle, and budget requirements.
+                    </p>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.1s;">
+                    <div class="process-icon"><i class="fa-solid fa-pencil-ruler"></i></div>
+                    <div class="process-num">02</div>
+                    <h3>Concept Design</h3>
+                    <p>Our designers craft tailored mood boards, floor plans, and material palettes for your approval.
+                    </p>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.15s;">
+                    <div class="process-icon"><i class="fa-solid fa-cube"></i></div>
+                    <div class="process-num">03</div>
+                    <h3>3D Visualization</h3>
+                    <p>Photorealistic renders bring your space to life before a single nail is hammered.</p>
+                </div>
+                <div class="process-step reveal" style="transition-delay:0.2s;">
+                    <div class="process-icon"><i class="fa-solid fa-hammer"></i></div>
+                    <div class="process-num">04</div>
+                    <h3>Execution</h3>
+                    <p>Our expert team manages every detail of construction, fit-out, and finishing to perfection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PACKAGES & PRICING ===================== -->
+    <section id="pricing" class="pricing-section section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-header-left">
+                    <span class="section-label">Transparent Pricing</span>
+                    <h2>Our Packages</h2>
+                </div>
+                <p class="section-desc">All-inclusive per sqft rates. No hidden costs.</p>
+            </div>
+
+            <!-- Package cards -->
+            <div class="pricing-grid">
+                <!-- Standard -->
+                <div class="price-card reveal">
+                    <div class="price-card-header">
+                        <span class="package-tag">Standard</span>
+                        <div class="price-amount">₹1,500 <span>/sqft</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×2, 2×4 (up to ₹40/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> Cement putty + Tractor Emulsion paint</li>
+                        <li><i class="fa-solid fa-check"></i> Gypsum corner ceiling design</li>
+                        <li><i class="fa-solid fa-check"></i> Normal COB lights & panel switches</li>
+                        <li><i class="fa-solid fa-check"></i> Wallpaper / texture / wall moulding</li>
+                        <li><i class="fa-solid fa-check"></i> MR Grade ply with laminate finish</li>
+                        <li><i class="fa-solid fa-check"></i> Ozone / Ebco fittings</li>
+                        <li><i class="fa-solid fa-check"></i> Hollow core doors with laminate</li>
+                        <li><i class="fa-solid fa-check"></i> Granite kitchen top (₹100/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> Mild Steel railings</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline pkg-btn">Get Quote</a>
+                </div>
+
+                <!-- Affordable — featured -->
+                <div class="price-card featured reveal" style="transition-delay:0.08s;">
+                    <div class="price-card-header">
+                        <span class="package-tag">Affordable</span>
+                        <span class="popular-badge">Most Popular</span>
+                        <div class="price-amount">₹2,000 <span>/sqft</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×4, 2.5×5 (up to ₹60/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> Acrylic putty smooth finish + Premium Emulsion</li>
+                        <li><i class="fa-solid fa-check"></i> POP complete ceiling with coves</li>
+                        <li><i class="fa-solid fa-check"></i> Profile lights, colour switches</li>
+                        <li><i class="fa-solid fa-check"></i> PVC / WPC / Charcoal wall panels</li>
+                        <li><i class="fa-solid fa-check"></i> BWR / HDHMR ply with polish acrylic finish</li>
+                        <li><i class="fa-solid fa-check"></i> Hettich / Godrej fittings</li>
+                        <li><i class="fa-solid fa-check"></i> Solid core flush door with veneer</li>
+                        <li><i class="fa-solid fa-check"></i> Granite / Tiles kitchen top (₹120–150/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> S.S 304 stainless steel railings</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary pkg-btn">Get Quote</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card reveal" style="transition-delay:0.16s;">
+                    <div class="price-card-header">
+                        <span class="package-tag">Premium</span>
+                        <div class="price-amount">₹2,500 <span>/sqft</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Vitrified 4×4, 4×6 or Italian Marble (+₹400/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> POP punning + Royal Aspire paint</li>
+                        <li><i class="fa-solid fa-check"></i> Multi-layer POP ceiling with full design</li>
+                        <li><i class="fa-solid fa-check"></i> Track lights, designer black switches</li>
+                        <li><i class="fa-solid fa-check"></i> Wooden panelling feature walls</li>
+                        <li><i class="fa-solid fa-check"></i> BWP Marine ply with Duco / PU finish</li>
+                        <li><i class="fa-solid fa-check"></i> Hafele / Blum fittings, designer handles</li>
+                        <li><i class="fa-solid fa-check"></i> Solid core panel door + veneer/skin + smart lock</li>
+                        <li><i class="fa-solid fa-check"></i> Quartz kitchen top (₹200–250/sqft)</li>
+                        <li><i class="fa-solid fa-check"></i> Toughened glass railings (₹1200/rft)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline pkg-btn">Get Quote</a>
+                </div>
+            </div>
+
+            <!-- Material comparison table -->
+            <div class="materials-section reveal" style="transition-delay:0.1s;">
+                <h3 class="materials-heading">Detailed Material Specifications</h3>
+                <p class="materials-subhead">Click any category to expand specifications across all three packages.</p>
+
+                <div class="mat-table">
+                    <!-- Header row -->
+                    <div class="mat-header">
+                        <div class="mat-col-cat">Category</div>
+                        <div class="mat-col">Standard</div>
+                        <div class="mat-col">Affordable</div>
+                        <div class="mat-col premium-col">Premium</div>
+                    </div>
+
+                    <!-- 1. Flooring -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">01</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-border-all"></i> Flooring</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Tile Size</strong></div>
+                                <div class="mat-col">2×2, 2×4</div>
+                                <div class="mat-col">2×4, 2.5×5</div>
+                                <div class="mat-col premium-col">2.5×5, 4×4, 4×6</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Type</strong></div>
+                                <div class="mat-col">Vitrified</div>
+                                <div class="mat-col">Vitrified</div>
+                                <div class="mat-col premium-col">Vitrified / Italian Marble</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Rate (Max)</strong></div>
+                                <div class="mat-col">₹40/sqft</div>
+                                <div class="mat-col">₹60/sqft</div>
+                                <div class="mat-col premium-col">₹80/sqft (+₹400 for Marble)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Wall Treatment -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">02</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-paint-roller"></i> Wall Treatment</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Finish</strong></div>
+                                <div class="mat-col">Cement Putty</div>
+                                <div class="mat-col">Acrylic Putty (Smooth)</div>
+                                <div class="mat-col premium-col">POP Punning</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Paint</strong></div>
+                                <div class="mat-col">Tractor Emulsion</div>
+                                <div class="mat-col">Premium Emulsion</div>
+                                <div class="mat-col premium-col">Royal Aspire</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. False Ceiling -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">03</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-layer-group"></i> False Ceiling</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Type</strong></div>
+                                <div class="mat-col">Gypsum</div>
+                                <div class="mat-col">POP</div>
+                                <div class="mat-col premium-col">POP</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Design</strong></div>
+                                <div class="mat-col">Corner design (less area)</div>
+                                <div class="mat-col">Complete ceiling, less coves</div>
+                                <div class="mat-col premium-col">Complete multi-layer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Electrical -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">04</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-bolt"></i> Electrical & Lighting</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Lights</strong></div>
+                                <div class="mat-col">Normal Panel, COB</div>
+                                <div class="mat-col">Profile Light, Linear Light</div>
+                                <div class="mat-col premium-col">Track Light, Linear Light</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Switches</strong></div>
+                                <div class="mat-col">Normal (blue/white)</div>
+                                <div class="mat-col">Colour switches</div>
+                                <div class="mat-col premium-col">Designer Black switches</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Furniture -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">05</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-couch"></i> Furniture & Hardware</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Ply Core</strong></div>
+                                <div class="mat-col">MR Grade</div>
+                                <div class="mat-col">BWR / HDHMR</div>
+                                <div class="mat-col premium-col">BWP Marine</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Finish</strong></div>
+                                <div class="mat-col">Laminate</div>
+                                <div class="mat-col">Polish Acrylic</div>
+                                <div class="mat-col premium-col">Duco / PU</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Fittings Brand</strong></div>
+                                <div class="mat-col">Ozone, Ebco</div>
+                                <div class="mat-col">Hettich, Godrej</div>
+                                <div class="mat-col premium-col">Hafele, Blum</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Kitchen -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">06</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-kitchen-set"></i> Kitchen</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Ply Core</strong></div>
+                                <div class="mat-col">MR Grade</div>
+                                <div class="mat-col">BWR / HDHMR</div>
+                                <div class="mat-col premium-col">BWP</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Finish</strong></div>
+                                <div class="mat-col">Laminate</div>
+                                <div class="mat-col">Acrylic</div>
+                                <div class="mat-col premium-col">Duco / PU</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Counter Top</strong></div>
+                                <div class="mat-col">Granite (₹100/sqft)</div>
+                                <div class="mat-col">Granite/Tiles (₹120–150/sqft)</div>
+                                <div class="mat-col premium-col">Quartz (₹200–250/sqft)</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Fittings</strong></div>
+                                <div class="mat-col">Ozone, Ebco (SS)</div>
+                                <div class="mat-col">Moda, Godrej (SS)</div>
+                                <div class="mat-col premium-col">Hafele, Blum, Hettich, Sleek</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Bathroom -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">07</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-shower"></i> Bathroom</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Floor Tile</strong></div>
+                                <div class="mat-col">2×2</div>
+                                <div class="mat-col">2×2</div>
+                                <div class="mat-col premium-col">4×2</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Wall Tile</strong></div>
+                                <div class="mat-col">2×2</div>
+                                <div class="mat-col">2×4</div>
+                                <div class="mat-col premium-col">4×2</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>WC Type</strong></div>
+                                <div class="mat-col">Single piece floor mounted</div>
+                                <div class="mat-col">Wall mounted</div>
+                                <div class="mat-col premium-col">Wall mounted</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Wash Basin</strong></div>
+                                <div class="mat-col">Pedestal</div>
+                                <div class="mat-col">Counter top / Under counter</div>
+                                <div class="mat-col premium-col">Counter top / Under counter</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Doors -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">08</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-door-open"></i> Doors</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Type</strong></div>
+                                <div class="mat-col">Hollow/Cellular core</div>
+                                <div class="mat-col">Solid core flush door</div>
+                                <div class="mat-col premium-col">Solid core panel main door</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Finish</strong></div>
+                                <div class="mat-col">Laminate</div>
+                                <div class="mat-col">Laminate / Veneer</div>
+                                <div class="mat-col premium-col">Veneer / Door skin / Deco PU</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Locks</strong></div>
+                                <div class="mat-col">Godrej / Doorset</div>
+                                <div class="mat-col">Normal upgraded</div>
+                                <div class="mat-col premium-col">Designer + 1 Smart Lock</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. TV Unit -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">09</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-tv"></i> TV Unit</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Back Panel</strong></div>
+                                <div class="mat-col">No back panel</div>
+                                <div class="mat-col">Semi back panel</div>
+                                <div class="mat-col premium-col">Full back panel</div>
+                            </div>
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Design Elements</strong></div>
+                                <div class="mat-col">Basic</div>
+                                <div class="mat-col">Design on sides</div>
+                                <div class="mat-col premium-col">Full design with elements</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Master Wall -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">10</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-rectangle-ad"></i> Feature / Master Wall</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Type</strong></div>
+                                <div class="mat-col">Wallpaper / Texture / Wall Moulding</div>
+                                <div class="mat-col">PVC / WPC / Charcoal / POP Designs (per rft)</div>
+                                <div class="mat-col premium-col">Wooden Panelling</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. UPVC Work -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">11</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-window-maximize"></i> UPVC Work</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Application</strong></div>
+                                <div class="mat-col">Bathroom window (Lesso brand)</div>
+                                <div class="mat-col">Smallest doors</div>
+                                <div class="mat-col premium-col">Balcony doors (UPVC / Aluminium)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Railing -->
+                    <div class="mat-row-group">
+                        <button class="mat-row-toggle">
+                            <span class="mat-row-num">12</span>
+                            <span class="mat-row-name"><i class="fa-solid fa-stairs"></i> Railing</span>
+                            <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="mat-row-body">
+                            <div class="mat-data">
+                                <div class="mat-col-cat"><strong>Material</strong></div>
+                                <div class="mat-col">Mild Steel (M.S.)</div>
+                                <div class="mat-col">S.S. 304 Stainless Steel</div>
+                                <div class="mat-col premium-col">Toughened Glass (₹1200/rft)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end mat-table -->
+            </div><!-- end materials-section -->
+
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS / PORTFOLIO ===================== -->
+    <section id="projects" class="products section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-header-left">
+                    <span class="section-label">Our Work</span>
+                    <h2>Recent Projects</h2>
+                </div>
+                <a href="#contact" class="link-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="product-grid">
-                <!-- Product 1 -->
+                <!-- Project 1 -->
                 <div class="product-card reveal">
                     <div class="product-img">
-                        <img src="images/prod-sofa.png" alt="Minimalist Beige Sofa">
+                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=85&auto=format&fit=crop"
+                            alt="Luxury Villa — Dubai">
+                        <span class="badge new">Residential</span>
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Sofas</p>
-                        <h3 class="product-title"><a href="#">Minimalist Beige Sofa</a></h3>
-                        <p class="product-price">$1,299</p>
+                        <div class="product-info-left">
+                            <p class="product-category">Dubai, UAE</p>
+                            <h3 class="product-title"><a href="#">Luxury Villa — Palm Jumeirah</a></h3>
+                        </div>
+                        <p class="product-price">2024</p>
                     </div>
                 </div>
-                <!-- Product 2 -->
-                <div class="product-card reveal" style="transition-delay: 0.1s;">
+                <!-- Project 2 -->
+                <div class="product-card reveal" style="transition-delay: 0.08s;">
                     <div class="product-img">
-                        <img src="images/prod-chair.png" alt="Lounge Chair Walnut">
-                        <span class="badge new">New</span>
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=85&auto=format&fit=crop"
+                            alt="Corporate HQ — Mumbai">
+                        <span class="badge sale">Commercial</span>
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Chairs</p>
-                        <h3 class="product-title"><a href="#">Lounge Chair Walnut</a></h3>
-                        <p class="product-price">$649</p>
+                        <div class="product-info-left">
+                            <p class="product-category">Mumbai, India</p>
+                            <h3 class="product-title"><a href="#">Corporate Headquarters</a></h3>
+                        </div>
+                        <p class="product-price">2024</p>
                     </div>
                 </div>
-                <!-- Product 3 -->
-                <div class="product-card reveal" style="transition-delay: 0.2s;">
+                <!-- Project 3 -->
+                <div class="product-card reveal" style="transition-delay: 0.16s;">
                     <div class="product-img">
-                        <img src="images/prod-dining.png" alt="Solid Wood Dining Table">
+                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=800&q=85&auto=format&fit=crop"
+                            alt="Boutique Hotel Lobby">
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Dining Tables</p>
-                        <h3 class="product-title"><a href="#">Solid Wood Dining Table</a></h3>
-                        <p class="product-price">$1,899</p>
+                        <div class="product-info-left">
+                            <p class="product-category">London, UK</p>
+                            <h3 class="product-title"><a href="#">Boutique Hotel Lobby</a></h3>
+                        </div>
+                        <p class="product-price">2023</p>
                     </div>
                 </div>
-                <!-- Product 4 -->
-                <div class="product-card reveal" style="transition-delay: 0.3s;">
+                <!-- Project 4 -->
+                <div class="product-card reveal" style="transition-delay: 0.08s;">
                     <div class="product-img">
-                        <img src="images/prod-bed.png" alt="Cream Velvet Bed">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85&auto=format&fit=crop"
+                            alt="Manhattan Penthouse">
+                        <span class="badge new">Residential</span>
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Beds</p>
-                        <h3 class="product-title"><a href="#">Cream Velvet Bed</a></h3>
-                        <p class="product-price">$2,199</p>
+                        <div class="product-info-left">
+                            <p class="product-category">New York, USA</p>
+                            <h3 class="product-title"><a href="#">Manhattan Penthouse</a></h3>
+                        </div>
+                        <p class="product-price">2023</p>
                     </div>
                 </div>
-                <!-- Product 5 -->
-                <div class="product-card reveal" style="transition-delay: 0.4s;">
+                <!-- Project 5 -->
+                <div class="product-card reveal" style="transition-delay: 0.16s;">
                     <div class="product-img">
-                        <img src="images/prod-cabinet.png" alt="Modern Oak Cabinet">
-                        <span class="badge sale">On Sale</span>
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85&auto=format&fit=crop"
+                            alt="Fine Dining Restaurant">
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Storage</p>
-                        <h3 class="product-title"><a href="#">Modern Oak Cabinet</a></h3>
-                        <p class="product-price"><span class="old-price">$1,200</span> $999</p>
+                        <div class="product-info-left">
+                            <p class="product-category">Singapore</p>
+                            <h3 class="product-title"><a href="#">Fine Dining Restaurant</a></h3>
+                        </div>
+                        <p class="product-price">2023</p>
                     </div>
                 </div>
-                <!-- Product 6 -->
-                <div class="product-card reveal" style="transition-delay: 0.5s;">
+                <!-- Project 6 -->
+                <div class="product-card reveal" style="transition-delay: 0.24s;">
                     <div class="product-img">
-                        <img src="images/prod-coffee.png" alt="Accent Coffee Table">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=85&auto=format&fit=crop"
+                            alt="Luxury Retail Showroom">
+                        <span class="badge sale">Commercial</span>
                         <div class="product-actions">
-                            <button class="action-btn" title="Add to Cart"><i
-                                    class="fa-solid fa-cart-shopping"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i
-                                    class="fa-regular fa-heart"></i></button>
+                            <button class="action-btn" title="View Project"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <p class="product-category">Tables</p>
-                        <h3 class="product-title"><a href="#">Accent Coffee Table</a></h3>
-                        <p class="product-price">$450</p>
+                        <div class="product-info-left">
+                            <p class="product-category">Paris, France</p>
+                            <h3 class="product-title"><a href="#">Luxury Retail Showroom</a></h3>
+                        </div>
+                        <p class="product-price">2022</p>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-40">
-                <a href="#" class="btn btn-outline">Explore All Products</a>
+            <div class="text-center mt-40 reveal">
+                <a href="#contact" class="btn btn-outline">Start Your Project</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+    <!-- ===================== FAQ SECTION ===================== -->
+    <section class="faq-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-header-left">
+                    <span class="section-label">Common Questions</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <p class="section-desc">Everything you need to know before starting your project.</p>
+            </div>
+
+            <div class="faq-grid">
+
+                <!-- Left column -->
+                <div class="faq-column">
+
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            What is the typical budget range for an interior design project?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our projects span a wide range depending on scope and finishes:</p>
+                            <ul>
+                                <li>Under ₹5,00,000 — Basic fit-out &amp; soft furnishing</li>
+                                <li>₹5,00,000 – ₹10,00,000 — Standard modular design</li>
+                                <li>₹10,00,000 – ₹25,00,000 — Full residential design</li>
+                                <li>₹25,00,000 – ₹50,00,000 — Premium design with custom furniture</li>
+                                <li>₹50,00,000 – ₹1,00,00,000+ — Luxury turnkey projects</li>
+                            </ul>
+                            <p>We work with every budget and always recommend a consultation first so we can tailor the proposal to your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.06s;">
+                        <button class="faq-question" aria-expanded="false">
+                            What design styles do you offer?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We are fluent in all major interior design styles including:</p>
+                            <ul>
+                                <li><strong>Modern & Contemporary</strong> — clean lines, neutral palettes</li>
+                                <li><strong>Minimalist</strong> — less is more, decluttered spaces</li>
+                                <li><strong>Scandinavian</strong> — warm woods, functional elegance</li>
+                                <li><strong>Mid-Century Modern</strong> — retro with organic forms</li>
+                                <li><strong>Industrial</strong> — raw materials, exposed elements</li>
+                                <li><strong>Traditional & Classic</strong> — rich details, timeless appeal</li>
+                                <li><strong>Eclectic & Transitional</strong> — a curated mix of styles</li>
+                            </ul>
+                            <p>During consultation, we help you identify your preferred style through mood boards and visual references.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.12s;">
+                        <button class="faq-question" aria-expanded="false">
+                            Which flat configurations do you typically work with?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We handle all residential configurations:</p>
+                            <ul>
+                                <li>1 BHK, 2 BHK, 3 BHK, 4 BHK apartments</li>
+                                <li>Villas &amp; independent houses</li>
+                                <li>Duplexes &amp; penthouses</li>
+                                <li>Commercial &amp; office spaces</li>
+                                <li>Hospitality &amp; F&amp;B outlets</li>
+                            </ul>
+                            <p>Whether it is a compact studio or a sprawling villa, our team designs for every space optimally.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.18s;">
+                        <button class="faq-question" aria-expanded="false">
+                            What is your typical project timeline?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Timelines vary by project size and complexity, but general estimates are:</p>
+                            <ul>
+                                <li><strong>1 BHK / 2 BHK</strong> — 6 to 10 weeks</li>
+                                <li><strong>3 BHK / 4 BHK</strong> — 10 to 16 weeks</li>
+                                <li><strong>Villa / Large Residence</strong> — 16 to 28 weeks</li>
+                                <li><strong>Commercial Turnkey</strong> — Depends on area and scope</li>
+                            </ul>
+                            <p>We share a detailed project schedule after the initial consultation and concept approval.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right column -->
+                <div class="faq-column">
+
+                    <div class="faq-item reveal" style="transition-delay:0.06s;">
+                        <button class="faq-question" aria-expanded="false">
+                            What rooms / areas can you design for us?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We design every area of your home or commercial space, including:</p>
+                            <ul>
+                                <li>Living Room — sofa, TV unit, false ceiling, lighting, partitions</li>
+                                <li>Dining Room — table, chairs, bar unit, wallpaper &amp; paint</li>
+                                <li>Kitchen — modular layouts, appliances, countertops, storage</li>
+                                <li>Master &amp; other Bedrooms — bed, wardrobes, study, dressing</li>
+                                <li>Bathrooms — vanity, fixtures, tiles, accessories</li>
+                                <li>Home Office, Pooja Room, Kids' Room, Balcony &amp; more</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.12s;">
+                        <button class="faq-question" aria-expanded="false">
+                            What possession status do you work with?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work at any stage of your property journey:</p>
+                            <ul>
+                                <li><strong>Bare Shell</strong> — we design from scratch alongside construction</li>
+                                <li><strong>Under Construction</strong> — we plan ahead so execution is seamless on possession</li>
+                                <li><strong>Ready to Move In</strong> — we begin immediately with full fit-out</li>
+                                <li><strong>Existing Home / Renovation</strong> — we assess the space and redesign with minimal disruption</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.18s;">
+                        <button class="faq-question" aria-expanded="false">
+                            What flooring and material options do you offer?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We source from premium vendors across all material categories:</p>
+                            <ul>
+                                <li><strong>Flooring</strong> — Marble, Tiles, Engineered Wood, Vinyl, Carpet</li>
+                                <li><strong>Walls</strong> — Wallpaper, Textured Paint, Paneling, Stone cladding</li>
+                                <li><strong>Furniture</strong> — Custom-made, modular, and curated from top brands</li>
+                                <li><strong>Lighting</strong> — Recessed, pendant, cove, statement &amp; smart lighting</li>
+                            </ul>
+                            <p>All materials are selected to match your chosen design style and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal" style="transition-delay:0.24s;">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I get started with The One Interior?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Getting started is simple — just 3 steps:</p>
+                            <ul>
+                                <li><strong>1. Fill the enquiry form</strong> — share your name, location, flat config, possession status &amp; scope of work</li>
+                                <li><strong>2. Free consultation</strong> — our designer meets you (in person or virtually) to understand your vision</li>
+                                <li><strong>3. Proposal &amp; kickoff</strong> — we present concept designs, get your approval, and begin execution</li>
+                            </ul>
+                            <p>Use the contact form above or WhatsApp us directly to get started today.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIAL ===================== -->
     <section class="testimonial section-padding">
         <div class="container testimonial-container reveal">
-            <div class="testimonial-content">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <blockquote>
-                    "The quality and elegance of One Furniture completely transformed my living room. Their pieces bring
-                    that perfect blend of warmth and modern luxury I was looking for. An absolute showroom experience."
-                </blockquote>
-                <div class="client-info">
-                    <img src="images/client.png" alt="Client Avatar" class="client-avatar">
-                    <div class="client-details">
-                        <h4>Sarah Jenkins</h4>
-                        <p>Interior Designer</p>
-                    </div>
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <blockquote>
+                "The One Interior transformed our villa into something truly extraordinary. Their attention to detail,
+                creative vision, and seamless execution made the entire process effortless. Worth every penny."
+            </blockquote>
+            <div class="client-info">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=85&auto=format&fit=crop&crop=face"
+                    alt="Client" class="client-avatar">
+                <div class="client-details">
+                    <h4>Ahmed Al Mansouri</h4>
+                    <p>CEO, Dubai</p>
                 </div>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section id="contact" class="contact-section section-padding bg-light">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-block reveal-left">
+                    <span class="section-label">Get In Touch</span>
+                    <h2>Let's Create<br>Something <em>Beautiful</em></h2>
+                    <p>Ready to transform your space? Share your vision with us and our team will get back to you within
+                        24 hours.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <div>
+                                <strong>Studio</strong>
+                                <span>123 Design Street, Interior District</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                            <div>
+                                <strong>Phone</strong>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <div>
+                                <strong>Email</strong>
+                                <span>hello@theoneinterior.com</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-block reveal" style="transition-delay:0.15s;">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" placeholder="City / Area" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="flat-config">Flat Configuration</label>
+                                <select id="flat-config" required>
+                                    <option value="">Select configuration...</option>
+                                    <option value="1bhk">1 BHK</option>
+                                    <option value="2bhk">2 BHK</option>
+                                    <option value="3bhk">3 BHK</option>
+                                    <option value="4bhk">4 BHK</option>
+                                    <option value="villa">Villa / Independent House</option>
+                                    <option value="duplex">Duplex</option>
+                                    <option value="penthouse">Penthouse</option>
+                                    <option value="commercial">Commercial Space</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="possession">Possession Status</label>
+                                <select id="possession" required>
+                                    <option value="">Select status...</option>
+                                    <option value="ready">Ready to Move In</option>
+                                    <option value="under-construction">Under Construction</option>
+                                    <option value="renovation">Existing — Needs Renovation</option>
+                                    <option value="bare-shell">Bare Shell</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="scope">Scope of Work</label>
+                            <textarea id="scope" rows="5"
+                                placeholder="Briefly describe your project — what rooms need design, your style preferences, budget range, timeline, or any specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
         <div class="container">
+            <!-- "LET'S CONNECT" hero section -->
+            <div class="footer-connect reveal">
+                <div class="footer-connect-inner">
+                    <h2 class="footer-headline">LET'S<br><span>DESIGN.</span></h2>
+                    <div class="footer-connect-right">
+                        <p>Have a project in mind? Let's talk about creating a space that truly reflects your vision and
+                            lifestyle.</p>
+                        <a href="mailto:hello@theoneinterior.com" class="btn btn-outline"
+                            style="color:#fff; border-color:rgba(255,255,255,0.4);">Email Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer grid -->
             <div class="footer-grid">
                 <div class="footer-col brand-col">
-                    <a href="#" class="logo footer-logo">One<span>Furniture</span></a>
-                    <p>Elevating modern living with premium furniture designs. Experience luxury, comfort, and
-                        exceptional craftsmanship.</p>
+                    <a href="#" class="footer-logo">The One<span>Interior</span></a>
+                    <p>A premium interior design studio crafting timeless, luxurious spaces that inspire and transform
+                        the way you live.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Pinterest</a>
+                        <a href="#">Houzz</a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#products">Shop</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#">Our Journal</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">Our Studio</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Customer Service</h3>
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Care Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#services">Residential Design</a></li>
+                        <li><a href="#services">Commercial Interiors</a></li>
+                        <li><a href="#services">Hospitality Design</a></li>
+                        <li><a href="#services">Turnkey Solutions</a></li>
+                        <li><a href="#services">Renovation & Fit-out</a></li>
                     </ul>
                 </div>
-                <div class="footer-col contact-col">
+                <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li><i class="fa-solid fa-location-dot"></i> 123 Luxury Avenue, Design District, NY 10001</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Design Street, Interior District</li>
                         <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fa-solid fa-envelope"></i> hello@onefurniture.com</li>
+                        <li><i class="fa-solid fa-envelope"></i> hello@theoneinterior.com</li>
+                        <li><i class="fa-regular fa-clock"></i> Mon–Sat: 9AM – 7PM</li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 One Furniture. All Rights Reserved.</p>
-                <div class="payment-methods">
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-brands fa-cc-amex"></i>
-                    <i class="fa-brands fa-cc-paypal"></i>
-                </div>
+                <p>&copy; 2026 The One Interior. All Rights Reserved.</p>
+                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem;">Design with Passion. Build with Precision.
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">Scroll to Top</div>
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
