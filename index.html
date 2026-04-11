@@ -33,7 +33,7 @@
                 <a href="#contact">Contact</a>
             </nav>
             <div class="nav-actions">
-                <a href="tel:+919370262177" class="icon-btn" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+                <a href="tel:+919309558584" class="icon-btn" title="Call Us"><i class="fa-solid fa-phone"></i></a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
                     <i class="fa-solid fa-bars"></i> Menu
                 </button>
@@ -66,40 +66,121 @@
         </div>
     </div>
 
-    <!-- ===================== HERO ===================== -->
-    <section id="home" class="hero">
+    <!-- ===================== CONFIGURATOR APP ===================== -->
+    <section class="hero configurator-hero">
         <div class="hero-image">
             <div class="hero-overlay"></div>
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&auto=format&fit=crop"
-                alt="Luxury Interior Design — The One Interior">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&auto=format&fit=crop" alt="Luxury Interior">
         </div>
-        <div class="hero-content reveal">
-            <p class="hero-eyebrow">Interior Design Studio</p>
-            <h1>We Design Spaces<br>That <em>Inspire</em></h1>
-            <p class="hero-description">From luxurious residences to bespoke commercial spaces — we craft interiors that
-                reflect your personality and elevate everyday living.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="link-btn">Get a Consultation <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-        <!-- Stats strip -->
-        <div class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">Years of Excellence</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">850+</span>
-                <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">38</span>
-                <span class="stat-label">Design Awards</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">12</span>
-                <span class="stat-label">Countries Served</span>
+        <div class="container configurator-wrapper">
+            <div class="configurator-container">
+                <div class="configurator-header">
+                    <h2>Interior Design Estimator</h2>
+                    <p>Customize your space in 5 simple steps</p>
+                    <div class="progress-bar">
+                        <div class="progress" id="config-progress" style="width: 16%;"></div>
+                    </div>
+                </div>
+
+                <div class="steps-wrapper">
+                    <!-- Step 1: Project Type -->
+                    <div class="config-step active" id="step-1">
+                        <h3>1. Select Project Type</h3>
+                        <div class="options-grid">
+                            <div class="option-card" onclick="selectConfig('type', 'Furniture', 1)">
+                                <i class="fa-solid fa-couch"></i><span>Furniture</span>
+                            </div>
+                            <div class="option-card" onclick="selectConfig('type', 'Interior', 1)">
+                                <i class="fa-solid fa-paint-roller"></i><span>Interiors</span>
+                            </div>
+                            <div class="option-card" onclick="selectConfig('type', 'Turnkey', 1)">
+                                <i class="fa-solid fa-house-chimney"></i><span>Turnkey</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Budget Range -->
+                    <div class="config-step" id="step-2">
+                        <h3>2. Select Budget Range</h3>
+                        <div class="options-grid budget-grid">
+                            <div class="option-card" data-rate="1500" data-fee="200" onclick="selectConfig('budget', 'Standard', 2, this)">
+                                <h4>Standard</h4>
+                                <span class="budget-rate">₹1500/sqft <small>+ ₹200 fee</small></span>
+                            </div>
+                            <div class="option-card" data-rate="2000" data-fee="275" onclick="selectConfig('budget', 'Affordable', 2, this)">
+                                <h4>Affordable</h4>
+                                <span class="budget-rate">₹2000/sqft <small>+ ₹275 fee</small></span>
+                            </div>
+                            <div class="option-card" data-rate="2500" data-fee="350" onclick="selectConfig('budget', 'Premium', 2, this)">
+                                <h4>Premium</h4>
+                                <span class="budget-rate">₹2500/sqft <small>+ ₹350 fee</small></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Design Style -->
+                    <div class="config-step" id="step-3">
+                        <h3>3. Select Design Style</h3>
+                        <div class="options-grid styles-grid">
+                            <div class="option-card" onclick="selectConfig('style', 'Modern', 3)">Modern</div>
+                            <div class="option-card" onclick="selectConfig('style', 'Minimal', 3)">Minimal</div>
+                            <div class="option-card" onclick="selectConfig('style', 'Classical', 3)">Classical</div>
+                            <div class="option-card" onclick="selectConfig('style', 'Industrial', 3)">Industrial</div>
+                            <div class="option-card" onclick="selectConfig('style', 'Bohemian', 3)">Bohemian</div>
+                            <div class="option-card" onclick="selectConfig('style', 'Other', 3)">Other</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Select Rooms -->
+                    <div class="config-step" id="step-4">
+                        <h3>4. Select Rooms</h3>
+                        <div class="options-grid multi-select" id="rooms-container">
+                            <div class="option-card multi" onclick="toggleMulti(this, 'Full Home')">Full Home</div>
+                            <div class="option-card multi" onclick="toggleMulti(this, 'Kitchen')">Kitchen</div>
+                            <div class="option-card multi" onclick="toggleMulti(this, 'Hall')">Hall</div>
+                            <div class="option-card" onclick="toggleMulti(this, 'Master Bedroom')">Master Bed</div>
+                            <div class="option-card" onclick="toggleMulti(this, 'Kids Bedroom')">Kids Bed</div>
+                            <div class="option-card" onclick="toggleMulti(this, 'Guest Bedroom')">Guest Bed</div>
+                            <div class="option-card" onclick="toggleMulti(this, 'Bathroom')">Bathroom</div>
+                            <div class="option-card" onclick="toggleMulti(this, 'Balcony')">Balcony</div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-primary" onclick="nextStep(4)">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Enter Area -->
+                    <div class="config-step" id="step-5">
+                        <h3>5. Enter Flat Area (sqft)</h3>
+                        <div class="input-container">
+                            <input type="number" id="area-input" placeholder="e.g. 1200" min="100">
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-primary" onclick="calculateResult()">Generate Estimate</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Output -->
+                    <div class="config-step" id="step-6">
+                        <h3>🎉 Your Estimate is Ready!</h3>
+                        <div class="output-container">
+                            <div class="output-row">
+                                <span>Estimated Cost</span>
+                                <h2 id="final-cost">₹0</h2>
+                                <small>(Material + Labour + Designer Fees)</small>
+                            </div>
+                            <div class="output-details">
+                                <p><strong>Timeline:</strong> Loose furniture (15-25 days) / Project (45-60 days)</p>
+                                <p><strong>Material Specs:</strong> Based on <span id="out-budget"></span> Tier.</p>
+                            </div>
+                        </div>
+                        <div class="whatsapp-prompt-box">
+                            <input type="text" id="cust-name" placeholder="Your Name">
+                            <input type="text" id="cust-loc" placeholder="Your Location">
+                            <button class="btn whatsapp-btn" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Click to Send WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -559,7 +640,7 @@
                     <div class="location-tag">Design Studio – Office</div>
                     <h3>The One Interior</h3>
                     <address>
-                        205/Dattani Prism IT Park-1,<br>
+                        Office no. 204, Dattani Prism IT Park-1,<br>
                         Behind Dattani Mall, Bhabola Road,<br>
                         Vasai-West, Palghar – 401202
                     </address>
@@ -821,7 +902,197 @@
                                 </div>
                             </div>
 
-                        </div>
+                        
+<div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Living Room Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>How will you primarily use your living room?</strong></li>
+<li><i class="fa-regular fa-square"></i> Family gatherings</li>
+<li><i class="fa-regular fa-square"></i> Entertaining guests</li>
+<li><i class="fa-regular fa-square"></i> Relaxing</li>
+<li><i class="fa-regular fa-square"></i> Watching TV or movies</li>
+<li><i class="fa-regular fa-square"></i> Working/Study area</li>
+<li><i class="fa-regular fa-square"></i> Play area for kids</li>
+<li style="margin-top: 1rem;"><strong>How many people need to be seated comfortably?</strong></li>
+<li><i class="fa-regular fa-square"></i> 23 people</li>
+<li><i class="fa-regular fa-square"></i> 45 people</li>
+<li><i class="fa-regular fa-square"></i> 6 people</li>
+<li style="margin-top: 1rem;"><strong>Do you have children or pets that need to be considered in the design?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, children</li>
+<li><i class="fa-regular fa-square"></i> Yes, pets</li>
+<li><i class="fa-regular fa-square"></i> Yes, both</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>What type of seating arrangement do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Sofa and armchairs</li>
+<li><i class="fa-regular fa-square"></i> Sectional sofa</li>
+<li><i class="fa-regular fa-square"></i> Recliners</li>
+<li><i class="fa-regular fa-square"></i> Modular/flexible seating</li>
+<li><i class="fa-regular fa-square"></i> Floor cushions and casual seating</li>
+<li style="margin-top: 1rem;"><strong>Do you need extra storage in the living room?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, built-in storage (shelving, cabinetry)</li>
+<li><i class="fa-regular fa-square"></i> Yes, hidden storage (ottomans, furniture with storage)</li>
+<li><i class="fa-regular fa-square"></i> No, minimal storage needed</li>
+<li style="margin-top: 1rem;"><strong>How much natural light does the room get?</strong></li>
+<li><i class="fa-regular fa-square"></i> Lots of natural light</li>
+<li><i class="fa-regular fa-square"></i> Moderate natural light</li>
+<li><i class="fa-regular fa-square"></i> Little natural light</li>
+<li style="margin-top: 1rem;"><strong>What kind of window treatments do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Curtains (light, airy fabrics)</li>
+<li><i class="fa-regular fa-square"></i> Heavy drapes (for light control and privacy)</li>
+<li><i class="fa-regular fa-square"></i> Blinds (wood or fabric)</li>
+<li><i class="fa-regular fa-square"></i> Shutters</li>
+<li><i class="fa-regular fa-square"></i> No preference</li>
+<li style="margin-top: 1rem;"><strong>What type of lighting do you want in the living room?</strong></li>
+<li><i class="fa-regular fa-square"></i> Ambient lighting (general lighting)</li>
+<li><i class="fa-regular fa-square"></i> Task lighting (reading lamps, focused lighting)</li>
+<li><i class="fa-regular fa-square"></i> Accent lighting (to highlight artwork or features)</li>
+<li><i class="fa-regular fa-square"></i> Dimmer switches for mood lighting</li>
+<li><i class="fa-regular fa-square"></i> Over to you</li>
+<li style="margin-top: 1rem;"><strong>Do you need a media center/TV in the living room?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, with a large TV</li>
+<li><i class="fa-regular fa-square"></i> Yes, with a small TV</li>
+<li><i class="fa-regular fa-square"></i> No TV, just a sound system</li>
+<li><i class="fa-regular fa-square"></i> No media needed</li>
+<li style="margin-top: 1rem;"><strong>Do you want any smart home features?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, smart lighting control</li>
+<li><i class="fa-regular fa-square"></i> Yes, smart thermostat</li>
+<li><i class="fa-regular fa-square"></i> Yes, integrated sound system</li>
+<li><i class="fa-regular fa-square"></i> No, I prefer manual controls</li>
+<li style="margin-top: 1rem;"><strong>Do you prefer open shelving or closed storage?</strong></li>
+<li><i class="fa-regular fa-square"></i> Open shelving for display</li>
+<li><i class="fa-regular fa-square"></i> Closed cabinetry for clutter control</li>
+<li><i class="fa-regular fa-square"></i> A mix of both</li>
+<li style="margin-top: 1rem;"><strong>Do you want a fireplace or focal point in the living room?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, a fireplace (real or electric)</li>
+<li><i class="fa-regular fa-square"></i> Yes, a large artwork/feature wall</li>
+<li><i class="fa-regular fa-square"></i> No specific focal point</li>
+<li style="margin-top: 1rem;"><strong>Are there any architectural features youʼd like to highlight?</strong></li>
+<li><i class="fa-regular fa-square"></i> Beams</li>
+<li><i class="fa-regular fa-square"></i> Fireplace</li>
+<li><i class="fa-regular fa-square"></i> Columns</li>
+<li><i class="fa-regular fa-square"></i> None</li>
+<li style="margin-top: 1rem;"><strong>Do you have any specific decor preferences?</strong></li>
+<li><i class="fa-regular fa-square"></i> Artwork (paintings, prints)</li>
+<li><i class="fa-regular fa-square"></i> Mirrors</li>
+<li><i class="fa-regular fa-square"></i> Sculptures</li>
+<li><i class="fa-regular fa-square"></i> Plants and greenery</li>
+<li><i class="fa-regular fa-square"></i> No strong preferences</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Kitchen Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>How much storage do you need in your kitchen?</strong></li>
+<li><i class="fa-regular fa-square"></i> Minimal (basic cabinets)</li>
+<li><i class="fa-regular fa-square"></i> Moderate (standard cabinetry and pantry)</li>
+<li><i class="fa-regular fa-square"></i> Extensive (extra cabinetry, pantry, and island storage)</li>
+<li style="margin-top: 1rem;"><strong>Do you need any specialty appliances or features?</strong></li>
+<li><i class="fa-regular fa-square"></i> Double oven</li>
+<li><i class="fa-regular fa-square"></i> Wine fridge</li>
+<li><i class="fa-regular fa-square"></i> Large refrigerator/freezer</li>
+<li><i class="fa-regular fa-square"></i> Built-in coffee station</li>
+<li><i class="fa-regular fa-square"></i> No special appliances</li>
+<li style="margin-top: 1rem;"><strong>Do you want an island or breakfast bar in the kitchen?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, an island</li>
+<li><i class="fa-regular fa-square"></i> Yes, a breakfast bar</li>
+<li><i class="fa-regular fa-square"></i> No, neither</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Dining Room Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>What is your preferred dining table shape?</strong></li>
+<li><i class="fa-regular fa-square"></i> Rectangular</li>
+<li><i class="fa-regular fa-square"></i> Round</li>
+<li><i class="fa-regular fa-square"></i> Oval</li>
+<li><i class="fa-regular fa-square"></i> Square</li>
+<li style="margin-top: 1rem;"><strong>How many people do you want to seat comfortably in the dining room?</strong></li>
+<li><i class="fa-regular fa-square"></i> 4 people</li>
+<li><i class="fa-regular fa-square"></i> 6 people</li>
+<li><i class="fa-regular fa-square"></i> 8 people</li>
+<li style="margin-top: 1rem;"><strong>Do you need space for additional storage or serving areas (buffet, sideboard)?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Would you like to incorporate a casual dining area (breakfast nook)?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Bedroom Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>What is the primary function of the bedroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Sleeping and relaxing only</li>
+<li><i class="fa-regular fa-square"></i> Sleeping, relaxing, and working</li>
+<li><i class="fa-regular fa-square"></i> Multi-functional (sleeping, working, exercise area)</li>
+<li style="margin-top: 1rem;"><strong>What kind of bed do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Standard bed</li>
+<li><i class="fa-regular fa-square"></i> Canopy bed</li>
+<li><i class="fa-regular fa-square"></i> Platform bed</li>
+<li><i class="fa-regular fa-square"></i> Storage bed</li>
+<li style="margin-top: 1rem;"><strong>Do you need a walk-in-wardrobe?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you need a designated workspace in the bedroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you prefer a seating area in the bedroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Bathroom Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>Do you prefer a shower, bathtub, or both?</strong></li>
+<li><i class="fa-regular fa-square"></i> Shower only</li>
+<li><i class="fa-regular fa-square"></i> Bathtub only</li>
+<li><i class="fa-regular fa-square"></i> Both</li>
+<li style="margin-top: 1rem;"><strong>What kind of storage do you need in the bathroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Minimal (vanity storage only)</li>
+<li><i class="fa-regular fa-square"></i> Moderate (vanity and wall storage)</li>
+<li><i class="fa-regular fa-square"></i> Extensive (extra shelving, linen closet)</li>
+<li style="margin-top: 1rem;"><strong>How many people will use the bathroom regularly?</strong></li>
+<li><i class="fa-regular fa-square"></i> 1 person</li>
+<li><i class="fa-regular fa-square"></i> 2 people</li>
+<li><i class="fa-regular fa-square"></i> More than 2 people</li>
+<li style="margin-top: 1rem;"><strong>Do you require a double vanity or single vanity?</strong></li>
+<li><i class="fa-regular fa-square"></i> Single vanity</li>
+<li><i class="fa-regular fa-square"></i> Double vanity</li>
+</ul>
+
+                                </div>
+                            </div>
+                            
+</div>
 
                         <!-- Right column -->
                         <div class="faq-column">
@@ -900,10 +1171,267 @@
                                         <li><strong>3. Proposal &amp; kickoff</strong> — we present concept designs, get
                                             your approval, and begin execution</li>
                                     </ul>
-                                    <p>Use the contact form above or WhatsApp us on <strong>+91 93702 62177</strong> to
+                                    <p>Use the contact form above or WhatsApp us on <strong>+91 93095 58584</strong> to
                                         get started today.</p>
                                 </div>
                             </div>
+<div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Outdoor Spaces Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>How do you plan to use your outdoor space?</strong></li>
+<li><i class="fa-regular fa-square"></i> Relaxing and lounging</li>
+<li><i class="fa-regular fa-square"></i> Entertaining guests</li>
+<li><i class="fa-regular fa-square"></i> Dining and BBQ</li>
+<li><i class="fa-regular fa-square"></i> Gardening</li>
+<li style="margin-top: 1rem;"><strong>Do you need a covered or shaded area?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, covered area</li>
+<li><i class="fa-regular fa-square"></i> No, open space preferred</li>
+<li style="margin-top: 1rem;"><strong>Do you require any specific features in the outdoor space?</strong></li>
+<li><i class="fa-regular fa-square"></i> Outdoor kitchen</li>
+<li><i class="fa-regular fa-square"></i> Fire pit</li>
+<li><i class="fa-regular fa-square"></i> Pool or hot tub</li>
+<li><i class="fa-regular fa-square"></i> Outdoor seating only</li>
+<li style="margin-top: 1rem;"><strong>How many people do you plan to accommodate outdoors?</strong></li>
+<li><i class="fa-regular fa-square"></i> 24 people</li>
+<li><i class="fa-regular fa-square"></i> 46 people</li>
+<li><i class="fa-regular fa-square"></i> More than 6 people</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Home Office Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>What is the primary function of your home office?</strong></li>
+<li><i class="fa-regular fa-square"></i> Work only</li>
+<li><i class="fa-regular fa-square"></i> Study and work</li>
+<li><i class="fa-regular fa-square"></i> Multi-purpose (work, hobbies, meetings)</li>
+<li style="margin-top: 1rem;"><strong>How many workstations do you need?</strong></li>
+<li><i class="fa-regular fa-square"></i> 1 workstation</li>
+<li><i class="fa-regular fa-square"></i> 2 workstations</li>
+<li><i class="fa-regular fa-square"></i> More than 2 workstations</li>
+<li style="margin-top: 1rem;"><strong>What kind of storage do you need in the office?</strong></li>
+<li><i class="fa-regular fa-square"></i> Minimal (desk storage)</li>
+<li><i class="fa-regular fa-square"></i> Moderate (bookshelves, filing cabinets)</li>
+<li><i class="fa-regular fa-square"></i> Extensive (multiple storage options)</li>
+<li style="margin-top: 1rem;"><strong>Do you need seating for guests or clients?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you want to incorporate a meeting space in the office?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li><i class="fa-regular fa-square"></i> Additional Rooms and Other Areas</li>
+<li style="margin-top: 1rem;"><strong>Do you have any additional rooms that need designing?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, a playroom</li>
+<li><i class="fa-regular fa-square"></i> Yes, a home gym</li>
+<li><i class="fa-regular fa-square"></i> Yes, a laundry room</li>
+<li><i class="fa-regular fa-square"></i> Yes, a guest bedroom</li>
+<li><i class="fa-regular fa-square"></i> No additional rooms</li>
+<li style="margin-top: 1rem;"><strong>What kind of storage do you need in additional rooms (if any)?</strong></li>
+<li><i class="fa-regular fa-square"></i> Minimal</li>
+<li><i class="fa-regular fa-square"></i> Moderate</li>
+<li><i class="fa-regular fa-square"></i> Extensive</li>
+<li><i class="fa-regular fa-square"></i> Smart Home and Project Details</li>
+<li style="margin-top: 1rem;"><strong>Do you want to incorporate smart home features in your project?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes, smart lighting control</li>
+<li><i class="fa-regular fa-square"></i> Yes, smart thermostat</li>
+<li><i class="fa-regular fa-square"></i> Yes, smart security system</li>
+<li><i class="fa-regular fa-square"></i> No smart features needed</li>
+<li><i class="fa-regular fa-square"></i> Inspirational Sources</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    False Ceiling Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>What is the main purpose of the false ceiling?</strong></li>
+<li><i class="fa-regular fa-square"></i> Decorative look</li>
+<li><i class="fa-regular fa-square"></i> Better lighting</li>
+<li><i class="fa-regular fa-square"></i> Hide wiring/AC ducts</li>
+<li><i class="fa-regular fa-square"></i> Sound insulation</li>
+<li style="margin-top: 1rem;"><strong>Which room do you want the false ceiling for?</strong></li>
+<li><i class="fa-regular fa-square"></i> Living room</li>
+<li><i class="fa-regular fa-square"></i> Bedroom</li>
+<li><i class="fa-regular fa-square"></i> Kitchen</li>
+<li><i class="fa-regular fa-square"></i> All rooms</li>
+<li style="margin-top: 1rem;"><strong>What ceiling height do you currently have?</strong></li>
+<li><i class="fa-regular fa-square"></i> Low height</li>
+<li><i class="fa-regular fa-square"></i> Medium</li>
+<li><i class="fa-regular fa-square"></i> High</li>
+<li style="margin-top: 1rem;"><strong>What type of design do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Simple & minimal</li>
+<li><i class="fa-regular fa-square"></i> Modern design</li>
+<li><i class="fa-regular fa-square"></i> Luxury design</li>
+<li><i class="fa-regular fa-square"></i> Designer patterns</li>
+<li style="margin-top: 1rem;"><strong>What kind of lighting do you want?</strong></li>
+<li><i class="fa-regular fa-square"></i> Cove lighting</li>
+<li><i class="fa-regular fa-square"></i> Spot lights</li>
+<li><i class="fa-regular fa-square"></i> LED strip lights</li>
+<li><i class="fa-regular fa-square"></i> Combination</li>
+<li style="margin-top: 1rem;"><strong>Do you need fan and AC provision?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong>What material do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Gypsum</li>
+<li><i class="fa-regular fa-square"></i> Wooden panels</li>
+<li><i class="fa-regular fa-square"></i> POP</li>
+<li><i class="fa-regular fa-square"></i> Decorative look</li>
+<li style="margin-top: 1rem;"><strong>Do you want ceiling colour same as walls?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> Suggest best option</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Is soundproofing required?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>What is your budget range?</strong></li>
+<li><i class="fa-regular fa-square"></i> Basic</li>
+<li><i class="fa-regular fa-square"></i> Premium</li>
+<li><i class="fa-regular fa-square"></i> Medium</li>
+<li><i class="fa-regular fa-square"></i> Decorative look</li>
+<li style="margin-top: 1rem;"><strong>Do you want easy maintenance design?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Who will use the bedroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Adults</li>
+<li><i class="fa-regular fa-square"></i> Kids</li>
+<li><i class="fa-regular fa-square"></i> Guest room</li>
+<li style="margin-top: 1rem;"><strong>What bedroom style do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Modern</li>
+<li><i class="fa-regular fa-square"></i> Minimal</li>
+<li><i class="fa-regular fa-square"></i> Luxury</li>
+<li><i class="fa-regular fa-square"></i> Traditional</li>
+<li style="margin-top: 1rem;"><strong>What bed size do you need?</strong></li>
+<li><i class="fa-regular fa-square"></i> Single</li>
+<li><i class="fa-regular fa-square"></i> Queen</li>
+<li><i class="fa-regular fa-square"></i> King</li>
+<li style="margin-top: 1rem;"><strong>Do you need storage in the bed?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>What kind of wardrobe do you want?</strong></li>
+<li><i class="fa-regular fa-square"></i> Sliding</li>
+<li><i class="fa-regular fa-square"></i> Hinged</li>
+<li><i class="fa-regular fa-square"></i> Walk-in</li>
+<li><i class="fa-regular fa-square"></i> Not required</li>
+<li style="margin-top: 1rem;"><strong>Do you need a dressing table?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you want a study or work area?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+<li style="margin-top: 1rem;"><strong></strong></li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Bedroom Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>What lighting do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Warm light</li>
+<li><i class="fa-regular fa-square"></i> Mix of both</li>
+<li><i class="fa-regular fa-square"></i> White light</li>
+<li><i class="fa-regular fa-square"></i> Decorative look</li>
+<li style="margin-top: 1rem;"><strong>Do you want a TV unit in the bedroom?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>What storage level do you need?</strong></li>
+<li><i class="fa-regular fa-square"></i> Minimal</li>
+<li><i class="fa-regular fa-square"></i> Maximum</li>
+<li><i class="fa-regular fa-square"></i> Medium</li>
+<li style="margin-top: 1rem;"><strong>Do you prefer calm or bold colours?</strong></li>
+<li><i class="fa-regular fa-square"></i> Clam & Light</li>
+<li><i class="fa-regular fa-square"></i> Dark & Bold</li>
+<li style="margin-top: 1rem;"><strong>Is vastu consideration required?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+</ul>
+
+                                </div>
+                            </div>
+                            <div class="faq-item reveal">
+                                <button class="faq-question" aria-expanded="false">
+                                    Wall Panelling Design Questionnaire
+                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
+                                <div class="faq-answer">
+                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+<li style="margin-top: 1rem;"><strong>Which area needs wall panelling?</strong></li>
+<li><i class="fa-regular fa-square"></i> Living room</li>
+<li><i class="fa-regular fa-square"></i> TV unit wall</li>
+<li><i class="fa-regular fa-square"></i> Bedroom</li>
+<li><i class="fa-regular fa-square"></i> Full room</li>
+<li style="margin-top: 1rem;"><strong>What is the main purpose?</strong></li>
+<li><i class="fa-regular fa-square"></i> Decorative</li>
+<li><i class="fa-regular fa-square"></i> Headboard wall</li>
+<li><i class="fa-regular fa-square"></i> TV backdrop</li>
+<li><i class="fa-regular fa-square"></i> Feature wall</li>
+<li style="margin-top: 1rem;"><strong>What style do you like?</strong></li>
+<li><i class="fa-regular fa-square"></i> Modern</li>
+<li><i class="fa-regular fa-square"></i> Luxury</li>
+<li><i class="fa-regular fa-square"></i> minimal</li>
+<li><i class="fa-regular fa-square"></i> Classic</li>
+<li style="margin-top: 1rem;"><strong>Which material do you prefer</strong></li>
+<li><i class="fa-regular fa-square"></i> MDF</li>
+<li><i class="fa-regular fa-square"></i> PVC</li>
+<li><i class="fa-regular fa-square"></i> Plywood</li>
+<li><i class="fa-regular fa-square"></i> Wooden /f_inish</li>
+<li style="margin-top: 1rem;"><strong>What Type of finish do you want ?</strong></li>
+<li><i class="fa-regular fa-square"></i> Matte</li>
+<li><i class="fa-regular fa-square"></i> Glossy</li>
+<li><i class="fa-regular fa-square"></i> Textured</li>
+<li style="margin-top: 1rem;"><strong>Do You want panelling with lighting ?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you want color or wood finish</strong></li>
+<li><i class="fa-regular fa-square"></i> Solid colour</li>
+<li><i class="fa-regular fa-square"></i> Mix of both</li>
+<li><i class="fa-regular fa-square"></i> Wood colour</li>
+<li style="margin-top: 1rem;"><strong>Should panelling match furniture colour?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>Do you need low maintenace material ?</strong></li>
+<li><i class="fa-regular fa-square"></i> Yes</li>
+<li><i class="fa-regular fa-square"></i> No</li>
+<li style="margin-top: 1rem;"><strong>What budget category do you prefer?</strong></li>
+<li><i class="fa-regular fa-square"></i> Budget friendly</li>
+<li><i class="fa-regular fa-square"></i> Premium</li>
+<li><i class="fa-regular fa-square"></i> Mid range</li>
+<li style="margin-top: 1rem;"><strong>Do you want custom design or ready pattern</strong></li>
+<li><i class="fa-regular fa-square"></i> Custom design</li>
+<li><i class="fa-regular fa-square"></i> Ready design</li>
+</ul>
+
+                                </div>
+                            </div>
+
+
 
                         </div>
 
@@ -926,7 +1454,7 @@
                                     <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
                                     <div>
                                         <strong>Design Studio</strong>
-                                        <span>205/Dattani Prism IT Park-1, Behind Dattani Mall, Bhabola Road,
+                                        <span>Office no. 204, Dattani Prism IT Park-1, Behind Dattani Mall, Bhabola Road,
                                             Vasai-West, Palghar – 401202</span>
                                     </div>
                                 </li>
@@ -934,14 +1462,14 @@
                                     <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
                                     <div>
                                         <strong>Phone / WhatsApp</strong>
-                                        <span>+91 93702 62177</span>
+                                        <span>+91 93095 58584</span>
                                     </div>
                                 </li>
                                 <li>
                                     <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
                                     <div>
                                         <strong>Email</strong>
-                                        <span>hello@theonedesign.in</span>
+                                        <span>info@theonefurniture.in</span>
                                     </div>
                                 </li>
                             </ul>
@@ -1523,7 +2051,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
                         <li><i class="fa-solid fa-location-dot"></i> Vasai-West, Palghar – 401202</li>
-                        <li><i class="fa-solid fa-phone"></i> +91 93702 62177</li>
+                        <li><i class="fa-solid fa-phone"></i> +91 93095 58584</li>
                         <li><i class="fa-solid fa-envelope"></i> hello@theoneinterior.com</li>
                         <li><i class="fa-regular fa-clock"></i> Mon–Sat: 9AM – 7PM</li>
                     </ul>
@@ -1542,7 +2070,7 @@
     <div class="scroll-indicator" id="scrollIndicator">Scroll to Top</div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919370262177" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/919309558584" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 

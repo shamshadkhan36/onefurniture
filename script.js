@@ -154,3 +154,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+
+/* ===================== CONFIGURATOR APP LOGIC ===================== */
+
+const userConfig = {
+    type: '',
+    budget: '',
+    rate: 0,
+    fee: 0,
+    style: '',
+    rooms: [],
+    area: 0
+};
+
+let currentStep = 1;
+const totalSteps = 6;
+
+function updateProgress() {
+    const progress = (currentStep / totalSteps) * 100;
+    document.getElementById('config-progress').style.width = progress + '%';
+}
+
+function showStep(step) {
+    document.querySelectorAll('.config-step').forEach(el => el.classList.remove('active'));
+    document.getElementById('step-' + step).classList.add('active');
+    currentStep = step;
+    updateProgress();
+}
+
+function nextStep(step) {
+    showStep(step + 1);
+}
+
+function selectConfig(key, value, step, el) {
+    userConfig[key] = value;
+    
+    // Handle specific budget logic
+    if (key === 'budget' && el) {
+        userConfig.rate = parseInt(el.getAttribute('data-rate'));
+        userConfig.fee = parseInt(el.getAttribute('data-fee'));
+    }
+
+    // Highlight selected card
+    const siblings = event.currentTarget.parentElement.children;
+    for(let sibling of siblings) {
+        sibling.classList.remove('selected');
+    }
+    event.currentTarget.classList.add('selected');
+
+    // Automatically go to next step
+    setTimeout(() => {
+        nextStep(step);
+    }, 400); // short delay for visual feedback
+}
+
+function toggleMulti(el, room) {
+    if (userConfig.rooms.includes(room)) {
+        userConfig.rooms = userConfig.rooms.filter(r => r !== room);
+        el.classList.remove('selected');
+    } else {
+        userConfig.rooms.push(room);
+        el.classList.add('selected');
+    }
+}
+
+function calculateResult() {
+    const areaInput = document.getElementById('area-input').value;
+    if (!areaInput || areaInput < 100) {
+        alert('Please enter a valid area starting from 100 SqFt.');
+        return;
+    }
+    
+    // Validate previous steps
+    if (!userConfig.type || !userConfig.budget || !userConfig.style) {
+        alert('Please complete all previous steps before generating an estimate.');
+        showStep(1);
+        return;
+    }
+
+    userConfig.area = parseInt(areaInput);
+    
+    // Calculation: (Rate + Fee) * Area
+    const totalRateSqft = userConfig.rate + userConfig.fee;
+    const finalEstimate = totalRateSqft * userConfig.area;
+    
+    // Format to Indian Rupees
+    const formattedEstimate = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+    }).format(finalEstimate);
+
+    document.getElementById('final-cost').innerText = formattedEstimate;
+    document.getElementById('out-budget').innerText = userConfig.budget;
+
+    nextStep(5);
+}
+
+function sendWhatsApp() {
+    const name = document.getElementById('cust-name').value.trim() || 'Valued Customer';
+    const loc = document.getElementById('cust-loc').value.trim() || 'Not Provided';
+    
+    const message = `Hi 👋 Thank you for contacting The One Furniture\n\nWe have received your requirements ✅\n\nOur team will guide you step-by-step for:\n✔ Design\n✔ Material\n✔ Budget planning\n\nYour Selection:\nName: ${name}\n📍 Location: ${loc}\n📐 Area: ${userConfig.area} sqft (${userConfig.rooms.join(', ')})\nBudget Range: ${userConfig.budget}\nDesign Style: ${userConfig.style}\nProject Type: ${userConfig.type}\n\nYou will receive a detailed estimate shortly 👍\n\n✅ “Clarity + Control + Convenience”`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = "+919309558584";
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+}
