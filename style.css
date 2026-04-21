@@ -3144,7 +3144,7 @@ blockquote {
     font-size: 1rem !important;
     box-sizing: border-box !important;
 }
-.whatsapp-btn {
+.whatsapp-submit-btn {
     background: #25D366 !important;
     color: white !important;
     width: 100% !important;
@@ -3164,11 +3164,11 @@ blockquote {
     box-sizing: border-box !important;
     height: auto !important;
 }
-.whatsapp-btn i {
+.whatsapp-submit-btn i {
     margin-right: 8px;
     font-size: 1.3rem;
 }
-.whatsapp-btn:hover {
+.whatsapp-submit-btn:hover {
     background: #128C7E !important;
     transform: translateY(-2px) !important;
 }
