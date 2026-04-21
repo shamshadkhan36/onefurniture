@@ -89,12 +89,15 @@
                         <div class="options-grid">
                             <div class="option-card" onclick="selectConfig('type', 'Furniture', 1)">
                                 <i class="fa-solid fa-couch"></i><span>Furniture</span>
+                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on fabricating and installing specific items.</p>
                             </div>
                             <div class="option-card" onclick="selectConfig('type', 'Interior', 1)">
                                 <i class="fa-solid fa-paint-roller"></i><span>Interiors</span>
+                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on designing and finishing the aesthetics of a space.</p>
                             </div>
                             <div class="option-card" onclick="selectConfig('type', 'Turnkey', 1)">
                                 <i class="fa-solid fa-house-chimney"></i><span>Turnkey</span>
+                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on managing the entire project from shell to handover.</p>
                             </div>
                         </div>
                     </div>
@@ -102,18 +105,66 @@
                     <!-- Step 2: Budget Range -->
                     <div class="config-step" id="step-2">
                         <h3>2. Select Budget Range</h3>
-                        <div class="options-grid budget-grid">
-                            <div class="option-card" data-rate="1500" data-fee="200" onclick="selectConfig('budget', 'Standard', 2, this)">
-                                <h4>Standard</h4>
-                                <span class="budget-rate">₹1500/sqft <small>+ ₹200 fee</small></span>
+                        <div class="pricing-grid" style="margin-top:2rem;">
+                            <!-- Standard -->
+                            <div class="price-card option-card" style="cursor:pointer; border-radius:0;" data-rate="1500" data-fee="200" onclick="selectConfig('budget', 'Standard', 2, this)">
+                                <div class="price-card-header">
+                                    <span class="package-tag">Standard</span>
+                                    <div class="price-amount">₹1,500 <span>/sqft</span></div>
+                                </div>
+                                <ul class="price-features">
+                                    <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×2, 2×4 (up to ₹40/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> Cement putty + Tractor Emulsion paint</li>
+                                    <li><i class="fa-solid fa-check"></i> Gypsum corner ceiling design</li>
+                                    <li><i class="fa-solid fa-check"></i> Normal COB lights & panel switches</li>
+                                    <li><i class="fa-solid fa-check"></i> Wallpaper / texture / wall moulding</li>
+                                    <li><i class="fa-solid fa-check"></i> MR Grade ply with laminate finish</li>
+                                    <li><i class="fa-solid fa-check"></i> Ozone / Ebco fittings</li>
+                                    <li><i class="fa-solid fa-check"></i> Hollow core doors with laminate</li>
+                                    <li><i class="fa-solid fa-check"></i> Granite kitchen top (₹100/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> Mild Steel railings</li>
+                                </ul>
                             </div>
-                            <div class="option-card" data-rate="2000" data-fee="275" onclick="selectConfig('budget', 'Affordable', 2, this)">
-                                <h4>Affordable</h4>
-                                <span class="budget-rate">₹2000/sqft <small>+ ₹275 fee</small></span>
+
+                            <!-- Affordable -->
+                            <div class="price-card featured option-card" style="cursor:pointer; border-radius:0;" data-rate="2000" data-fee="275" onclick="selectConfig('budget', 'Affordable', 2, this)">
+                                <div class="price-card-header">
+                                    <span class="package-tag">Affordable</span>
+                                    <span class="popular-badge">Most Popular</span>
+                                    <div class="price-amount">₹2,000 <span>/sqft</span></div>
+                                </div>
+                                <ul class="price-features">
+                                    <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×4, 2.5×5 (up to ₹60/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> Acrylic putty smooth finish + Premium Emulsion</li>
+                                    <li><i class="fa-solid fa-check"></i> POP complete ceiling with coves</li>
+                                    <li><i class="fa-solid fa-check"></i> Profile lights, colour switches</li>
+                                    <li><i class="fa-solid fa-check"></i> PVC / WPC / Charcoal wall panels</li>
+                                    <li><i class="fa-solid fa-check"></i> BWR / HDHMR ply with polish acrylic finish</li>
+                                    <li><i class="fa-solid fa-check"></i> Hettich / Godrej fittings</li>
+                                    <li><i class="fa-solid fa-check"></i> Solid core flush door with veneer</li>
+                                    <li><i class="fa-solid fa-check"></i> Granite / Tiles kitchen top (₹120–150/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> S.S 304 stainless steel railings</li>
+                                </ul>
                             </div>
-                            <div class="option-card" data-rate="2500" data-fee="350" onclick="selectConfig('budget', 'Premium', 2, this)">
-                                <h4>Premium</h4>
-                                <span class="budget-rate">₹2500/sqft <small>+ ₹350 fee</small></span>
+
+                            <!-- Premium -->
+                            <div class="price-card option-card" style="cursor:pointer; border-radius:0;" data-rate="2500" data-fee="350" onclick="selectConfig('budget', 'Premium', 2, this)">
+                                <div class="price-card-header">
+                                    <span class="package-tag">Premium</span>
+                                    <div class="price-amount">₹2,500 <span>/sqft</span></div>
+                                </div>
+                                <ul class="price-features">
+                                    <li><i class="fa-solid fa-check"></i> Vitrified 4×4, 4×6 or Italian Marble (+₹400/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> POP punning + Royal Aspire paint</li>
+                                    <li><i class="fa-solid fa-check"></i> Multi-layer POP ceiling with full design</li>
+                                    <li><i class="fa-solid fa-check"></i> Track lights, designer black switches</li>
+                                    <li><i class="fa-solid fa-check"></i> Wooden panelling feature walls</li>
+                                    <li><i class="fa-solid fa-check"></i> BWP Marine ply with Duco / PU finish</li>
+                                    <li><i class="fa-solid fa-check"></i> Hafele / Blum fittings, designer handles</li>
+                                    <li><i class="fa-solid fa-check"></i> Solid core panel door + veneer/skin + smart lock</li>
+                                    <li><i class="fa-solid fa-check"></i> Quartz kitchen top (₹200–250/sqft)</li>
+                                    <li><i class="fa-solid fa-check"></i> Toughened glass railings (₹1200/rft)</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -167,7 +218,7 @@
                             <div class="output-row">
                                 <span>Estimated Cost</span>
                                 <h2 id="final-cost">₹0</h2>
-                                <small>(Material + Labour + Designer Fees)</small>
+                                <small>(Material + Labour)</small>
                             </div>
                             <div class="output-details">
                                 <p><strong>Timeline:</strong> Loose furniture (15-25 days) / Project (45-60 days)</p>
