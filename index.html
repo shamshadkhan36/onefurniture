@@ -67,15 +67,32 @@
 
     <!-- ===================== CONFIGURATOR APP ===================== -->
     <section class="hero configurator-hero">
-        <div style="position: absolute; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: var(--accent, #C8A96E); padding: 8px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10;">
+        <div style="position: absolute; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: var(--accent, #FACC15); padding: 8px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10;">
             <marquee behavior="scroll" direction="left" scrollamount="6">Welcome to The One Interior</marquee>
         </div>
         <div class="hero-image">
             <div class="hero-overlay"></div>
             <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&auto=format&fit=crop" alt="Luxury Interior">
         </div>
+
+        <div id="heroContent" class="hero-content">
+            <div class="hero-eyebrow">Premium Interior Design Studio</div>
+            <h1>Crafting Timeless<br><em>Luxury</em> Spaces</h1>
+            <p class="hero-description">
+                Experience the art of fine living. We design interiors that seamlessly blend elegance, comfort, and unparalleled craftsmanship.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#services" class="link-btn">Explore Services</a>
+            </div>
+        </div>
+
+        <button id="startEstimatorBtn" class="btn btn-primary" style="position: absolute; bottom: 40px; right: 40px; z-index: 10; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            Start Estimator <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+        </button>
+
         <div class="container configurator-wrapper">
-            <div class="configurator-container">
+            <div class="configurator-container" id="configuratorContainer" style="display: none;">
                 <div class="configurator-header">
                     <h2>Interior Design Estimator</h2>
                     <p>Customize your space in 5 simple steps</p>
@@ -215,11 +232,14 @@
 
                     <!-- Step 6: Output -->
                     <div class="config-step" id="step-6">
-                        <h3>🎉 Your Estimate is Ready!</h3>
+                        <h3>🎉 Your Preferences are Saved!</h3>
                         <div class="output-container">
                             <div class="output-row">
                                 <span>Estimated Cost</span>
-                                <h2 id="final-cost">₹0</h2>
+                                <h2 style="font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                                    <span>₹</span> 
+                                    <span style="font-size: 1.1rem; font-family: var(--font-body); font-weight: 500;">To get the amount WhatsApp us</span>
+                                </h2>
                                 <small>(Material + Labour)</small>
                             </div>
                             <div class="output-details">
@@ -280,7 +300,7 @@
                 <div class="usp-card reveal" style="transition-delay:0.1s;">
                     <div class="usp-icon"><i class="fa-solid fa-industry"></i></div>
                     <h3>Manufacturing Unit</h3>
-                    <p>Own 2,800 sq.ft modular kitchen factory set up — direct from production to your home, zero
+                    <p>Manufacturing unit tie up 50+ — direct from production to your home, zero
                         middlemen.</p>
                 </div>
                 <div class="usp-card reveal" style="transition-delay:0.2s;">
@@ -345,8 +365,6 @@
                     </div>
                     <ul class="service-feature-list">
                         <li><i class="fa-solid fa-check"></i> Custom made modular kitchen &amp; wardrobe services</li>
-                        <li><i class="fa-solid fa-check"></i> 1,000 sq.ft per day cutting capacity</li>
-                        <li><i class="fa-solid fa-check"></i> 2,800 sq.ft dedicated factory</li>
                         <li><i class="fa-solid fa-check"></i> Within 7–10 days quick delivery</li>
                         <li><i class="fa-solid fa-check"></i> PU, Laminate &amp; Acrylic — multiple finish options</li>
                     </ul>
@@ -530,49 +548,125 @@
         </div>
     </section>
 
-
     <!-- ===================== ABOUT / STUDIO ===================== -->
     <section id="about" class="about section-padding">
         <div class="container about-container">
             <div class="about-image-wrapper reveal-left">
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=85&auto=format&fit=crop"
-                        alt="The One Interior Studio">
+                        alt="The One Furniture Studio">
                 </div>
                 <div class="experience-badge">
-                    <span class="number">15+</span>
-                    <span class="text">Years of<br>Excellence</span>
+                    <span class="number">Est.</span>
+                    <span class="text">2021<br>Vasai West, Mumbai</span>
                 </div>
             </div>
             <div class="about-content reveal" style="transition-delay: 0.15s;">
                 <span class="section-label">About Us</span>
                 <h2>Who We Are</h2>
-                <p>At The One Interior, design is not just work — it is our passion. We believe everyone deserves to
-                    live beautifully, and we strive to make that possible by creating spaces where new ideas, advanced
-                    techniques, and the finest craftsmanship combine.</p>
-                <p>Our multidisciplinary team of architects, designers, and project managers works closely with every
-                    client to deliver interiors that are as functional as they are beautiful.</p>
+                <p>The One Furniture is a modern furniture and interior solutions brand based in Vasai West, Mumbai.
+                    Located at Dattani Prism IT Commercial Park, we have quickly established ourselves as a trusted
+                    destination for high-quality, stylish, and functional furniture solutions for both residential
+                    and commercial spaces.</p>
+                <p>The brand operates under <strong>Ramjisheth Furniture Private Limited</strong>, a growing
+                    furniture manufacturing and trading company incorporated in 2021. Built on the idea of delivering
+                    complete furniture and interior solutions under one roof — from living room sofas and bedroom
+                    wardrobes to office furniture and customized décor solutions.</p>
 
                 <div class="about-metrics">
                     <div class="metric-item">
-                        <div class="metric-num">850+</div>
-                        <div class="metric-label">Projects Delivered</div>
+                        <div class="metric-num">2021</div>
+                        <div class="metric-label">Year Founded</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-num">98%</div>
-                        <div class="metric-label">Client Satisfaction</div>
+                        <div class="metric-num">PAN</div>
+                        <div class="metric-label">India Delivery</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-num">45+</div>
-                        <div class="metric-label">Design Experts</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-num">38</div>
-                        <div class="metric-label">Design Awards</div>
+                        <div class="metric-num">100%</div>
+                        <div class="metric-label">Direct-to-Customer</div>
                     </div>
                 </div>
 
                 <a href="#contact" class="btn btn-outline">Work With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== OUR STORY ===================== -->
+    <section class="our-story-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center reveal" style="margin-bottom:3rem;">
+                <div class="section-header-left" style="width:100%;">
+                    <span class="section-label" style="justify-content:center;">Our Story</span>
+                    <h2>How We Started</h2>
+                </div>
+            </div>
+            <div class="story-grid">
+                <div class="story-text reveal">
+                    <p>Founded with a vision to simplify furniture buying and interior design, The One Furniture
+                        focuses on a <strong>direct-to-customer approach</strong>, eliminating unnecessary middlemen
+                        and making quality furniture more accessible and affordable.</p>
+                    <p>Since its inception, the company has grown steadily by leveraging local craftsmanship,
+                        modern production techniques, and a customer-first mindset. With a dedicated team and a
+                        growing client base across <strong>Mumbai, Navi Mumbai, and surrounding regions</strong>,
+                        the brand continues to expand its reach while maintaining high standards of quality and service.</p>
+                </div>
+                <div class="story-specializations reveal" style="transition-delay:0.1s;">
+                    <h3 style="margin-bottom:1.5rem; font-size:1.3rem;">What We Do</h3>
+                    <ul class="story-list">
+                        <li><i class="fa-solid fa-check"></i> Custom furniture design and manufacturing</li>
+                        <li><i class="fa-solid fa-check"></i> Home interior solutions</li>
+                        <li><i class="fa-solid fa-check"></i> Office and commercial furniture</li>
+                        <li><i class="fa-solid fa-check"></i> Modular and modern furniture concepts</li>
+                        <li><i class="fa-solid fa-check"></i> End-to-end furnishing projects</li>
+                    </ul>
+                    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--dark-gray);">Every product is designed keeping in mind comfort, durability, and aesthetics — ensuring customers receive furniture that enhances their everyday living experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== QUALITY COMMITMENT ===================== -->
+    <section class="quality-section section-padding">
+        <div class="container">
+            <div class="quality-grid">
+                <div class="quality-text reveal">
+                    <span class="section-label">Our Commitment</span>
+                    <h2>Quality is Our Standard</h2>
+                    <p>At The One Furniture, quality is not just a promise — it is a standard. We use carefully
+                        selected materials and focus on detailed craftsmanship to ensure long-lasting and reliable
+                        products. Customers consistently appreciate the brand for its excellent design quality,
+                        reasonable pricing, and supportive service.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top:1.5rem;">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="why-choose-grid reveal" style="transition-delay:0.1s;">
+                    <h3 style="margin-bottom:1.5rem; font-size:1.3rem; grid-column:1/-1;">Why Choose Us</h3>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Customized furniture tailored to your needs</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Modern designs with practical functionality</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Affordable pricing through direct sales approach</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Experienced team and professional service</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>End-to-end interior and furnishing solutions</span>
+                    </div>
+                    <div class="why-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Serving Mumbai, Navi Mumbai &amp; across India</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -594,9 +688,9 @@
                     </div>
                     <div class="mv-body">
                         <h3>Vision</h3>
-                        <blockquote class="mv-quote">
-                            "Every Customer has a right to middle-man free product in the best quality."
-                        </blockquote>
+                        <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
+                            To become a trusted and recognized furniture brand across India by delivering innovative designs, superior craftsmanship, and exceptional customer experiences.
+                        </p>
                     </div>
                 </div>
                 <!-- Mission -->
@@ -606,9 +700,9 @@
                     </div>
                     <div class="mv-body">
                         <h3>Mission</h3>
-                        <blockquote class="mv-quote">
-                            "To Solve mass community furniture needs — both in price &amp; Style."
-                        </blockquote>
+                        <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
+                            To provide high-quality, customized furniture and interior solutions that combine modern design, functionality, and affordability for every customer.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -633,8 +727,8 @@
                         <div class="team-avatar-initials">MC</div>
                     </div>
                     <div class="team-info">
-                        <h3>Mr. Manoj Chavan</h3>
-                        <span class="team-role">Managing Director</span>
+                        <h3>Mr. Manoj Chawhan</h3>
+                        <span class="team-role">Principal Designer</span>
                     </div>
                 </div>
 
@@ -645,7 +739,7 @@
                     </div>
                     <div class="team-info">
                         <h3>Mr. Sanket C.</h3>
-                        <span class="team-role">Director / CEO</span>
+                        <span class="team-role">Principal Designer</span>
                     </div>
                 </div>
 
@@ -656,7 +750,7 @@
                     </div>
                     <div class="team-info">
                         <h3>ID. Saish Gondhali</h3>
-                        <span class="team-role">Principal Designer</span>
+                        <span class="team-role">HOD</span>
                     </div>
                 </div>
 
@@ -685,11 +779,13 @@
                 </div>
                 <p class="section-desc">Four locations serving you across Mumbai &amp; Palghar.</p>
             </div>
-            <div class="locations-grid">
+            <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
 
                 <!-- Location 1: Design Studio -->
                 <div class="location-card reveal">
-                    <div class="location-icon"><i class="fa-solid fa-drafting-compass"></i></div>
+                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=85&auto=format&fit=crop" alt="Design Studio" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
                     <div class="location-tag">Design Studio – Office</div>
                     <h3>The One Interior</h3>
                     <address>
@@ -697,7 +793,7 @@
                         Behind Dattani Mall, Bhabola Road,<br>
                         Vasai-West, Palghar – 401202
                     </address>
-                    <a href="https://maps.google.com/?q=Dattani+Prism+IT+Park+Vasai" target="_blank"
+                    <a href="https://maps.google.com/?q=Dattani+Prism+IT+Park,+Bhabola+Road,+Vasai+West" target="_blank"
                         class="location-map-btn">
                         <i class="fa-solid fa-map-pin"></i> View on Map
                     </a>
@@ -705,7 +801,9 @@
 
                 <!-- Location 2: Head Office -->
                 <div class="location-card reveal" style="transition-delay:0.08s;">
-                    <div class="location-icon"><i class="fa-solid fa-building"></i></div>
+                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=85&auto=format&fit=crop" alt="Head Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
                     <div class="location-tag">Head Office</div>
                     <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
                     <address>
@@ -713,7 +811,7 @@
                         Kolivery Village, MMRDA Area,<br>
                         BKC–Bandra East, Mumbai – 400051
                     </address>
-                    <a href="https://maps.google.com/?q=Pinnacle+Corporate+Park+BKC+Mumbai" target="_blank"
+                    <a href="https://maps.google.com/?q=Tribe+Space,+Pinnacle+Corporate+Park,+BKC,+Mumbai" target="_blank"
                         class="location-map-btn">
                         <i class="fa-solid fa-map-pin"></i> View on Map
                     </a>
@@ -721,7 +819,9 @@
 
                 <!-- Location 3: Register Office -->
                 <div class="location-card reveal" style="transition-delay:0.16s;">
-                    <div class="location-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
+                        <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=600&q=85&auto=format&fit=crop" alt="Registered Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
                     <div class="location-tag">Registered Office</div>
                     <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
                     <address>
@@ -729,23 +829,7 @@
                         Opp. Nirmala Mata Church, JV Nagar,<br>
                         Umela, Naigaon-West, Palghar – 401202
                     </address>
-                    <a href="https://maps.google.com/?q=Naigaon+West+Palghar" target="_blank" class="location-map-btn">
-                        <i class="fa-solid fa-map-pin"></i> View on Map
-                    </a>
-                </div>
-
-                <!-- Location 4: Modular Factory -->
-                <div class="location-card location-card--factory reveal" style="transition-delay:0.24s;">
-                    <div class="location-icon"><i class="fa-solid fa-industry"></i></div>
-                    <div class="location-tag">Modular Factory</div>
-                    <h3>The One Interior</h3>
-                    <address>
-                        Azim Industrial Estate, Gala No. 8,<br>
-                        Vanotha Pada, Pelhar,<br>
-                        Vasai-East, Palghar – 401208
-                    </address>
-                    <a href="https://maps.google.com/?q=Azim+Industrial+Estate+Vasai+East" target="_blank"
-                        class="location-map-btn">
+                    <a href="https://maps.google.com/?q=Vrindavan+Society,+Nirmala+Mata+Church,+Naigaon+West" target="_blank" class="location-map-btn">
                         <i class="fa-solid fa-map-pin"></i> View on Map
                     </a>
                 </div>
@@ -771,7 +855,7 @@
                 <div class="price-card reveal">
                     <div class="price-card-header">
                         <span class="package-tag">Standard</span>
-                        <div class="price-amount">₹1,500 <span>/sqft</span></div>
+                        <div class="price-amount">₹1,500 <span>/sqft onwards</span></div>
                     </div>
                     <ul class="price-features">
                         <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×2, 2×4 (up to ₹40/sqft)</li>
@@ -793,7 +877,7 @@
                     <div class="price-card-header">
                         <span class="package-tag">Affordable</span>
                         <span class="popular-badge">Most Popular</span>
-                        <div class="price-amount">₹2,000 <span>/sqft</span></div>
+                        <div class="price-amount">₹2,000 <span>/sqft onwards</span></div>
                     </div>
                     <ul class="price-features">
                         <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×4, 2.5×5 (up to ₹60/sqft)</li>
@@ -814,7 +898,7 @@
                 <div class="price-card reveal" style="transition-delay:0.16s;">
                     <div class="price-card-header">
                         <span class="package-tag">Premium</span>
-                        <div class="price-amount">₹2,500 <span>/sqft</span></div>
+                        <div class="price-amount">₹2,500 <span>/sqft onwards</span></div>
                     </div>
                     <ul class="price-features">
                         <li><i class="fa-solid fa-check"></i> Vitrified 4×4, 4×6 or Italian Marble (+₹400/sqft)</li>
@@ -831,39 +915,88 @@
                     <a href="#contact" class="btn btn-outline pkg-btn">Get Quote</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- ===================== TESTIMONIAL ===================== -->
-            <section class="testimonial section-padding">
-                <div class="container testimonial-container reveal">
+    <!-- ===================== TESTIMONIAL ===================== -->
+    <section class="testimonial section-padding bg-light">
+                <div class="container reveal">
                     <div class="section-header text-center reveal">
-                        <h2 style="margin-bottom:2rem;">Customer Rating</h2>
+                        <span class="section-label" style="justify-content:center;">What People Say</span>
+                        <h2 style="margin-bottom:3rem;">Customer Reviews</h2>
                     </div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <blockquote>
-                        "The One Interior transformed our villa into something truly extraordinary. Their attention to
-                        detail,
-                        creative vision, and seamless execution made the entire process effortless. Worth every penny."
-                    </blockquote>
-                    <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=85&auto=format&fit=crop&crop=face"
-                            alt="Client" class="client-avatar">
-                        <div class="client-details">
-                            <h4>Ahmed Al Mansouri</h4>
-                            <p>CEO, Dubai</p>
+                    
+                    <div class="testimonial-grid">
+                        
+                        <!-- Review 1 -->
+                        <div class="testimonial-card">
+                            <div class="client-info">
+                                <div class="client-avatar-letter" style="background:#5D4037;">S</div>
+                                <div class="client-details">
+                                    <h4>Supriya Mhashelkar</h4>
+                                    <p>4 reviews · 1 photo</p>
+                                </div>
+                                <i class="fa-brands fa-google google-icon"></i>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="review-time">5 months ago</span>
+                            </div>
+                            <p class="review-text">"I’m truly impressed with the quality of work done. From the initial consultation to project completion, manoj and he's team provided exceptional support and guidance. Their creativity, dedication, and timely execution made the entire process smooth and stress-free. The final outcome meet my expectations.<br><br>Manoj were supportive at every step and made sure everything turned out just the way we imagined.<br><br>Really happy with the result. Thank you for the excellent service!"</p>
                         </div>
-                    </div>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+
+                        <!-- Review 2 -->
+                        <div class="testimonial-card">
+                            <div class="client-info">
+                                <div class="client-avatar-letter" style="background:#795548;">L</div>
+                                <div class="client-details">
+                                    <h4>Lalit Pawar</h4>
+                                    <p>2 reviews · 7 photos</p>
+                                </div>
+                                <i class="fa-brands fa-google google-icon"></i>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="review-time">4 years ago</span>
+                            </div>
+                            <p class="review-text">"High in quality, range of products, customer friendly staff and value of money. Very happy with my new sofa, absolutely loved the service, delivered on time. Good place for furniture shopping"</p>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="testimonial-card">
+                            <div class="client-info">
+                                <div class="client-avatar-letter" style="background:#2E7D32;">M</div>
+                                <div class="client-details">
+                                    <h4>Manish Haldankar</h4>
+                                    <p>Local Guide · 9 reviews</p>
+                                </div>
+                                <i class="fa-brands fa-google google-icon"></i>
+                            </div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span class="review-time">4 years ago</span>
+                            </div>
+                            <p class="review-text">"Very good products with reasonable price, nice collections..Really must visit center and the best thing is service"</p>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
-            <!-- ===================== FAQ SECTION ===================== -->
-            <section class="faq-section section-padding bg-light">
+    <!-- ===================== FAQ SECTION ===================== -->
+    <section class="faq-section section-padding bg-light">
                 <div class="container">
                     <div class="section-header reveal">
                         <div class="section-header-left">
@@ -955,196 +1088,7 @@
                                 </div>
                             </div>
 
-                        
-<div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Living Room Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>How will you primarily use your living room?</strong></li>
-<li><i class="fa-regular fa-square"></i> Family gatherings</li>
-<li><i class="fa-regular fa-square"></i> Entertaining guests</li>
-<li><i class="fa-regular fa-square"></i> Relaxing</li>
-<li><i class="fa-regular fa-square"></i> Watching TV or movies</li>
-<li><i class="fa-regular fa-square"></i> Working/Study area</li>
-<li><i class="fa-regular fa-square"></i> Play area for kids</li>
-<li style="margin-top: 1rem;"><strong>How many people need to be seated comfortably?</strong></li>
-<li><i class="fa-regular fa-square"></i> 23 people</li>
-<li><i class="fa-regular fa-square"></i> 45 people</li>
-<li><i class="fa-regular fa-square"></i> 6 people</li>
-<li style="margin-top: 1rem;"><strong>Do you have children or pets that need to be considered in the design?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, children</li>
-<li><i class="fa-regular fa-square"></i> Yes, pets</li>
-<li><i class="fa-regular fa-square"></i> Yes, both</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>What type of seating arrangement do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Sofa and armchairs</li>
-<li><i class="fa-regular fa-square"></i> Sectional sofa</li>
-<li><i class="fa-regular fa-square"></i> Recliners</li>
-<li><i class="fa-regular fa-square"></i> Modular/flexible seating</li>
-<li><i class="fa-regular fa-square"></i> Floor cushions and casual seating</li>
-<li style="margin-top: 1rem;"><strong>Do you need extra storage in the living room?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, built-in storage (shelving, cabinetry)</li>
-<li><i class="fa-regular fa-square"></i> Yes, hidden storage (ottomans, furniture with storage)</li>
-<li><i class="fa-regular fa-square"></i> No, minimal storage needed</li>
-<li style="margin-top: 1rem;"><strong>How much natural light does the room get?</strong></li>
-<li><i class="fa-regular fa-square"></i> Lots of natural light</li>
-<li><i class="fa-regular fa-square"></i> Moderate natural light</li>
-<li><i class="fa-regular fa-square"></i> Little natural light</li>
-<li style="margin-top: 1rem;"><strong>What kind of window treatments do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Curtains (light, airy fabrics)</li>
-<li><i class="fa-regular fa-square"></i> Heavy drapes (for light control and privacy)</li>
-<li><i class="fa-regular fa-square"></i> Blinds (wood or fabric)</li>
-<li><i class="fa-regular fa-square"></i> Shutters</li>
-<li><i class="fa-regular fa-square"></i> No preference</li>
-<li style="margin-top: 1rem;"><strong>What type of lighting do you want in the living room?</strong></li>
-<li><i class="fa-regular fa-square"></i> Ambient lighting (general lighting)</li>
-<li><i class="fa-regular fa-square"></i> Task lighting (reading lamps, focused lighting)</li>
-<li><i class="fa-regular fa-square"></i> Accent lighting (to highlight artwork or features)</li>
-<li><i class="fa-regular fa-square"></i> Dimmer switches for mood lighting</li>
-<li><i class="fa-regular fa-square"></i> Over to you</li>
-<li style="margin-top: 1rem;"><strong>Do you need a media center/TV in the living room?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, with a large TV</li>
-<li><i class="fa-regular fa-square"></i> Yes, with a small TV</li>
-<li><i class="fa-regular fa-square"></i> No TV, just a sound system</li>
-<li><i class="fa-regular fa-square"></i> No media needed</li>
-<li style="margin-top: 1rem;"><strong>Do you want any smart home features?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, smart lighting control</li>
-<li><i class="fa-regular fa-square"></i> Yes, smart thermostat</li>
-<li><i class="fa-regular fa-square"></i> Yes, integrated sound system</li>
-<li><i class="fa-regular fa-square"></i> No, I prefer manual controls</li>
-<li style="margin-top: 1rem;"><strong>Do you prefer open shelving or closed storage?</strong></li>
-<li><i class="fa-regular fa-square"></i> Open shelving for display</li>
-<li><i class="fa-regular fa-square"></i> Closed cabinetry for clutter control</li>
-<li><i class="fa-regular fa-square"></i> A mix of both</li>
-<li style="margin-top: 1rem;"><strong>Do you want a fireplace or focal point in the living room?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, a fireplace (real or electric)</li>
-<li><i class="fa-regular fa-square"></i> Yes, a large artwork/feature wall</li>
-<li><i class="fa-regular fa-square"></i> No specific focal point</li>
-<li style="margin-top: 1rem;"><strong>Are there any architectural features youʼd like to highlight?</strong></li>
-<li><i class="fa-regular fa-square"></i> Beams</li>
-<li><i class="fa-regular fa-square"></i> Fireplace</li>
-<li><i class="fa-regular fa-square"></i> Columns</li>
-<li><i class="fa-regular fa-square"></i> None</li>
-<li style="margin-top: 1rem;"><strong>Do you have any specific decor preferences?</strong></li>
-<li><i class="fa-regular fa-square"></i> Artwork (paintings, prints)</li>
-<li><i class="fa-regular fa-square"></i> Mirrors</li>
-<li><i class="fa-regular fa-square"></i> Sculptures</li>
-<li><i class="fa-regular fa-square"></i> Plants and greenery</li>
-<li><i class="fa-regular fa-square"></i> No strong preferences</li>
-</ul>
 
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Kitchen Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>How much storage do you need in your kitchen?</strong></li>
-<li><i class="fa-regular fa-square"></i> Minimal (basic cabinets)</li>
-<li><i class="fa-regular fa-square"></i> Moderate (standard cabinetry and pantry)</li>
-<li><i class="fa-regular fa-square"></i> Extensive (extra cabinetry, pantry, and island storage)</li>
-<li style="margin-top: 1rem;"><strong>Do you need any specialty appliances or features?</strong></li>
-<li><i class="fa-regular fa-square"></i> Double oven</li>
-<li><i class="fa-regular fa-square"></i> Wine fridge</li>
-<li><i class="fa-regular fa-square"></i> Large refrigerator/freezer</li>
-<li><i class="fa-regular fa-square"></i> Built-in coffee station</li>
-<li><i class="fa-regular fa-square"></i> No special appliances</li>
-<li style="margin-top: 1rem;"><strong>Do you want an island or breakfast bar in the kitchen?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, an island</li>
-<li><i class="fa-regular fa-square"></i> Yes, a breakfast bar</li>
-<li><i class="fa-regular fa-square"></i> No, neither</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Dining Room Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>What is your preferred dining table shape?</strong></li>
-<li><i class="fa-regular fa-square"></i> Rectangular</li>
-<li><i class="fa-regular fa-square"></i> Round</li>
-<li><i class="fa-regular fa-square"></i> Oval</li>
-<li><i class="fa-regular fa-square"></i> Square</li>
-<li style="margin-top: 1rem;"><strong>How many people do you want to seat comfortably in the dining room?</strong></li>
-<li><i class="fa-regular fa-square"></i> 4 people</li>
-<li><i class="fa-regular fa-square"></i> 6 people</li>
-<li><i class="fa-regular fa-square"></i> 8 people</li>
-<li style="margin-top: 1rem;"><strong>Do you need space for additional storage or serving areas (buffet, sideboard)?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Would you like to incorporate a casual dining area (breakfast nook)?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Bedroom Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>What is the primary function of the bedroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Sleeping and relaxing only</li>
-<li><i class="fa-regular fa-square"></i> Sleeping, relaxing, and working</li>
-<li><i class="fa-regular fa-square"></i> Multi-functional (sleeping, working, exercise area)</li>
-<li style="margin-top: 1rem;"><strong>What kind of bed do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Standard bed</li>
-<li><i class="fa-regular fa-square"></i> Canopy bed</li>
-<li><i class="fa-regular fa-square"></i> Platform bed</li>
-<li><i class="fa-regular fa-square"></i> Storage bed</li>
-<li style="margin-top: 1rem;"><strong>Do you need a walk-in-wardrobe?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you need a designated workspace in the bedroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you prefer a seating area in the bedroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Bathroom Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>Do you prefer a shower, bathtub, or both?</strong></li>
-<li><i class="fa-regular fa-square"></i> Shower only</li>
-<li><i class="fa-regular fa-square"></i> Bathtub only</li>
-<li><i class="fa-regular fa-square"></i> Both</li>
-<li style="margin-top: 1rem;"><strong>What kind of storage do you need in the bathroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Minimal (vanity storage only)</li>
-<li><i class="fa-regular fa-square"></i> Moderate (vanity and wall storage)</li>
-<li><i class="fa-regular fa-square"></i> Extensive (extra shelving, linen closet)</li>
-<li style="margin-top: 1rem;"><strong>How many people will use the bathroom regularly?</strong></li>
-<li><i class="fa-regular fa-square"></i> 1 person</li>
-<li><i class="fa-regular fa-square"></i> 2 people</li>
-<li><i class="fa-regular fa-square"></i> More than 2 people</li>
-<li style="margin-top: 1rem;"><strong>Do you require a double vanity or single vanity?</strong></li>
-<li><i class="fa-regular fa-square"></i> Single vanity</li>
-<li><i class="fa-regular fa-square"></i> Double vanity</li>
-</ul>
-
-                                </div>
-                            </div>
-                            
 </div>
 
                         <!-- Right column -->
@@ -1228,272 +1172,14 @@
                                         get started today.</p>
                                 </div>
                             </div>
-<div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Outdoor Spaces Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>How do you plan to use your outdoor space?</strong></li>
-<li><i class="fa-regular fa-square"></i> Relaxing and lounging</li>
-<li><i class="fa-regular fa-square"></i> Entertaining guests</li>
-<li><i class="fa-regular fa-square"></i> Dining and BBQ</li>
-<li><i class="fa-regular fa-square"></i> Gardening</li>
-<li style="margin-top: 1rem;"><strong>Do you need a covered or shaded area?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, covered area</li>
-<li><i class="fa-regular fa-square"></i> No, open space preferred</li>
-<li style="margin-top: 1rem;"><strong>Do you require any specific features in the outdoor space?</strong></li>
-<li><i class="fa-regular fa-square"></i> Outdoor kitchen</li>
-<li><i class="fa-regular fa-square"></i> Fire pit</li>
-<li><i class="fa-regular fa-square"></i> Pool or hot tub</li>
-<li><i class="fa-regular fa-square"></i> Outdoor seating only</li>
-<li style="margin-top: 1rem;"><strong>How many people do you plan to accommodate outdoors?</strong></li>
-<li><i class="fa-regular fa-square"></i> 24 people</li>
-<li><i class="fa-regular fa-square"></i> 46 people</li>
-<li><i class="fa-regular fa-square"></i> More than 6 people</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Home Office Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>What is the primary function of your home office?</strong></li>
-<li><i class="fa-regular fa-square"></i> Work only</li>
-<li><i class="fa-regular fa-square"></i> Study and work</li>
-<li><i class="fa-regular fa-square"></i> Multi-purpose (work, hobbies, meetings)</li>
-<li style="margin-top: 1rem;"><strong>How many workstations do you need?</strong></li>
-<li><i class="fa-regular fa-square"></i> 1 workstation</li>
-<li><i class="fa-regular fa-square"></i> 2 workstations</li>
-<li><i class="fa-regular fa-square"></i> More than 2 workstations</li>
-<li style="margin-top: 1rem;"><strong>What kind of storage do you need in the office?</strong></li>
-<li><i class="fa-regular fa-square"></i> Minimal (desk storage)</li>
-<li><i class="fa-regular fa-square"></i> Moderate (bookshelves, filing cabinets)</li>
-<li><i class="fa-regular fa-square"></i> Extensive (multiple storage options)</li>
-<li style="margin-top: 1rem;"><strong>Do you need seating for guests or clients?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you want to incorporate a meeting space in the office?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li><i class="fa-regular fa-square"></i> Additional Rooms and Other Areas</li>
-<li style="margin-top: 1rem;"><strong>Do you have any additional rooms that need designing?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, a playroom</li>
-<li><i class="fa-regular fa-square"></i> Yes, a home gym</li>
-<li><i class="fa-regular fa-square"></i> Yes, a laundry room</li>
-<li><i class="fa-regular fa-square"></i> Yes, a guest bedroom</li>
-<li><i class="fa-regular fa-square"></i> No additional rooms</li>
-<li style="margin-top: 1rem;"><strong>What kind of storage do you need in additional rooms (if any)?</strong></li>
-<li><i class="fa-regular fa-square"></i> Minimal</li>
-<li><i class="fa-regular fa-square"></i> Moderate</li>
-<li><i class="fa-regular fa-square"></i> Extensive</li>
-<li><i class="fa-regular fa-square"></i> Smart Home and Project Details</li>
-<li style="margin-top: 1rem;"><strong>Do you want to incorporate smart home features in your project?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes, smart lighting control</li>
-<li><i class="fa-regular fa-square"></i> Yes, smart thermostat</li>
-<li><i class="fa-regular fa-square"></i> Yes, smart security system</li>
-<li><i class="fa-regular fa-square"></i> No smart features needed</li>
-<li><i class="fa-regular fa-square"></i> Inspirational Sources</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    False Ceiling Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>What is the main purpose of the false ceiling?</strong></li>
-<li><i class="fa-regular fa-square"></i> Decorative look</li>
-<li><i class="fa-regular fa-square"></i> Better lighting</li>
-<li><i class="fa-regular fa-square"></i> Hide wiring/AC ducts</li>
-<li><i class="fa-regular fa-square"></i> Sound insulation</li>
-<li style="margin-top: 1rem;"><strong>Which room do you want the false ceiling for?</strong></li>
-<li><i class="fa-regular fa-square"></i> Living room</li>
-<li><i class="fa-regular fa-square"></i> Bedroom</li>
-<li><i class="fa-regular fa-square"></i> Kitchen</li>
-<li><i class="fa-regular fa-square"></i> All rooms</li>
-<li style="margin-top: 1rem;"><strong>What ceiling height do you currently have?</strong></li>
-<li><i class="fa-regular fa-square"></i> Low height</li>
-<li><i class="fa-regular fa-square"></i> Medium</li>
-<li><i class="fa-regular fa-square"></i> High</li>
-<li style="margin-top: 1rem;"><strong>What type of design do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Simple & minimal</li>
-<li><i class="fa-regular fa-square"></i> Modern design</li>
-<li><i class="fa-regular fa-square"></i> Luxury design</li>
-<li><i class="fa-regular fa-square"></i> Designer patterns</li>
-<li style="margin-top: 1rem;"><strong>What kind of lighting do you want?</strong></li>
-<li><i class="fa-regular fa-square"></i> Cove lighting</li>
-<li><i class="fa-regular fa-square"></i> Spot lights</li>
-<li><i class="fa-regular fa-square"></i> LED strip lights</li>
-<li><i class="fa-regular fa-square"></i> Combination</li>
-<li style="margin-top: 1rem;"><strong>Do you need fan and AC provision?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong>What material do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Gypsum</li>
-<li><i class="fa-regular fa-square"></i> Wooden panels</li>
-<li><i class="fa-regular fa-square"></i> POP</li>
-<li><i class="fa-regular fa-square"></i> Decorative look</li>
-<li style="margin-top: 1rem;"><strong>Do you want ceiling colour same as walls?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> Suggest best option</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Is soundproofing required?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>What is your budget range?</strong></li>
-<li><i class="fa-regular fa-square"></i> Basic</li>
-<li><i class="fa-regular fa-square"></i> Premium</li>
-<li><i class="fa-regular fa-square"></i> Medium</li>
-<li><i class="fa-regular fa-square"></i> Decorative look</li>
-<li style="margin-top: 1rem;"><strong>Do you want easy maintenance design?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Who will use the bedroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Adults</li>
-<li><i class="fa-regular fa-square"></i> Kids</li>
-<li><i class="fa-regular fa-square"></i> Guest room</li>
-<li style="margin-top: 1rem;"><strong>What bedroom style do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Modern</li>
-<li><i class="fa-regular fa-square"></i> Minimal</li>
-<li><i class="fa-regular fa-square"></i> Luxury</li>
-<li><i class="fa-regular fa-square"></i> Traditional</li>
-<li style="margin-top: 1rem;"><strong>What bed size do you need?</strong></li>
-<li><i class="fa-regular fa-square"></i> Single</li>
-<li><i class="fa-regular fa-square"></i> Queen</li>
-<li><i class="fa-regular fa-square"></i> King</li>
-<li style="margin-top: 1rem;"><strong>Do you need storage in the bed?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>What kind of wardrobe do you want?</strong></li>
-<li><i class="fa-regular fa-square"></i> Sliding</li>
-<li><i class="fa-regular fa-square"></i> Hinged</li>
-<li><i class="fa-regular fa-square"></i> Walk-in</li>
-<li><i class="fa-regular fa-square"></i> Not required</li>
-<li style="margin-top: 1rem;"><strong>Do you need a dressing table?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you want a study or work area?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-<li style="margin-top: 1rem;"><strong></strong></li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Bedroom Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>What lighting do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Warm light</li>
-<li><i class="fa-regular fa-square"></i> Mix of both</li>
-<li><i class="fa-regular fa-square"></i> White light</li>
-<li><i class="fa-regular fa-square"></i> Decorative look</li>
-<li style="margin-top: 1rem;"><strong>Do you want a TV unit in the bedroom?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>What storage level do you need?</strong></li>
-<li><i class="fa-regular fa-square"></i> Minimal</li>
-<li><i class="fa-regular fa-square"></i> Maximum</li>
-<li><i class="fa-regular fa-square"></i> Medium</li>
-<li style="margin-top: 1rem;"><strong>Do you prefer calm or bold colours?</strong></li>
-<li><i class="fa-regular fa-square"></i> Clam & Light</li>
-<li><i class="fa-regular fa-square"></i> Dark & Bold</li>
-<li style="margin-top: 1rem;"><strong>Is vastu consideration required?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-</ul>
-
-                                </div>
-                            </div>
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    Wall Panelling Design Questionnaire
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-<li style="margin-top: 1rem;"><strong>Which area needs wall panelling?</strong></li>
-<li><i class="fa-regular fa-square"></i> Living room</li>
-<li><i class="fa-regular fa-square"></i> TV unit wall</li>
-<li><i class="fa-regular fa-square"></i> Bedroom</li>
-<li><i class="fa-regular fa-square"></i> Full room</li>
-<li style="margin-top: 1rem;"><strong>What is the main purpose?</strong></li>
-<li><i class="fa-regular fa-square"></i> Decorative</li>
-<li><i class="fa-regular fa-square"></i> Headboard wall</li>
-<li><i class="fa-regular fa-square"></i> TV backdrop</li>
-<li><i class="fa-regular fa-square"></i> Feature wall</li>
-<li style="margin-top: 1rem;"><strong>What style do you like?</strong></li>
-<li><i class="fa-regular fa-square"></i> Modern</li>
-<li><i class="fa-regular fa-square"></i> Luxury</li>
-<li><i class="fa-regular fa-square"></i> minimal</li>
-<li><i class="fa-regular fa-square"></i> Classic</li>
-<li style="margin-top: 1rem;"><strong>Which material do you prefer</strong></li>
-<li><i class="fa-regular fa-square"></i> MDF</li>
-<li><i class="fa-regular fa-square"></i> PVC</li>
-<li><i class="fa-regular fa-square"></i> Plywood</li>
-<li><i class="fa-regular fa-square"></i> Wooden /f_inish</li>
-<li style="margin-top: 1rem;"><strong>What Type of finish do you want ?</strong></li>
-<li><i class="fa-regular fa-square"></i> Matte</li>
-<li><i class="fa-regular fa-square"></i> Glossy</li>
-<li><i class="fa-regular fa-square"></i> Textured</li>
-<li style="margin-top: 1rem;"><strong>Do You want panelling with lighting ?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you want color or wood finish</strong></li>
-<li><i class="fa-regular fa-square"></i> Solid colour</li>
-<li><i class="fa-regular fa-square"></i> Mix of both</li>
-<li><i class="fa-regular fa-square"></i> Wood colour</li>
-<li style="margin-top: 1rem;"><strong>Should panelling match furniture colour?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>Do you need low maintenace material ?</strong></li>
-<li><i class="fa-regular fa-square"></i> Yes</li>
-<li><i class="fa-regular fa-square"></i> No</li>
-<li style="margin-top: 1rem;"><strong>What budget category do you prefer?</strong></li>
-<li><i class="fa-regular fa-square"></i> Budget friendly</li>
-<li><i class="fa-regular fa-square"></i> Premium</li>
-<li><i class="fa-regular fa-square"></i> Mid range</li>
-<li style="margin-top: 1rem;"><strong>Do you want custom design or ready pattern</strong></li>
-<li><i class="fa-regular fa-square"></i> Custom design</li>
-<li><i class="fa-regular fa-square"></i> Ready design</li>
-</ul>
-
-                                </div>
-                            </div>
-
-
-
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <!-- ===================== CONTACT SECTION ===================== -->
-            <section id="contact" class="contact-section section-padding bg-light">
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section id="contact" class="contact-section section-padding bg-light">
                 <div class="container">
                     <div class="contact-grid">
                         <div class="contact-info-block reveal-left">
@@ -1578,343 +1264,7 @@
             </section>
 
 
-            <!-- ===================== MATERIAL PREFERENCE ===================== -->
-            <section id="materials" class="materials-section-container section-padding">
-                <div class="container">
-                    <!-- Material comparison table -->
 
-                    <div class="materials-section reveal" style="transition-delay:0.1s;">
-                        <div class="section-header">
-                            <h2 style="margin-bottom:1rem">Material Preference</h2>
-                        </div>
-                        <h3 class="materials-heading">Detailed Material Specifications</h3>
-                        <p class="materials-subhead">Click any category to expand specifications across all three
-                            packages.</p>
-
-                        <div class="mat-table">
-                            <!-- Header row -->
-                            <div class="mat-header">
-                                <div class="mat-col-cat">Category</div>
-                                <div class="mat-col">Standard</div>
-                                <div class="mat-col">Affordable</div>
-                                <div class="mat-col premium-col">Premium</div>
-                            </div>
-
-                            <!-- 1. Flooring -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">01</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-border-all"></i> Flooring</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Tile Size</strong></div>
-                                        <div class="mat-col">2×2, 2×4</div>
-                                        <div class="mat-col">2×4, 2.5×5</div>
-                                        <div class="mat-col premium-col">2.5×5, 4×4, 4×6</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Type</strong></div>
-                                        <div class="mat-col">Vitrified</div>
-                                        <div class="mat-col">Vitrified</div>
-                                        <div class="mat-col premium-col">Vitrified / Italian Marble</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Rate (Max)</strong></div>
-                                        <div class="mat-col">₹40/sqft</div>
-                                        <div class="mat-col">₹60/sqft</div>
-                                        <div class="mat-col premium-col">₹80/sqft (+₹400 for Marble)</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2. Wall Treatment -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">02</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-paint-roller"></i> Wall
-                                        Treatment</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Finish</strong></div>
-                                        <div class="mat-col">Cement Putty</div>
-                                        <div class="mat-col">Acrylic Putty (Smooth)</div>
-                                        <div class="mat-col premium-col">POP Punning</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Paint</strong></div>
-                                        <div class="mat-col">Tractor Emulsion</div>
-                                        <div class="mat-col">Premium Emulsion</div>
-                                        <div class="mat-col premium-col">Royal Aspire</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 3. False Ceiling -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">03</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-layer-group"></i> False
-                                        Ceiling</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Type</strong></div>
-                                        <div class="mat-col">Gypsum</div>
-                                        <div class="mat-col">POP</div>
-                                        <div class="mat-col premium-col">POP</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Design</strong></div>
-                                        <div class="mat-col">Corner design (less area)</div>
-                                        <div class="mat-col">Complete ceiling, less coves</div>
-                                        <div class="mat-col premium-col">Complete multi-layer</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 4. Electrical -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">04</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-bolt"></i> Electrical &
-                                        Lighting</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Lights</strong></div>
-                                        <div class="mat-col">Normal Panel, COB</div>
-                                        <div class="mat-col">Profile Light, Linear Light</div>
-                                        <div class="mat-col premium-col">Track Light, Linear Light</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Switches</strong></div>
-                                        <div class="mat-col">Normal (blue/white)</div>
-                                        <div class="mat-col">Colour switches</div>
-                                        <div class="mat-col premium-col">Designer Black switches</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 5. Furniture -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">05</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-couch"></i> Furniture &
-                                        Hardware</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Ply Core</strong></div>
-                                        <div class="mat-col">MR Grade</div>
-                                        <div class="mat-col">BWR / HDHMR</div>
-                                        <div class="mat-col premium-col">BWP Marine</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Finish</strong></div>
-                                        <div class="mat-col">Laminate</div>
-                                        <div class="mat-col">Polish Acrylic</div>
-                                        <div class="mat-col premium-col">Duco / PU</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Fittings Brand</strong></div>
-                                        <div class="mat-col">Ozone, Ebco</div>
-                                        <div class="mat-col">Hettich, Godrej</div>
-                                        <div class="mat-col premium-col">Hafele, Blum</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 6. Kitchen -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">06</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-kitchen-set"></i> Kitchen</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Ply Core</strong></div>
-                                        <div class="mat-col">MR Grade</div>
-                                        <div class="mat-col">BWR / HDHMR</div>
-                                        <div class="mat-col premium-col">BWP</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Finish</strong></div>
-                                        <div class="mat-col">Laminate</div>
-                                        <div class="mat-col">Acrylic</div>
-                                        <div class="mat-col premium-col">Duco / PU</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Counter Top</strong></div>
-                                        <div class="mat-col">Granite (₹100/sqft)</div>
-                                        <div class="mat-col">Granite/Tiles (₹120–150/sqft)</div>
-                                        <div class="mat-col premium-col">Quartz (₹200–250/sqft)</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Fittings</strong></div>
-                                        <div class="mat-col">Ozone, Ebco (SS)</div>
-                                        <div class="mat-col">Moda, Godrej (SS)</div>
-                                        <div class="mat-col premium-col">Hafele, Blum, Hettich, Sleek</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 7. Bathroom -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">07</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-shower"></i> Bathroom</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Floor Tile</strong></div>
-                                        <div class="mat-col">2×2</div>
-                                        <div class="mat-col">2×2</div>
-                                        <div class="mat-col premium-col">4×2</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Wall Tile</strong></div>
-                                        <div class="mat-col">2×2</div>
-                                        <div class="mat-col">2×4</div>
-                                        <div class="mat-col premium-col">4×2</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>WC Type</strong></div>
-                                        <div class="mat-col">Single piece floor mounted</div>
-                                        <div class="mat-col">Wall mounted</div>
-                                        <div class="mat-col premium-col">Wall mounted</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Wash Basin</strong></div>
-                                        <div class="mat-col">Pedestal</div>
-                                        <div class="mat-col">Counter top / Under counter</div>
-                                        <div class="mat-col premium-col">Counter top / Under counter</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 8. Doors -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">08</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-door-open"></i> Doors</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Type</strong></div>
-                                        <div class="mat-col">Hollow/Cellular core</div>
-                                        <div class="mat-col">Solid core flush door</div>
-                                        <div class="mat-col premium-col">Solid core panel main door</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Finish</strong></div>
-                                        <div class="mat-col">Laminate</div>
-                                        <div class="mat-col">Laminate / Veneer</div>
-                                        <div class="mat-col premium-col">Veneer / Door skin / Deco PU</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Locks</strong></div>
-                                        <div class="mat-col">Godrej / Doorset</div>
-                                        <div class="mat-col">Normal upgraded</div>
-                                        <div class="mat-col premium-col">Designer + 1 Smart Lock</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 9. TV Unit -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">09</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-tv"></i> TV Unit</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Back Panel</strong></div>
-                                        <div class="mat-col">No back panel</div>
-                                        <div class="mat-col">Semi back panel</div>
-                                        <div class="mat-col premium-col">Full back panel</div>
-                                    </div>
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Design Elements</strong></div>
-                                        <div class="mat-col">Basic</div>
-                                        <div class="mat-col">Design on sides</div>
-                                        <div class="mat-col premium-col">Full design with elements</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 10. Master Wall -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">10</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-rectangle-ad"></i> Feature / Master
-                                        Wall</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Type</strong></div>
-                                        <div class="mat-col">Wallpaper / Texture / Wall Moulding</div>
-                                        <div class="mat-col">PVC / WPC / Charcoal / POP Designs (per rft)</div>
-                                        <div class="mat-col premium-col">Wooden Panelling</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 11. UPVC Work -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">11</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-window-maximize"></i> UPVC
-                                        Work</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Application</strong></div>
-                                        <div class="mat-col">Bathroom window (Lesso brand)</div>
-                                        <div class="mat-col">Smallest doors</div>
-                                        <div class="mat-col premium-col">Balcony doors (UPVC / Aluminium)</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 12. Railing -->
-                            <div class="mat-row-group">
-                                <button class="mat-row-toggle">
-                                    <span class="mat-row-num">12</span>
-                                    <span class="mat-row-name"><i class="fa-solid fa-stairs"></i> Railing</span>
-                                    <span class="mat-toggle-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="mat-row-body">
-                                    <div class="mat-data">
-                                        <div class="mat-col-cat"><strong>Material</strong></div>
-                                        <div class="mat-col">Mild Steel (M.S.)</div>
-                                        <div class="mat-col">S.S. 304 Stainless Steel</div>
-                                        <div class="mat-col premium-col">Toughened Glass (₹1200/rft)</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- end mat-table -->
-                    </div><!-- end materials-section -->
-
-                </div>
-
-
-
-        </div>
-    </section>
     <!-- ===================== PROJECTS / PORTFOLIO ===================== -->
     <section id="projects" class="products section-padding">
         <div class="container">
@@ -2074,8 +1424,8 @@
                     <p>A premium interior design studio crafting timeless, luxurious spaces that inspire and transform
                         the way you live. Since 2005, Dubai to Vasai.</p>
                     <div class="social-links" style="display:flex; gap:1.2rem; margin-top:1.2rem; align-items:center;">
-                        <a href="#" aria-label="Facebook" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#C8A96E'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">

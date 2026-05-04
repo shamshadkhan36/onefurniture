@@ -152,6 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* =============================================
+       START ESTIMATOR BUTTON
+       ============================================= */
+    const startEstimatorBtn = document.getElementById('startEstimatorBtn');
+    const configuratorContainer = document.getElementById('configuratorContainer');
+    const heroContent = document.getElementById('heroContent');
+
+    if (startEstimatorBtn && configuratorContainer) {
+        startEstimatorBtn.addEventListener('click', () => {
+            configuratorContainer.style.display = 'block';
+            startEstimatorBtn.style.display = 'none';
+            if (heroContent) heroContent.style.display = 'none';
+        });
+    }
+
 });
 
 
@@ -235,21 +250,9 @@ function calculateResult() {
 
     userConfig.area = parseInt(areaInput);
     
-    // Calculation: (Rate + Fee) * Area
-    const totalRateSqft = userConfig.rate + userConfig.fee;
-    const finalEstimate = totalRateSqft * userConfig.area;
-    
-    // Format to Indian Rupees
-    const formattedEstimate = new Intl.NumberFormat('en-IN', {
-        style: 'currency',
-        currency: 'INR',
-        maximumFractionDigits: 0
-    }).format(finalEstimate);
-
-    document.getElementById('final-cost').innerText = formattedEstimate;
     document.getElementById('out-budget').innerText = userConfig.budget;
 
-    nextStep(5);
+    showStep(6);
 }
 
 function sendWhatsApp() {
