@@ -1,24 +1,24 @@
 /* ======================================================
    THE ONE INTERIOR — Professional Redesign
-   Luxury Architectural | Charcoal & Gold | DM Serif + DM Sans
+   Full Magenta Theme | DM Serif + DM Sans
    ====================================================== */
 
 /* ======== VARIABLES ======== */
 :root {
-    --black: #1E1B4B;        /* Very Deep Indigo */
-    --charcoal: #312E81;     /* Deep Indigo */
+    --black: #2D0036;        /* Very Deep Magenta */
+    --charcoal: #4a044e;     /* Deep Magenta (Fuchsia 900) */
     --white: #FFFFFF;
-    --off-white: #F5F3FF;    /* Very light violet */
-    --cream: #EDE9FE;        /* Violet 100 */
-    --light-gray: #DDD6FE;   /* Violet 200 */
-    --mid-gray: #8B5CF6;     /* Violet 500 */
-    --dark-gray: #5B21B6;    /* Violet 800 */
-    --accent: #D946EF;       /* Vibrant Magenta */
-    --accent-light: #E879F9; /* Magenta 400 */
-    --accent-hover: #A21CAF; /* Magenta 700 */
+    --off-white: #fdf4ff;    /* Very light magenta (Fuchsia 50) */
+    --cream: #fae8ff;        /* Magenta tint (Fuchsia 100) */
+    --light-gray: #f0abfc;   /* Magenta 200 (Fuchsia 200) */
+    --mid-gray: #c026d3;     /* Magenta 500 (Fuchsia 600) */
+    --dark-gray: #86198f;    /* Magenta 800 (Fuchsia 800) */
+    --accent: #D946EF;       /* Vibrant Magenta (Fuchsia 500) */
+    --accent-light: #E879F9; /* Magenta 400 (Fuchsia 400) */
+    --accent-hover: #A21CAF; /* Magenta 700 (Fuchsia 700) */
 
-    --border: 1px solid #DDD6FE;
-    --border-light: 1px solid #F5F3FF;
+    --border: 1px solid #f0abfc;
+    --border-light: 1px solid #fdf4ff;
     --border-gold: 1px solid rgba(217, 70, 239, 0.3);
 
     --font-heading: 'DM Serif Display', serif;
@@ -520,10 +520,10 @@ img {
     height: 100%;
     background: linear-gradient(
         105deg,
-        rgba(30, 27, 75, 0.85) 0%,    /* Deep Indigo */
-        rgba(139, 92, 246, 0.50) 45%, /* Vibrant Violet */
-        rgba(236, 72, 153, 0.25) 75%, /* Vibrant Pink */
-        rgba(245, 158, 11, 0.10) 100% /* Amber */
+        rgba(45, 0, 54, 0.88) 0%,     /* Very Deep Magenta */
+        rgba(192, 38, 211, 0.55) 45%, /* Vibrant Magenta */
+        rgba(217, 70, 239, 0.30) 75%, /* Fuchsia accent */
+        rgba(232, 121, 249, 0.10) 100% /* Light Magenta glow */
     );
 }
 
