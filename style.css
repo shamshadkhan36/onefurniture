@@ -13,13 +13,13 @@
     --light-gray: #DDD6FE;   /* Violet 200 */
     --mid-gray: #8B5CF6;     /* Violet 500 */
     --dark-gray: #5B21B6;    /* Violet 800 */
-    --accent: #EC4899;       /* Vibrant Pink */
-    --accent-light: #F472B6; /* Pink 400 */
-    --accent-hover: #BE185D; /* Pink 700 */
+    --accent: #D946EF;       /* Vibrant Magenta */
+    --accent-light: #E879F9; /* Magenta 400 */
+    --accent-hover: #A21CAF; /* Magenta 700 */
 
     --border: 1px solid #DDD6FE;
     --border-light: 1px solid #F5F3FF;
-    --border-gold: 1px solid rgba(236, 72, 153, 0.3);
+    --border-gold: 1px solid rgba(217, 70, 239, 0.3);
 
     --font-heading: 'DM Serif Display', serif;
     --font-body: 'DM Sans', sans-serif;

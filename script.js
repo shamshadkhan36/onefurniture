@@ -107,14 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* =============================================
-       DYNAMIC COPYRIGHT YEAR
-       ============================================= */
-    const yearEl = document.querySelector('.footer-bottom p');
-    if (yearEl) {
-        yearEl.innerHTML = `&copy; ${new Date().getFullYear()} The One Interior. All Rights Reserved.`;
-    }
-
 
     /* =============================================
        FAQ ACCORDION
