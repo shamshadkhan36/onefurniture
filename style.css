@@ -5,21 +5,21 @@
 
 /* ======== VARIABLES ======== */
 :root {
-    --black: #0F0F0F;
-    --charcoal: #1A1A1A;
+    --black: #1E1B4B;        /* Very Deep Indigo */
+    --charcoal: #312E81;     /* Deep Indigo */
     --white: #FFFFFF;
-    --off-white: #F8F7F4;
-    --cream: #FAF9F6;
-    --light-gray: #E8E8E8;
-    --mid-gray: #7A7A7A;
-    --dark-gray: #2E2E2E;
-    --accent: #D4AF37;        /* Refined warm gold */
-    --accent-light: #F0D060;  /* Highlight gold */
-    --accent-hover: #B8960C;  /* Deep gold for hover */
+    --off-white: #F5F3FF;    /* Very light violet */
+    --cream: #EDE9FE;        /* Violet 100 */
+    --light-gray: #DDD6FE;   /* Violet 200 */
+    --mid-gray: #8B5CF6;     /* Violet 500 */
+    --dark-gray: #5B21B6;    /* Violet 800 */
+    --accent: #EC4899;       /* Vibrant Pink */
+    --accent-light: #F472B6; /* Pink 400 */
+    --accent-hover: #BE185D; /* Pink 700 */
 
-    --border: 1px solid #1A1A1A;
-    --border-light: 1px solid #E5E5E5;
-    --border-gold: 1px solid rgba(212, 175, 55, 0.3);
+    --border: 1px solid #DDD6FE;
+    --border-light: 1px solid #F5F3FF;
+    --border-gold: 1px solid rgba(236, 72, 153, 0.3);
 
     --font-heading: 'DM Serif Display', serif;
     --font-body: 'DM Sans', sans-serif;
@@ -520,10 +520,10 @@ img {
     height: 100%;
     background: linear-gradient(
         105deg,
-        rgba(10, 10, 10, 0.82) 0%,
-        rgba(10, 10, 10, 0.60) 45%,
-        rgba(10, 10, 10, 0.25) 75%,
-        rgba(10, 10, 10, 0.08) 100%
+        rgba(30, 27, 75, 0.85) 0%,    /* Deep Indigo */
+        rgba(139, 92, 246, 0.50) 45%, /* Vibrant Violet */
+        rgba(236, 72, 153, 0.25) 75%, /* Vibrant Pink */
+        rgba(245, 158, 11, 0.10) 100% /* Amber */
     );
 }
 
@@ -3577,4 +3577,120 @@ img {
 .whatsapp-submit-btn:hover {
     background: #128C7E !important;
     transform: translateY(-2px) !important;
+}
+
+/* ======================================================
+   ADVANCED ANIMATIONS & COLORFUL EFFECTS
+   ====================================================== */
+
+/* Hero Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Colorful Gradient Primary Button */
+.btn-primary {
+    background: linear-gradient(45deg, var(--charcoal), var(--mid-gray), var(--accent), var(--accent-light));
+    background-size: 300% 300% !important;
+    animation: gradientBG 6s ease infinite !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4) !important;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.btn-primary::after {
+    display: none !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 12px 30px rgba(236, 72, 153, 0.6) !important;
+    color: #ffffff !important;
+}
+
+/* Enhanced Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1); /* bouncy */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px) rotate(-3deg);
+    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+/* Colorful Card Hover Effects */
+.usp-card, .service-card-detailed, .location-card, .team-card, .category-card {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.usp-card:hover, .service-card-detailed:hover, .location-card:hover, .team-card:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.25) !important;
+    border-color: var(--light-gray) !important;
+    background: linear-gradient(135deg, var(--white), var(--off-white)) !important;
+}
+
+/* Animated Gradient Borders */
+.usp-card::before, .service-card-detailed::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--mid-gray), var(--accent));
+    background-size: 300% auto;
+    animation: gradientBG 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.usp-card:hover::before, .service-card-detailed:hover::before {
+    opacity: 1;
+}
+
+/* Floating icons */
+.usp-icon i, .mv-icon-wrap i {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.usp-card:hover .usp-icon i, .mv-card:hover .mv-icon-wrap i {
+    transform: scale(1.4) rotate(15deg) !important;
+    color: var(--accent) !important;
+}
+
+/* Image float */
+.about-image img {
+    animation: float 7s ease-in-out infinite;
+}
+
+/* Text Gradients for Headers */
+.section-header h2 {
+    background: linear-gradient(135deg, var(--black) 20%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
