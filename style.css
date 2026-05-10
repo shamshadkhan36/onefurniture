@@ -2526,57 +2526,65 @@ img {
 .usp-card {
     background: var(--white);
     border: var(--border-light);
-    padding: 2.75rem 2rem;
     text-align: center;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
-}
-
-.usp-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-light));
-    transition: width 0.5s ease;
-    border-radius: 0 0 4px 4px;
-}
-
-.usp-card::after {
-    display: none;
-}
-
-.usp-card:hover::before {
-    width: 70%;
-}
-
-.usp-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-6px);
-    border-color: rgba(212, 175, 55, 0.25);
-}
-
-.usp-icon {
-    width: 64px;
-    height: 64px;
-    background: var(--black);
-    color: var(--white);
-    border-radius: 50%;
+    border-radius: 12px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    margin: 0 auto 1.5rem;
+    flex-direction: column;
+}
+
+/* Image area */
+.usp-card-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.usp-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.usp-card:hover .usp-card-img img {
+    transform: scale(1.07);
+}
+
+.usp-card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(45,0,54,0.15) 0%, rgba(45,0,54,0.55) 100%);
     transition: var(--transition);
 }
 
-.usp-card:hover .usp-icon {
-    background: var(--accent);
+.usp-card:hover .usp-card-img-overlay {
+    background: linear-gradient(to bottom, rgba(217,70,239,0.2) 0%, rgba(45,0,54,0.65) 100%);
+}
+
+/* Icon floats on bottom of image */
+.usp-card-img .usp-icon {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 2;
+    width: 56px;
+    height: 56px;
+    font-size: 1.2rem;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 20px rgba(45,0,54,0.3);
+}
+
+/* Text body below image */
+.usp-card-body {
+    padding: 2.5rem 1.5rem 2rem;
+    flex: 1;
 }
 
 .usp-card h3 {
@@ -2589,6 +2597,28 @@ img {
     font-size: 0.88rem;
     color: var(--mid-gray);
     line-height: 1.7;
+}
+
+.usp-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.usp-card:hover .usp-icon {
+    background: var(--accent);
+}
+
+.usp-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
 }
 
 @media (max-width: 900px) {
