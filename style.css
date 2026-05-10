@@ -656,6 +656,127 @@ img {
 }
 
 
+
+/* ======================================================
+   ESTIMATOR CTA BUTTON — Attention Magnet
+   ====================================================== */
+
+@keyframes estimatorBounce {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+}
+
+@keyframes estimatorPulse {
+    0%   { transform: scale(1);   opacity: 0.75; }
+    70%  { transform: scale(1.9); opacity: 0; }
+    100% { transform: scale(1.9); opacity: 0; }
+}
+
+@keyframes estimatorShimmer {
+    0%   { left: -100%; }
+    100% { left: 150%; }
+}
+
+.estimator-cta-wrap {
+    position: absolute;
+    bottom: 44px;
+    right: 44px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: estimatorBounce 2.2s ease-in-out infinite;
+}
+
+.estimator-pulse-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50px;
+    border: 2px solid var(--accent);
+    opacity: 0;
+    animation: estimatorPulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    pointer-events: none;
+}
+
+.estimator-pulse-ring--delay {
+    animation-delay: 0.9s;
+}
+
+.estimator-cta-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.6rem 0.85rem 1rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 4px rgba(217, 70, 239, 0.25),
+        0 12px 35px rgba(162, 28, 175, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-family: var(--font-body);
+    white-space: nowrap;
+}
+
+.estimator-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: estimatorShimmer 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.estimator-cta-btn:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 0 0 6px rgba(217, 70, 239, 0.3),
+        0 18px 45px rgba(162, 28, 175, 0.65);
+}
+
+.estimator-btn-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.estimator-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    text-align: left;
+}
+
+.estimator-btn-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.estimator-btn-sub {
+    font-size: 0.72rem;
+    font-weight: 400;
+    opacity: 0.88;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+
 /* ======================================================
    SECTION HEADERS
    ====================================================== */

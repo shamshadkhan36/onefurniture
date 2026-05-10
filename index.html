@@ -87,9 +87,17 @@
             </div>
         </div>
 
-        <button id="startEstimatorBtn" class="btn btn-primary" style="position: absolute; bottom: 40px; right: 40px; z-index: 10; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-            Start Estimator <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-        </button>
+        <div class="estimator-cta-wrap">
+            <div class="estimator-pulse-ring"></div>
+            <div class="estimator-pulse-ring estimator-pulse-ring--delay"></div>
+            <button id="startEstimatorBtn" class="estimator-cta-btn">
+                <span class="estimator-btn-icon"><i class="fa-solid fa-calculator"></i></span>
+                <span class="estimator-btn-text">
+                    <span class="estimator-btn-label">FREE Estimate</span>
+                    <span class="estimator-btn-sub">Get your interior cost now →</span>
+                </span>
+            </button>
+        </div>
 
         <div class="container configurator-wrapper">
             <div class="configurator-container" id="configuratorContainer" style="display: none;">
