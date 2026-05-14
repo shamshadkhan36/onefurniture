@@ -171,7 +171,7 @@ const userConfig = {
     rate: 0,
     fee: 0,
     style: '',
-    rooms: [],
+    rooms: '',
     area: 0
 };
 
@@ -203,12 +203,22 @@ function selectConfig(key, value, step, el) {
         userConfig.fee = parseInt(el.getAttribute('data-fee'));
     }
 
-    // Highlight selected card
-    const siblings = event.currentTarget.parentElement.children;
-    for(let sibling of siblings) {
-        sibling.classList.remove('selected');
+    let targetEl = el;
+    if (!targetEl && typeof event !== 'undefined') {
+        targetEl = event.target;
+        while (targetEl && !targetEl.classList.contains('option-card') && targetEl !== document.body) {
+            targetEl = targetEl.parentElement;
+        }
     }
-    event.currentTarget.classList.add('selected');
+
+    // Highlight selected card
+    if (targetEl && targetEl.parentElement) {
+        const siblings = targetEl.parentElement.children;
+        for(let sibling of siblings) {
+            sibling.classList.remove('selected');
+        }
+        targetEl.classList.add('selected');
+    }
 
     // Automatically go to next step
     setTimeout(() => {
@@ -216,15 +226,7 @@ function selectConfig(key, value, step, el) {
     }, 400); // short delay for visual feedback
 }
 
-function toggleMulti(el, room) {
-    if (userConfig.rooms.includes(room)) {
-        userConfig.rooms = userConfig.rooms.filter(r => r !== room);
-        el.classList.remove('selected');
-    } else {
-        userConfig.rooms.push(room);
-        el.classList.add('selected');
-    }
-}
+
 
 function calculateResult() {
     const areaInput = document.getElementById('area-input').value;
@@ -251,7 +253,7 @@ function sendWhatsApp() {
     const name = document.getElementById('cust-name').value.trim() || 'Valued Customer';
     const loc = document.getElementById('cust-loc').value.trim() || 'Not Provided';
     
-    const message = `Hi 👋 Thank you for contacting The One Furniture\n\nWe have received your requirements ✅\n\nOur team will guide you step-by-step for:\n✔ Design\n✔ Material\n✔ Budget planning\n\nYour Selection:\nName: ${name}\n📍 Location: ${loc}\n📐 Area: ${userConfig.area} sqft (${userConfig.rooms.join(', ')})\nBudget Range: ${userConfig.budget}\nDesign Style: ${userConfig.style}\nProject Type: ${userConfig.type}\n\nYou will receive a detailed estimate shortly 👍\n\n✅ “Clarity + Control + Convenience”`;
+    const message = `Hi 👋 Thank you for contacting The One Furniture\n\nWe have received your requirements ✨\n\nOur team will guide you step-by-step for:\n✅ Design\n✅ Material\n✅ Budget planning\n\nYour Selection:\nName: ${name}\n📍 Location: ${loc}\n📏 Area: ${userConfig.area} sqft (${userConfig.rooms})\nBudget Range: ${userConfig.budget}\nDesign Style: ${userConfig.style}\nProject Type: ${userConfig.type}\n\nYou will receive a detailed estimate shortly 📋\n\n🔥 "Clarity + Control + Convenience"\n\nYou will get connected shortly`;
 
     const encodedMessage = encodeURIComponent(message);
     const phoneNumber = "+919309558584";

@@ -68,7 +68,7 @@
     <!-- ===================== CONFIGURATOR APP ===================== -->
     <section class="hero configurator-hero">
         <div style="position: absolute; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: var(--accent, #FACC15); padding: 8px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10;">
-            <marquee behavior="scroll" direction="left" scrollamount="6">Welcome to The One Interior</marquee>
+            <marquee behavior="scroll" direction="left" scrollamount="6">Enjoy 10% off on site visit use code Welcome10</marquee>
         </div>
         <div class="hero-image">
             <div class="hero-overlay"></div>
@@ -114,15 +114,15 @@
                     <div class="config-step active" id="step-1">
                         <h3>1. Select Project Type</h3>
                         <div class="options-grid">
-                            <div class="option-card" onclick="selectConfig('type', 'Furniture', 1)">
+                            <div class="option-card" onclick="selectConfig('type', 'Furniture', 1, this)">
                                 <i class="fa-solid fa-couch"></i><span>Furniture</span>
                                 <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on fabricating and installing specific items.</p>
                             </div>
-                            <div class="option-card" onclick="selectConfig('type', 'Interior', 1)">
+                            <div class="option-card" onclick="selectConfig('type', 'Interior', 1, this)">
                                 <i class="fa-solid fa-paint-roller"></i><span>Interiors</span>
                                 <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on designing and finishing the aesthetics of a space.</p>
                             </div>
-                            <div class="option-card" onclick="selectConfig('type', 'Turnkey', 1)">
+                            <div class="option-card" onclick="selectConfig('type', 'Turnkey', 1, this)">
                                 <i class="fa-solid fa-house-chimney"></i><span>Turnkey</span>
                                 <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on managing the entire project from shell to handover.</p>
                             </div>
@@ -200,30 +200,83 @@
                     <div class="config-step" id="step-3">
                         <h3>3. Select Design Style</h3>
                         <div class="options-grid styles-grid">
-                            <div class="option-card" onclick="selectConfig('style', 'Modern', 3)">Modern</div>
-                            <div class="option-card" onclick="selectConfig('style', 'Minimal', 3)">Minimal</div>
-                            <div class="option-card" onclick="selectConfig('style', 'Classical', 3)">Classical</div>
-                            <div class="option-card" onclick="selectConfig('style', 'Industrial', 3)">Industrial</div>
-                            <div class="option-card" onclick="selectConfig('style', 'Bohemian', 3)">Bohemian</div>
-                            <div class="option-card" onclick="selectConfig('style', 'Other', 3)">Other</div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Modern', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Modern</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Minimal', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Minimal</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Classical', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Classical</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Industrial', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Industrial</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Bohemian', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Bohemian</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('style', 'Other', 3, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Other</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Step 4: Select Rooms -->
                     <div class="config-step" id="step-4">
                         <h3>4. Select Rooms</h3>
-                        <div class="options-grid multi-select" id="rooms-container">
-                            <div class="option-card multi" onclick="toggleMulti(this, 'Full Home')">Full Home</div>
-                            <div class="option-card multi" onclick="toggleMulti(this, 'Kitchen')">Kitchen</div>
-                            <div class="option-card multi" onclick="toggleMulti(this, 'Hall')">Hall</div>
-                            <div class="option-card" onclick="toggleMulti(this, 'Master Bedroom')">Master Bed</div>
-                            <div class="option-card" onclick="toggleMulti(this, 'Kids Bedroom')">Kids Bed</div>
-                            <div class="option-card" onclick="toggleMulti(this, 'Guest Bedroom')">Guest Bed</div>
-                            <div class="option-card" onclick="toggleMulti(this, 'Bathroom')">Bathroom</div>
-                            <div class="option-card" onclick="toggleMulti(this, 'Balcony')">Balcony</div>
-                        </div>
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="nextStep(4)">Continue</button>
+                        <div class="options-grid styles-grid" id="rooms-container">
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Full Home', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Full Home</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Kitchen', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Kitchen</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Hall', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Hall</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Master Bedroom', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Master Bed</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Kids Bedroom', 4, this)">
+                                <div class="style-bg" style="background-image: url('images/kids_bed.png');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Kids Bed</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Guest Bedroom', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Guest Bed</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Bathroom', 4, this)">
+                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Bathroom</span>
+                            </div>
+                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Balcony', 4, this)">
+                                <div class="style-bg" style="background-image: url('images/balcony.png');"></div>
+                                <div class="style-overlay"></div>
+                                <span>Balcony</span>
+                            </div>
                         </div>
                     </div>
 
@@ -246,7 +299,7 @@
                                 <span>Estimated Cost</span>
                                 <h2 style="font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
                                     <span>₹</span> 
-                                    <span style="font-size: 1.1rem; font-family: var(--font-body); font-weight: 500;">To get the amount WhatsApp us</span>
+                                    <span style="font-size: 1.1rem; font-family: var(--font-body); font-weight: 500;">Get your personalized estimate via WhatsApp</span>
                                 </h2>
                                 <small>(Material + Labour)</small>
                             </div>
@@ -294,8 +347,7 @@
         <div class="container">
             <div class="section-header text-center reveal" style="margin-bottom:3rem;">
                 <div class="section-header-left" style="width:100%;">
-                    <span class="section-label" style="justify-content:center;">Our USP</span>
-                    <h2>Why Choose The One Interior</h2>
+                    <h2>Why Choose Us in Mumbai</h2>
                 </div>
             </div>
             <div class="usp-grid">
@@ -312,24 +364,24 @@
                 </div>
                 <div class="usp-card reveal" style="transition-delay:0.1s;">
                     <div class="usp-card-img">
-                        <img src="images/usp_manufacturing_unit.png" alt="Manufacturing Unit">
+                        <img src="images/usp_manufacturing_unit.png" alt="Manufacturing Support">
                         <div class="usp-card-img-overlay"></div>
                         <div class="usp-icon"><i class="fa-solid fa-industry"></i></div>
                     </div>
                     <div class="usp-card-body">
-                        <h3>Manufacturing Unit</h3>
-                        <p>Manufacturing unit tie up 50+ — direct from production to your home, zero middlemen.</p>
+                        <h3>Manufacturing Support</h3>
+                        <p>Manufacturing support tie up 50+ — direct from production to your home, zero middlemen.</p>
                     </div>
                 </div>
                 <div class="usp-card reveal" style="transition-delay:0.2s;">
                     <div class="usp-card-img">
-                        <img src="images/usp_middleman_free.png" alt="Middle-Man Free">
+                        <img src="images/usp_middleman_free.png" alt="Streamlined Process">
                         <div class="usp-card-img-overlay"></div>
-                        <div class="usp-icon"><i class="fa-solid fa-handshake-slash"></i></div>
+                        <div class="usp-icon"><i class="fa-solid fa-bars-progress"></i></div>
                     </div>
                     <div class="usp-card-body">
-                        <h3>Middle-Man Free</h3>
-                        <p>Third party and middle-man free execution — you get the best quality at the true manufacturing price.</p>
+                        <h3>Streamlined Process</h3>
+                        <p>Experience a hassle-free journey from initial design concept to flawless execution with transparent timelines.</p>
                     </div>
                 </div>
                 <div class="usp-card reveal" style="transition-delay:0.3s;">
@@ -405,7 +457,7 @@
     </section>
 
     <!-- ===================== CUSTOMER ON-BOARDING PROCESS ===================== -->
-    <section id="process" class="onboard-section section-padding bg-light">
+    <section id="process" class="onboard-section section-padding bg-light" style="display:none;">
         <div class="container">
             <div class="section-header text-center reveal" style="margin-bottom:3.5rem;">
                 <div class="section-header-left" style="width:100%">
@@ -593,56 +645,36 @@
             <div class="about-content reveal" style="transition-delay: 0.15s;">
                 <span class="section-label">About Us</span>
                 <h2>Who We Are</h2>
-                <p>The One Furniture is a modern furniture and interior solutions brand based in Vasai West, Mumbai.
-                    Located at Dattani Prism IT Commercial Park, we have quickly established ourselves as a trusted
+                <p>The One Furniture is a modern furniture and interior solutions brand based in Vasai West, Mumbai. 
+                    With a rich legacy and industry experience dating back to 2005, we have quickly established ourselves as a trusted
                     destination for high-quality, stylish, and functional furniture solutions for both residential
                     and commercial spaces.</p>
                 <p>The brand operates under <strong>Ramjisheth Furniture Private Limited</strong>, a growing
                     furniture manufacturing and trading company incorporated in 2021. Built on the idea of delivering
                     complete furniture and interior solutions under one roof — from living room sofas and bedroom
                     wardrobes to office furniture and customized décor solutions.</p>
+                <p>Founded with a vision to simplify furniture buying and interior design, The One Furniture
+                    focuses on a <strong>direct-to-customer approach</strong>, eliminating unnecessary middlemen
+                    and making quality furniture more accessible and affordable.</p>
+                <p>Since its inception, the company has grown steadily by leveraging local craftsmanship,
+                    modern production techniques, and a customer-first mindset. With a dedicated team and a
+                    growing client base across <strong>Mumbai, Navi Mumbai, and surrounding regions</strong>,
+                    the brand continues to expand its reach while maintaining high standards of quality and service.</p>
 
                 <div class="about-metrics">
                     <div class="metric-item">
-                        <div class="metric-num">2021</div>
-                        <div class="metric-label">Year Founded</div>
+                        <div class="metric-num">2005</div>
+                        <div class="metric-label">Industry Experience Since</div>
                     </div>
-                    <div class="metric-item">
-                        <div class="metric-num">PAN</div>
-                        <div class="metric-label">India Delivery</div>
-                    </div>
+
                     <div class="metric-item">
                         <div class="metric-num">100%</div>
                         <div class="metric-label">Direct-to-Customer</div>
                     </div>
                 </div>
 
-                <a href="#contact" class="btn btn-outline">Work With Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== OUR STORY ===================== -->
-    <section class="our-story-section section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center reveal" style="margin-bottom:3rem;">
-                <div class="section-header-left" style="width:100%;">
-                    <span class="section-label" style="justify-content:center;">Our Story</span>
-                    <h2>How We Started</h2>
-                </div>
-            </div>
-            <div class="story-grid">
-                <div class="story-text reveal">
-                    <p>Founded with a vision to simplify furniture buying and interior design, The One Furniture
-                        focuses on a <strong>direct-to-customer approach</strong>, eliminating unnecessary middlemen
-                        and making quality furniture more accessible and affordable.</p>
-                    <p>Since its inception, the company has grown steadily by leveraging local craftsmanship,
-                        modern production techniques, and a customer-first mindset. With a dedicated team and a
-                        growing client base across <strong>Mumbai, Navi Mumbai, and surrounding regions</strong>,
-                        the brand continues to expand its reach while maintaining high standards of quality and service.</p>
-                </div>
-                <div class="story-specializations reveal" style="transition-delay:0.1s;">
-                    <h3 style="margin-bottom:1.5rem; font-size:1.3rem;">What We Do</h3>
+                <div class="story-specializations" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
+                    <h3 style="margin-bottom:1.2rem; font-size:1.3rem;">What We Do</h3>
                     <ul class="story-list">
                         <li><i class="fa-solid fa-check"></i> Custom furniture design and manufacturing</li>
                         <li><i class="fa-solid fa-check"></i> Home interior solutions</li>
@@ -652,60 +684,21 @@
                     </ul>
                     <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--dark-gray);">Every product is designed keeping in mind comfort, durability, and aesthetics — ensuring customers receive furniture that enhances their everyday living experience.</p>
                 </div>
+
+                <a href="#contact" class="btn btn-outline">Work With Us</a>
             </div>
         </div>
     </section>
 
     <!-- ===================== QUALITY COMMITMENT ===================== -->
-    <section class="quality-section section-padding">
-        <div class="container">
-            <div class="quality-grid">
-                <div class="quality-text reveal">
-                    <span class="section-label">Our Commitment</span>
-                    <h2>Quality is Our Standard</h2>
-                    <p>At The One Furniture, quality is not just a promise — it is a standard. We use carefully
-                        selected materials and focus on detailed craftsmanship to ensure long-lasting and reliable
-                        products. Customers consistently appreciate the brand for its excellent design quality,
-                        reasonable pricing, and supportive service.</p>
-                    <a href="#contact" class="btn btn-outline" style="margin-top:1.5rem;">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="why-choose-grid reveal" style="transition-delay:0.1s;">
-                    <h3 style="margin-bottom:1.5rem; font-size:1.3rem; grid-column:1/-1;">Why Choose Us</h3>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Customized furniture tailored to your needs</span>
-                    </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Modern designs with practical functionality</span>
-                    </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Affordable pricing through direct sales approach</span>
-                    </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Experienced team and professional service</span>
-                    </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>End-to-end interior and furnishing solutions</span>
-                    </div>
-                    <div class="why-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Serving Mumbai, Navi Mumbai &amp; across India</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ===================== MISSION & VISION ===================== -->
     <section id="mission" class="mv-section section-padding bg-light">
         <div class="container">
             <div class="section-header text-center reveal" style="margin-bottom:3.5rem;">
                 <div class="section-header-left" style="width:100%">
-                    <span class="section-label" style="justify-content:center;">Our Purpose</span>
+
                     <h2>Our Mission &amp; Vision</h2>
                 </div>
             </div>
@@ -718,7 +711,7 @@
                     <div class="mv-body">
                         <h3>Vision</h3>
                         <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
-                            To become a trusted and recognized furniture brand across India by delivering innovative designs, superior craftsmanship, and exceptional customer experiences.
+                            "Every Customer has a right to middle-man free product in the best quality ."
                         </p>
                     </div>
                 </div>
@@ -730,7 +723,7 @@
                     <div class="mv-body">
                         <h3>Mission</h3>
                         <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
-                            To provide high-quality, customized furniture and interior solutions that combine modern design, functionality, and affordability for every customer.
+                            "To Solve mass community furniture needs- both in price &amp; Style ."
                         </p>
                     </div>
                 </div>
@@ -753,10 +746,10 @@
                 <!-- Member 1 -->
                 <div class="team-card reveal">
                     <div class="team-avatar">
-                        <div class="team-avatar-initials">MC</div>
+                        <img src="persons/Mr.Manoj Chavan .png" alt="Mr. Manoj Chavan">
                     </div>
                     <div class="team-info">
-                        <h3>Mr. Manoj Chawhan</h3>
+                        <h3>Mr. Manoj Chavan</h3>
                         <span class="team-role">Principal Designer</span>
                     </div>
                 </div>
@@ -764,7 +757,7 @@
                 <!-- Member 2 -->
                 <div class="team-card reveal" style="transition-delay:0.08s;">
                     <div class="team-avatar">
-                        <div class="team-avatar-initials">SC</div>
+                        <img src="persons/Mr.sanket c.png" alt="Mr. Sanket C.">
                     </div>
                     <div class="team-info">
                         <h3>Mr. Sanket C.</h3>
@@ -775,7 +768,7 @@
                 <!-- Member 3 -->
                 <div class="team-card reveal" style="transition-delay:0.16s;">
                     <div class="team-avatar">
-                        <div class="team-avatar-initials">SG</div>
+                        <img src="persons/ID. Saish Gondhali  .png" alt="ID. Saish Gondhali">
                     </div>
                     <div class="team-info">
                         <h3>ID. Saish Gondhali</h3>
@@ -786,7 +779,7 @@
                 <!-- Member 4 -->
                 <div class="team-card reveal" style="transition-delay:0.24s;">
                     <div class="team-avatar">
-                        <div class="team-avatar-initials">HM</div>
+                        <img src="persons/Heena Mande   .png" alt="A/C. Heena Mande">
                     </div>
                     <div class="team-info">
                         <h3>A/C. Heena Mande</h3>
@@ -794,6 +787,12 @@
                     </div>
                 </div>
 
+            </div>
+            
+            <!-- Full Team Picture -->
+            <div class="team-group-pic reveal" style="margin-top: 5rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <h3 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--black); margin-bottom: 2rem;">Our Team</h3>
+                <img src="persons/team.png" alt="The One Furniture Team" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-md); transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
             </div>
         </div>
     </section>
@@ -812,17 +811,17 @@
 
                 <!-- Location 1: Design Studio -->
                 <div class="location-card reveal">
-                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/The One Interior.jpeg" alt="The One Interior Design Studio Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="location-image" style="width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
+                        <img src="images/The One Interior.jpeg" alt="The One Interior Design Studio Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
-                    <div class="location-tag">Design Studio – Office</div>
+                    <div class="location-tag">Branch Office</div>
                     <h3>The One Interior</h3>
                     <address>
                         Office no. 204, Dattani Prism IT Park-1,<br>
                         Behind Dattani Mall, Bhabola Road,<br>
                         Vasai-West, Palghar – 401202
                     </address>
-                    <a href="https://maps.google.com/?q=Dattani+Prism+IT+Park,+Bhabola+Road,+Vasai+West" target="_blank"
+                    <a href="https://www.google.co.in/maps/place/The+One+Furniture+-+Top+Furniture+%26+Interior+Shop+In+Vasai-Virar/@19.3590455,72.6587194,12z/data=!4m10!1m2!2m1!1sone+furniture+vasia!3m6!1s0x3be7af3407be5d7b:0xe82d1a710b283774!8m2!3d19.3590455!4d72.8111547!15sChNvbmUgZnVybml0dXJlIHZhc2FpWhUiE29uZSBmdXJuaXR1cmUgdmFzYWmSAQ9mdXJuaXR1cmVfc3RvcmXgAQA!16s%2Fg%2F11qg50z7c4?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
                         class="location-map-btn">
                         <i class="fa-solid fa-map-pin"></i> View on Map
                     </a>
@@ -830,8 +829,8 @@
 
                 <!-- Location 2: Head Office -->
                 <div class="location-card reveal" style="transition-delay:0.08s;">
-                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/Ramjisheth Furniture Pvt. Ltd..jpeg" alt="Ramjisheth Furniture Pvt. Ltd. Head Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="location-image" style="width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
+                        <img src="images/Ramjisheth Furniture Pvt. Ltd..jpeg" alt="Ramjisheth Furniture Pvt. Ltd. Head Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                     <div class="location-tag">Head Office</div>
                     <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
@@ -840,28 +839,13 @@
                         Bandra East, Mumbai<br>
                         Maharashtra 400051
                     </address>
-                    <a href="https://maps.google.com/?q=Sanman+CHS,+Gandhi+nagar,+Bandra+East,+Mumbai" target="_blank"
+                    <a href="https://www.google.co.in/maps/place/Ramjisheth+Furniture+Pvt+Ltd-+Best+middle+man+free+furniture+trader+in+mumbai/@19.072558,72.8675731,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7afb6e05fb6df:0x321481d018609e89!8m2!3d19.0725529!4d72.870148!16s%2Fg%2F11nnvtb0hm?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
                         class="location-map-btn">
                         <i class="fa-solid fa-map-pin"></i> View on Map
                     </a>
                 </div>
 
-                <!-- Location 3: Register Office -->
-                <div class="location-card reveal" style="transition-delay:0.16s;">
-                    <div class="location-image" style="width: 100%; height: 160px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/Ramjisheth Furniture Pvt. Ltd..jpeg" alt="Registered Office" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div class="location-tag">Registered Office</div>
-                    <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
-                    <address>
-                        A/404 Vrindavan Society,<br>
-                        Opp. Nirmala Mata Church, JV Nagar,<br>
-                        Umela, Naigaon-West, Palghar – 401202
-                    </address>
-                    <a href="https://maps.google.com/?q=Vrindavan+Society,+Nirmala+Mata+Church,+Naigaon+West" target="_blank" class="location-map-btn">
-                        <i class="fa-solid fa-map-pin"></i> View on Map
-                    </a>
-                </div>
+
 
             </div>
         </div>
@@ -873,7 +857,6 @@
             <div class="section-header reveal">
                 <div class="section-header-left">
                     <span class="section-label">Our Packages</span>
-                    <h2>Types of Execution</h2>
                 </div>
                 <p class="section-desc">All-inclusive per sqft rates. No hidden costs.</p>
             </div>
@@ -975,7 +958,8 @@
                                 <i class="fa-solid fa-star"></i>
                                 <span class="review-time">5 months ago</span>
                             </div>
-                            <p class="review-text">"I’m truly impressed with the quality of work done. From the initial consultation to project completion, manoj and he's team provided exceptional support and guidance. Their creativity, dedication, and timely execution made the entire process smooth and stress-free. The final outcome meet my expectations.<br><br>Manoj were supportive at every step and made sure everything turned out just the way we imagined.<br><br>Really happy with the result. Thank you for the excellent service!"</p>
+                            <p class="review-text text-clamp" id="review1">"I’m truly impressed with the quality of work done. From the initial consultation to project completion, manoj and he's team provided exceptional support and guidance. Their creativity, dedication, and timely execution made the entire process smooth and stress-free. The final outcome meet my expectations.<br><br>Manoj were supportive at every step and made sure everything turned out just the way we imagined.<br><br>Really happy with the result. Thank you for the excellent service!"</p>
+                            <button class="read-more-btn" onclick="document.getElementById('review1').classList.toggle('expanded'); this.innerText = this.innerText === 'Read more' ? 'Read less' : 'Read more';">Read more</button>
                         </div>
 
                         <!-- Review 2 -->
@@ -1293,143 +1277,6 @@
             </section>
 
 
-
-    <!-- ===================== PROJECTS / PORTFOLIO ===================== -->
-    <section id="projects" class="products section-padding">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-header-left">
-                    <span class="section-label">Portfolio</span>
-                    <h2>Design Style</h2>
-                </div>
-                <a href="#contact" class="link-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="product-grid">
-                <!-- Project 1 -->
-                <div class="product-card reveal">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=85&auto=format&fit=crop"
-                            alt="Luxury Villa — Dubai">
-                        <span class="badge new">Residential</span>
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">Dubai, UAE</p>
-                            <h3 class="product-title"><a href="#">Luxury Villa — Palm Jumeirah</a></h3>
-                        </div>
-                        <p class="product-price">2024</p>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="product-card reveal" style="transition-delay: 0.08s;">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=85&auto=format&fit=crop"
-                            alt="Corporate HQ — Mumbai">
-                        <span class="badge sale">Commercial</span>
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">Mumbai, India</p>
-                            <h3 class="product-title"><a href="#">Corporate Headquarters</a></h3>
-                        </div>
-                        <p class="product-price">2024</p>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="product-card reveal" style="transition-delay: 0.16s;">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=800&q=85&auto=format&fit=crop"
-                            alt="Boutique Hotel Lobby">
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">London, UK</p>
-                            <h3 class="product-title"><a href="#">Boutique Hotel Lobby</a></h3>
-                        </div>
-                        <p class="product-price">2023</p>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="product-card reveal" style="transition-delay: 0.08s;">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85&auto=format&fit=crop"
-                            alt="Manhattan Penthouse">
-                        <span class="badge new">Residential</span>
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">New York, USA</p>
-                            <h3 class="product-title"><a href="#">Manhattan Penthouse</a></h3>
-                        </div>
-                        <p class="product-price">2023</p>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="product-card reveal" style="transition-delay: 0.16s;">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85&auto=format&fit=crop"
-                            alt="Fine Dining Restaurant">
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">Singapore</p>
-                            <h3 class="product-title"><a href="#">Fine Dining Restaurant</a></h3>
-                        </div>
-                        <p class="product-price">2023</p>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="product-card reveal" style="transition-delay: 0.24s;">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=85&auto=format&fit=crop"
-                            alt="Luxury Retail Showroom">
-                        <span class="badge sale">Commercial</span>
-                        <div class="product-actions">
-                            <button class="action-btn" title="View Project"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                            <button class="action-btn" title="Save"><i class="fa-regular fa-bookmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-info-left">
-                            <p class="product-category">Paris, France</p>
-                            <h3 class="product-title"><a href="#">Luxury Retail Showroom</a></h3>
-                        </div>
-                        <p class="product-price">2022</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-40 reveal">
-                <a href="#contact" class="btn btn-outline">Start Your Project</a>
-            </div>
-        </div>
-    </section>
-
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
         <div class="container">
@@ -1488,8 +1335,9 @@
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem;">Design with Passion. Build with Precision.</p>
+            <div class="footer-bottom" style="text-align: center; padding-top: 1rem;">
+                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem;">&copy; 2024 Ramjisheth Pvt Ltd. All rights reserved.</p>
+                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem; margin-top: 0.5rem;">Design with Passion. Build with Precision.</p>
             </div>
         </div>
     </footer>
