@@ -244,7 +244,7 @@ function calculateResult() {
 
     userConfig.area = parseInt(areaInput);
     
-    document.getElementById('out-budget').innerText = userConfig.budget;
+    // document.getElementById('out-budget').innerText = userConfig.budget;
 
     showStep(6);
 }

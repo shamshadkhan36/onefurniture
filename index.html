@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The One Interior | Premium Interior Design Company</title>
+    <title>The One Furniture | Premium Interior Design Company</title>
     <meta name="description"
-        content="The One Interior — a premium interior design company crafting timeless, luxurious spaces. We design residential, commercial, and hospitality interiors that inspire.">
-    <!-- Google Fonts — DM Serif Display + DM Sans -->
+        content="The One Furniture — a premium interior design company crafting timeless, luxurious spaces. We design residential, commercial, and hospitality interiors that inspire.">
+    <!-- Google Fonts — Playfair Display + Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -24,7 +22,9 @@
     <!-- ===================== NAVBAR ===================== -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">The One<span>Interior</span></a>
+            <a href="#" class="logo" style="display: block; width: 170px; height: 42px; overflow: hidden; position: relative;">
+                <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 42px; width: auto; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.05);">
+            </a>
             <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
@@ -43,7 +43,9 @@
     <!-- ===================== FULLSCREEN OVERLAY MENU ===================== -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <span class="mobile-menu-logo">The One Interior</span>
+            <span class="mobile-menu-logo" style="display: inline-block; width: 160px; height: 46px; overflow: hidden; background: white; border-radius: 4px; position: relative;">
+                <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 46px; width: auto;">
+            </span>
             <button class="close-menu" id="closeMenu" aria-label="Close menu">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -56,7 +58,7 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="mobile-menu-footer">
-            <p>© 2026 The One Interior</p>
+            <p>© 2026 The One Furniture</p>
             <div class="mobile-menu-social">
                 <a href="#">Instagram</a>
                 <a href="#">Facebook</a>
@@ -67,19 +69,19 @@
 
     <!-- ===================== CONFIGURATOR APP ===================== -->
     <section class="hero configurator-hero">
-        <div style="position: absolute; top: 80px; left: 0; width: 100%; background: rgba(0,0,0,0.6); color: var(--accent, #FACC15); padding: 8px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10;">
+        <div style="position: absolute; top: 85px; left: 0; width: 100%; background: var(--accent); color: var(--white); padding: 10px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10; border-bottom: var(--border);">
             <marquee behavior="scroll" direction="left" scrollamount="6">Enjoy 10% off on site visit use code Welcome10</marquee>
         </div>
         <div class="hero-image">
             <div class="hero-overlay"></div>
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85&auto=format&fit=crop" alt="Luxury Interior">
+            <img src="images/hero_luxury_interior.png" alt="Luxury Interior">
         </div>
 
         <div id="heroContent" class="hero-content">
             <div class="hero-eyebrow">Premium Interior Design Studio</div>
-            <h1>Crafting Timeless<br><em>Luxury</em> Spaces</h1>
+            <h1>Elevate Your<br><em>Living</em> Space</h1>
             <p class="hero-description">
-                Experience the art of fine living. We design interiors that seamlessly blend elegance, comfort, and unparalleled craftsmanship.
+                Experience the art of fine living. We curate bespoke interiors that seamlessly blend elegance, comfort, and unparalleled craftsmanship.
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
@@ -303,10 +305,7 @@
                                 </h2>
                                 <small>(Material + Labour)</small>
                             </div>
-                            <div class="output-details">
-                                <p><strong>Timeline:</strong> Loose furniture (15-25 days) / Project (45-60 days)</p>
-                                <p><strong>Material Specs:</strong> Based on <span id="out-budget"></span> Tier.</p>
-                            </div>
+
                         </div>
                         <div class="whatsapp-prompt-box">
                             <input type="text" id="cust-name" placeholder="Your Name">
@@ -791,7 +790,7 @@
             
             <!-- Full Team Picture -->
             <div class="team-group-pic reveal" style="margin-top: 5rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h3 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--black); margin-bottom: 2rem;">Our Team</h3>
+                <h3 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--accent); margin-bottom: 2rem;">Our Team</h3>
                 <img src="persons/team.png" alt="The One Furniture Team" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-md); transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
             </div>
         </div>
@@ -812,10 +811,10 @@
                 <!-- Location 1: Design Studio -->
                 <div class="location-card reveal">
                     <div class="location-image" style="width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/The One Interior.jpeg" alt="The One Interior Design Studio Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="images/The One Interior.jpeg" alt="The One Furniture Design Studio Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                     <div class="location-tag">Branch Office</div>
-                    <h3>The One Interior</h3>
+                    <h3>The One Furniture</h3>
                     <address>
                         Office no. 204, Dattani Prism IT Park-1,<br>
                         Behind Dattani Mall, Bhabola Road,<br>
@@ -1168,7 +1167,7 @@
 
                             <div class="faq-item reveal" style="transition-delay:0.24s;">
                                 <button class="faq-question" aria-expanded="false">
-                                    How do I get started with The One Interior?
+                                    How do I get started with The One Furniture?
                                     <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
                                 </button>
                                 <div class="faq-answer">
@@ -1287,8 +1286,8 @@
                     <div class="footer-connect-right">
                         <p>Have a project in mind? Let's talk about creating a space that truly reflects your vision and
                             lifestyle.</p>
-                        <a href="mailto:hello@theoneinterior.com" class="btn btn-outline"
-                            style="color:#fff; border-color:rgba(255,255,255,0.4);">Email Us</a>
+                        <a href="mailto:info@theonefurniture.in" class="btn btn-outline"
+                            style="color:var(--black); border-color:var(--border);">Email Us</a>
                     </div>
                 </div>
             </div>
@@ -1296,12 +1295,14 @@
             <!-- Footer grid -->
             <div class="footer-grid">
                 <div class="footer-col brand-col">
-                    <a href="#" class="footer-logo">The One<span>Interior</span></a>
+                    <a href="#" class="footer-logo" style="display: block; width: 190px; height: 50px; overflow: hidden; position: relative; margin-bottom: 1.5rem;">
+                        <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 50px; width: auto; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.05);">
+                    </a>
                     <p>A premium interior design studio crafting timeless, luxurious spaces that inspire and transform
                         the way you live. Since 2005, Dubai to Vasai.</p>
                     <div class="social-links" style="display:flex; gap:1.2rem; margin-top:1.2rem; align-items:center;">
-                        <a href="#" aria-label="Facebook" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram" style="font-size:1.5rem; color:rgba(255,255,255,0.6); transition:0.3s;" onmouseover="this.style.color='#FACC15'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" style="font-size:1.5rem; color:var(--dark-gray); transition:0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--dark-gray)'"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram" style="font-size:1.5rem; color:var(--dark-gray); transition:0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--dark-gray)'"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1329,15 +1330,15 @@
                     <ul class="contact-info">
                         <li><i class="fa-solid fa-location-dot"></i> Vasai-West, Palghar – 401202</li>
                         <li><i class="fa-solid fa-phone"></i> +91 93095 58584</li>
-                        <li><i class="fa-solid fa-envelope"></i> hello@theoneinterior.com</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@theonefurniture.in</li>
                         <li><i class="fa-regular fa-clock"></i> Mon–Sat: 9AM – 7PM</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom" style="text-align: center; padding-top: 1rem;">
-                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem;">&copy; 2024 Ramjisheth Pvt Ltd. All rights reserved.</p>
-                <p style="color:rgba(255,255,255,0.25); font-size:0.75rem; margin-top: 0.5rem;">Design with Passion. Build with Precision.</p>
+                <p style="color:var(--mid-gray); font-size:0.75rem;">&copy; 2024 Ramjisheth Pvt Ltd. All rights reserved.</p>
+                <p style="color:var(--mid-gray); font-size:0.75rem; margin-top: 0.5rem;">Design with Passion. Build with Precision.</p>
             </div>
         </div>
     </footer>
