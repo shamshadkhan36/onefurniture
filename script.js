@@ -265,6 +265,69 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 4. CALCULATOR & PACKAGE BUTTONS SCROLLER
     // ==========================================
+    // ==========================================
+    // 10. ESTIMATOR FORM MODAL CONTROLLER
+    // ==========================================
+    const estimatorCard = document.getElementById('estimatorCard');
+    const estimatorModal = document.getElementById('estimatorModal');
+    const modalPlaceholder = document.getElementById('modalFormPlaceholder');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    
+    // Create a hero placeholder so layout remains clean when card moves
+    let heroPlaceholder = null;
+    if (estimatorCard) {
+        heroPlaceholder = document.createElement('div');
+        heroPlaceholder.id = 'heroFormPlaceholder';
+        heroPlaceholder.style.display = 'none';
+        estimatorCard.parentNode.insertBefore(heroPlaceholder, estimatorCard);
+    }
+    
+    let modalTimer = null;
+    let modalHasOpened = false;
+
+    function openEstimatorModal() {
+        if (modalHasOpened || !estimatorCard || !estimatorModal || !modalPlaceholder) return;
+        modalHasOpened = true;
+        
+        // Clear any auto-open timer
+        if (modalTimer) clearTimeout(modalTimer);
+        
+        // Move the estimator card into the modal
+        modalPlaceholder.appendChild(estimatorCard);
+        estimatorModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // lock background scroll
+    }
+    
+    function closeEstimatorModal() {
+        if (!estimatorModal || !estimatorCard || !heroPlaceholder) return;
+        estimatorModal.classList.remove('active');
+        document.body.style.overflow = ''; // restore background scroll
+        
+        // Move the estimator card back to the hero grid
+        heroPlaceholder.parentNode.insertBefore(estimatorCard, heroPlaceholder);
+    }
+    
+    // Make open & close functions available globally for button triggers
+    window.openEstimatorModal = openEstimatorModal;
+    window.closeEstimatorModal = closeEstimatorModal;
+
+    // Auto open after 5 seconds (5000ms)
+    if (estimatorCard && estimatorModal) {
+        modalTimer = setTimeout(openEstimatorModal, 5000);
+        
+        // Close modal button event
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeEstimatorModal);
+        }
+        
+        // Close on clicking overlay outside the container
+        estimatorModal.addEventListener('click', (e) => {
+            if (e.target === estimatorModal) {
+                closeEstimatorModal();
+            }
+        });
+    }
+
     window.scrollToEstimator = function (bhkValue) {
         // Pre-select service type based on trigger configuration value
         if (serviceSelect) {
@@ -280,19 +343,31 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.serviceType = serviceSelect.value;
         }
 
-        // Smooth scroll to estimator card
-        const targetElement = document.getElementById('estimatorCard');
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Focus on input step to encourage completion
+        // Open modal or scroll
+        if (estimatorModal && modalPlaceholder) {
+            openEstimatorModal();
             setTimeout(() => {
                 if (currentStep === 1) {
                     nameInput.focus();
                 } else {
                     goToStep(3);
                 }
-            }, 800);
+            }, 500);
+        } else {
+            // Smooth scroll to estimator card fallback
+            const targetElement = document.getElementById('estimatorCard');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Focus on input step to encourage completion
+                setTimeout(() => {
+                    if (currentStep === 1) {
+                        nameInput.focus();
+                    } else {
+                        goToStep(3);
+                    }
+                }, 800);
+            }
         }
     };
 
