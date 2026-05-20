@@ -371,8 +371,8 @@ img {
     margin-bottom: 1.5rem;
 }
 
-.hero-content h1 span.gradient-text {
-    background: linear-gradient(135deg, #f97316 0%, #eab308 100%);
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -1737,6 +1737,9 @@ img {
     .section-title {
         font-size: 2rem;
     }
+    .packages-main-heading {
+        font-size: 1.8rem;
+    }
     .usp-strip-grid, .stats-grid, .packages-grid, .offer-grid, .estimator-grid, .timeline-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1768,46 +1771,48 @@ img {
 .packages-section-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 1.5rem;
     margin-bottom: 2.5rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.packages-sec-title {
+.packages-sec-title-group {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .packages-sec-badge {
-    font-family: var(--font-header);
-    color: var(--secondary);
-    font-size: 0.95rem;
+    align-self: flex-start;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 1px;
-    position: relative;
-    padding-left: 2.5rem;
-    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.packages-sec-badge::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2rem;
-    height: 2px;
-    background-color: var(--secondary);
+.packages-main-heading {
+    font-family: var(--font-header);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--navy-text);
+    margin: 0;
+    line-height: 1.2;
 }
 
 .packages-sec-desc {
     font-family: var(--font-body);
-    color: var(--text-main);
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 450px;
+    line-height: 1.5;
 }
 
 .price-cards-grid {
