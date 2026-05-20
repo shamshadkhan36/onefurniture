@@ -230,30 +230,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. WHATSAPP REDIRECTION BUILDER
     // ==========================================
     function redirectToWhatsApp(data) {
-        let fullMessage = `*NEW INTERIOR ENQUIRY* 📥\n`;
+        let fullMessage = `*NEW INTERIOR ENQUIRY*\n`;
         fullMessage += `*The One Furniture & Interior Solutions*\n\n`;
-        fullMessage += `Hi The One Furniture Team! 👋 I've filled out your enquiry form on the website and would love to connect for a detailed estimate.\n\n`;
+        fullMessage += `Hi The One Furniture Team! I've filled out your enquiry form on the website and would love to connect for a detailed estimate.\n\n`;
         
-        fullMessage += `*📌 CLIENT INFORMATION*\n`;
-        fullMessage += `• *Name:* ${data.name}\n`;
+        fullMessage += `*CLIENT INFORMATION*\n`;
+        fullMessage += `- Name: ${data.name}\n`;
         if (data.phone && data.phone !== 'Shared on Chat') {
-            fullMessage += `• *Phone:* ${data.phone}\n`;
+            fullMessage += `- Phone: ${data.phone}\n`;
         }
-        fullMessage += `• *Location:* ${data.city}`;
+        fullMessage += `- Location: ${data.city}`;
         if (data.pincode && data.pincode !== 'N/A') {
             fullMessage += ` (Pincode: ${data.pincode})`;
         }
         fullMessage += `\n\n`;
         
-        fullMessage += `*📐 PROJECT DETAILS*\n`;
-        fullMessage += `• *Service Type:* ${data.serviceType}\n`;
-        fullMessage += `• *Timeline/Scope:* ${data.timeline}\n\n`;
+        fullMessage += `*PROJECT DETAILS*\n`;
+        fullMessage += `- Service Type: ${data.serviceType}\n`;
+        fullMessage += `- Timeline/Scope: ${data.timeline}\n\n`;
         
         fullMessage += `---\n`;
         fullMessage += `Please share the estimate and guide me step-by-step for:\n`;
-        fullMessage += `✔ *Design Planning*\n`;
-        fullMessage += `✔ *Material Specifications*\n`;
-        fullMessage += `✔ *Budget Options*\n\n`;
+        fullMessage += `- Design Planning\n`;
+        fullMessage += `- Material Specifications\n`;
+        fullMessage += `- Budget Options\n\n`;
         fullMessage += `Thank you! I look forward to your reply.`;
 
         const encodedText = encodeURIComponent(fullMessage);
