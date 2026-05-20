@@ -1,261 +1,358 @@
-/**
- * One Furniture — Main JavaScript
- * Theme: TheOneDesign.co Minimalist Style
- */
+/* ======================================================
+   THE ONE FURNITURE — Premium Redesign JavaScript
+   ====================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* =============================================
-       NAVBAR SCROLL EFFECT
-       ============================================= */
-    const navbar = document.querySelector('.navbar');
+    // ==========================================
+    // 1. NAVBAR SCROLL EFFECT & MOBILE MENU
+    // ==========================================
+    const navbar = document.getElementById('mainNavbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksContainer = document.querySelector('.nav-links');
 
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
-
-    /* =============================================
-       FULLSCREEN OVERLAY MENU
-       ============================================= */
-    const menuToggle = document.getElementById('menuToggle');
-    const closeMenu = document.getElementById('closeMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-
-    const openMenu = () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeMobileMenu = () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    };
-
-    if (menuToggle) menuToggle.addEventListener('click', openMenu);
-    if (closeMenu) closeMenu.addEventListener('click', closeMobileMenu);
-
-    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeMobileMenu();
-    });
-
-
-    /* =============================================
-       SCROLL REVEAL ANIMATIONS
-       ============================================= */
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                revealObserver.unobserve(entry.target); // fire once
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
-    revealEls.forEach(el => revealObserver.observe(el));
-
-
-    /* =============================================
-       SCROLL INDICATOR
-       ============================================= */
-    const scrollIndicator = document.getElementById('scrollIndicator');
-
-    if (scrollIndicator) {
-        // Click scrolls back to top
-        scrollIndicator.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        scrollIndicator.style.cursor = 'pointer';
-
-        // Hide when at the very top
-        window.addEventListener('scroll', () => {
-            if (window.scrollY < 300) {
-                scrollIndicator.classList.add('hidden');
+    // Simple mobile menu toggle
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinksContainer.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+                navLinksContainer.style.display = 'flex';
+                navLinksContainer.style.flexDirection = 'column';
+                navLinksContainer.style.position = 'absolute';
+                navLinksContainer.style.top = '100%';
+                navLinksContainer.style.left = '0';
+                navLinksContainer.style.width = '100%';
+                navLinksContainer.style.backgroundColor = 'white';
+                navLinksContainer.style.padding = '1.5rem';
+                navLinksContainer.style.borderBottom = '1px solid var(--border-light)';
+                navLinksContainer.style.boxShadow = 'var(--shadow-md)';
             } else {
-                scrollIndicator.classList.remove('hidden');
+                icon.className = 'fa-solid fa-bars';
+                navLinksContainer.style.display = '';
             }
         });
-
-        // Initial state
-        scrollIndicator.classList.add('hidden');
     }
 
+    // ==========================================
+    // 2. HERO MULTI-STEP FORM LOGIC
+    // ==========================================
+    const form = document.getElementById('heroMultistepForm');
+    const steps = document.querySelectorAll('.form-step');
+    const dots = document.querySelectorAll('.step-dot');
+    const progressLine = document.getElementById('stepProgress');
+    const secureTag = document.getElementById('secureTag');
+    const stepIndicator = document.getElementById('stepIndicator');
+    const successView = document.getElementById('formSuccessView');
+    const leadSummary = document.getElementById('leadSummary');
 
-    /* =============================================
-       SMOOTH SCROLL FOR ANCHOR LINKS
-       ============================================= */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+    // Input fields from markup
+    const nameInput = document.getElementById('fullName');
+    const phoneInput = document.getElementById('phoneNumber');
+    const whatsappCheckbox = document.getElementById('whatsappUpdates');
+    const cityInput = document.getElementById('formCity');
+    const pincodeInput = document.getElementById('formPincode');
+    const serviceSelect = document.getElementById('formServiceType');
+    const budgetSelect = document.getElementById('formEstimatedBudget');
+    const timelineSelect = document.getElementById('formPossessionTimeline');
 
-            const targetEl = document.querySelector(targetId);
-            if (targetEl) {
-                e.preventDefault();
-                const navHeight = navbar ? navbar.offsetHeight : 0;
-                const offsetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                window.scrollTo({ top: offsetPos, behavior: 'smooth' });
-                closeMobileMenu();
-            }
-        });
+    let currentStep = 1;
+    let formData = {
+        name: '',
+        phone: '',
+        whatsapp: true,
+        city: '',
+        pincode: '',
+        serviceType: '',
+        budgetRange: '',
+        timeline: ''
+    };
+
+    // Step 1: Next Action
+    document.getElementById('btnNext1').addEventListener('click', () => {
+        if (validateStep1()) {
+            formData.name = nameInput.value.trim();
+            formData.phone = phoneInput.value.trim();
+            formData.whatsapp = whatsappCheckbox.checked;
+            goToStep(2);
+        }
     });
 
+    // Step 2: Actions
+    document.getElementById('btnPrev2').addEventListener('click', () => goToStep(1));
+    document.getElementById('btnNext2').addEventListener('click', () => {
+        if (validateStep2()) {
+            formData.city = cityInput.value.trim();
+            formData.pincode = pincodeInput.value.trim();
+            goToStep(3);
+        }
+    });
 
+    // Step 3: Actions
+    document.getElementById('btnPrev3').addEventListener('click', () => goToStep(2));
+    document.getElementById('btnNext3').addEventListener('click', () => {
+        if (validateStep3()) {
+            formData.serviceType = serviceSelect.value;
+            formData.budgetRange = budgetSelect.value;
+            goToStep(4);
+        }
+    });
 
-    /* =============================================
-       FAQ ACCORDION
-       ============================================= */
-    document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const item = btn.closest('.faq-item');
-            const isOpen = item.classList.contains('open');
+    // Step 4: Actions
+    document.getElementById('btnPrev4').addEventListener('click', () => goToStep(3));
 
-            // Close all other open items
-            document.querySelectorAll('.faq-item.open').forEach(openItem => {
-                openItem.classList.remove('open');
-                openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    // Form Submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (validateStep4()) {
+            formData.timeline = timelineSelect.value;
+
+            // Show Success View
+            form.style.display = 'none';
+            stepIndicator.style.display = 'none';
+            secureTag.style.display = 'none';
+            successView.style.display = 'block';
+
+            // Fill Lead Summary Box
+            leadSummary.innerHTML = `
+                <div><strong>Name:</strong> ${formData.name}</div>
+                <div><strong>Location:</strong> ${formData.city} (Pincode: ${formData.pincode})</div>
+                <div><strong>Type of Service:</strong> ${formData.serviceType}</div>
+                <div><strong>Possession Timeline:</strong> ${formData.timeline}</div>
+            `;
+
+            // Set up WhatsApp button action
+            const whatsappBtn = document.getElementById('btnWhatsAppRedirect');
+            whatsappBtn.addEventListener('click', () => {
+                redirectToWhatsApp(formData);
+            });
+        }
+    });
+
+    // Step navigation transitions
+    function goToStep(stepNum) {
+        steps.forEach(step => step.classList.remove('active'));
+        const targetStep = document.querySelector(`.form-step[data-step="${stepNum}"]`);
+        if (targetStep) targetStep.classList.add('active');
+
+        // Update Dots
+        dots.forEach(dot => {
+            const dotStep = parseInt(dot.dataset.step);
+            dot.classList.remove('active', 'completed');
+            if (dotStep === stepNum) {
+                dot.classList.add('active');
+            } else if (dotStep < stepNum) {
+                dot.classList.add('completed');
+            }
+        });
+
+        // Update Progress Bar
+        const percent = ((stepNum - 1) / 3) * 100;
+        progressLine.style.width = `${percent}%`;
+        currentStep = stepNum;
+    }
+
+    // Step Validations
+    function validateStep1() {
+        const nameVal = nameInput.value.trim();
+        const phoneVal = phoneInput.value.trim();
+
+        if (nameVal.length < 2) {
+            alert('Please enter your full name.');
+            nameInput.focus();
+            return false;
+        }
+
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phoneVal)) {
+            alert('Please enter a valid 10-digit mobile number.');
+            phoneInput.focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateStep2() {
+        const cityVal = cityInput.value.trim();
+        const pincodeVal = pincodeInput.value.trim();
+
+        if (cityVal.length < 2) {
+            alert('Please enter your city.');
+            cityInput.focus();
+            return false;
+        }
+
+        const pinRegex = /^[0-9]{6}$/;
+        if (!pinRegex.test(pincodeVal)) {
+            alert('Please enter a valid 6-digit pincode.');
+            pincodeInput.focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    function validateStep3() {
+        if (!serviceSelect.value) {
+            alert('Please select a type of service.');
+            serviceSelect.focus();
+            return false;
+        }
+        if (!budgetSelect.value) {
+            alert('Please select your estimated budget range.');
+            budgetSelect.focus();
+            return false;
+        }
+        return true;
+    }
+
+    // Validation for Step 4
+    function validateStep4() {
+        if (!timelineSelect.value) {
+            alert('Please select your possession timeline.');
+            timelineSelect.focus();
+            return false;
+        }
+        return true;
+    }
+
+    // ==========================================
+    // 3. WHATSAPP REDIRECTION BUILDER
+    // ==========================================
+    function redirectToWhatsApp(data) {
+        let fullMessage = `*NEW INTERIOR ENQUIRY* 📥\n`;
+        fullMessage += `*The One Furniture & Interior Solutions*\n\n`;
+        fullMessage += `Hi The One Furniture Team! 👋 I've filled out your enquiry form on the website and would love to connect for a detailed estimate.\n\n`;
+        
+        fullMessage += `*📌 CLIENT INFORMATION*\n`;
+        fullMessage += `• *Name:* ${data.name}\n`;
+        if (data.phone && data.phone !== 'Shared on Chat') {
+            fullMessage += `• *Phone:* ${data.phone}\n`;
+        }
+        fullMessage += `• *Location:* ${data.city}`;
+        if (data.pincode && data.pincode !== 'N/A') {
+            fullMessage += ` (Pincode: ${data.pincode})`;
+        }
+        fullMessage += `\n\n`;
+        
+        fullMessage += `*📐 PROJECT DETAILS*\n`;
+        fullMessage += `• *Service Type:* ${data.serviceType}\n`;
+        fullMessage += `• *Timeline/Scope:* ${data.timeline}\n\n`;
+        
+        fullMessage += `---\n`;
+        fullMessage += `Please share the estimate and guide me step-by-step for:\n`;
+        fullMessage += `✔ *Design Planning*\n`;
+        fullMessage += `✔ *Material Specifications*\n`;
+        fullMessage += `✔ *Budget Options*\n\n`;
+        fullMessage += `Thank you! I look forward to your reply.`;
+
+        const encodedText = encodeURIComponent(fullMessage);
+        const whatsappNumber = '919309558584';
+        const url = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+        window.open(url, '_blank');
+    }
+
+    // ==========================================
+    // 4. CALCULATOR & PACKAGE BUTTONS SCROLLER
+    // ==========================================
+    window.scrollToEstimator = function (bhkValue) {
+        // Pre-select service type based on trigger configuration value
+        if (serviceSelect) {
+            if (bhkValue.includes('BHK') || bhkValue.includes('Villa') || bhkValue.includes('Full Home')) {
+                serviceSelect.value = 'Full Home Interior';
+            } else if (bhkValue.includes('Kitchen')) {
+                serviceSelect.value = 'Modular Kitchen';
+            } else if (bhkValue.includes('Wardrobe')) {
+                serviceSelect.value = 'Wardrobe Design';
+            } else {
+                serviceSelect.value = 'Full Home Interior';
+            }
+            formData.serviceType = serviceSelect.value;
+        }
+
+        // Smooth scroll to estimator card
+        const targetElement = document.getElementById('estimatorCard');
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Focus on input step to encourage completion
+            setTimeout(() => {
+                if (currentStep === 1) {
+                    nameInput.focus();
+                } else {
+                    goToStep(3);
+                }
+            }, 800);
+        }
+    };
+
+    // ==========================================
+    // 5. FAQ ACCORDION INTERACTION
+    // ==========================================
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function () {
+            const faqItem = this.closest('.faq-item');
+            const isOpen = faqItem.classList.contains('open');
+
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('open');
+                const answer = item.querySelector('.faq-answer');
+                if (answer) answer.style.maxHeight = '';
             });
 
-            // Toggle the clicked one
+            // Open clicked item if it was closed
             if (!isOpen) {
-                item.classList.add('open');
-                btn.setAttribute('aria-expanded', 'true');
+                faqItem.classList.add('open');
+                const answer = faqItem.querySelector('.faq-answer');
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
             }
         });
     });
 
-    /* =============================================
-       MATERIALS TABLE ACCORDION
-       ============================================= */
-    document.querySelectorAll('.mat-row-toggle').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const group = btn.closest('.mat-row-group');
-            const isOpen = group.classList.contains('open');
+    // ==========================================
+    // 6. CONTACT PAGE FORM SUBMISSION
+    // ==========================================
+    const contactForm = document.getElementById('contactPageForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const contactName = document.getElementById('contactName').value.trim();
+            const contactLocation = document.getElementById('contactLocation').value.trim();
+            const contactBhk = document.getElementById('contactBHK').value;
+            const contactStatus = document.getElementById('contactStatus').value;
+            const contactScope = document.getElementById('contactScope').value.trim();
 
-            document.querySelectorAll('.mat-row-group.open').forEach(g => g.classList.remove('open'));
+            if (!contactName || !contactLocation || !contactBhk || !contactStatus) {
+                alert('Please fill out all required fields.');
+                return;
+            }
 
-            if (!isOpen) group.classList.add('open');
-        });
-    });
+            const data = {
+                name: contactName,
+                phone: 'Shared on Chat',
+                city: contactLocation,
+                pincode: 'N/A',
+                serviceType: contactBhk,
+                budgetRange: 'TBD',
+                timeline: `Status: ${contactStatus} | Scope: ${contactScope}`
+            };
 
-    /* =============================================
-       START ESTIMATOR BUTTON
-       ============================================= */
-    const startEstimatorBtn = document.getElementById('startEstimatorBtn');
-    const configuratorContainer = document.getElementById('configuratorContainer');
-    const heroContent = document.getElementById('heroContent');
-
-    if (startEstimatorBtn && configuratorContainer) {
-        startEstimatorBtn.addEventListener('click', () => {
-            configuratorContainer.style.display = 'block';
-            startEstimatorBtn.style.display = 'none';
-            if (heroContent) heroContent.style.display = 'none';
+            redirectToWhatsApp(data);
         });
     }
 
 });
-
-
-
-/* ===================== CONFIGURATOR APP LOGIC ===================== */
-
-const userConfig = {
-    type: '',
-    budget: '',
-    rate: 0,
-    fee: 0,
-    style: '',
-    rooms: '',
-    area: 0
-};
-
-let currentStep = 1;
-const totalSteps = 6;
-
-function updateProgress() {
-    const progress = (currentStep / totalSteps) * 100;
-    document.getElementById('config-progress').style.width = progress + '%';
-}
-
-function showStep(step) {
-    document.querySelectorAll('.config-step').forEach(el => el.classList.remove('active'));
-    document.getElementById('step-' + step).classList.add('active');
-    currentStep = step;
-    updateProgress();
-}
-
-function nextStep(step) {
-    showStep(step + 1);
-}
-
-function selectConfig(key, value, step, el) {
-    userConfig[key] = value;
-    
-    // Handle specific budget logic
-    if (key === 'budget' && el) {
-        userConfig.rate = parseInt(el.getAttribute('data-rate'));
-        userConfig.fee = parseInt(el.getAttribute('data-fee'));
-    }
-
-    let targetEl = el;
-    if (!targetEl && typeof event !== 'undefined') {
-        targetEl = event.target;
-        while (targetEl && !targetEl.classList.contains('option-card') && targetEl !== document.body) {
-            targetEl = targetEl.parentElement;
-        }
-    }
-
-    // Highlight selected card
-    if (targetEl && targetEl.parentElement) {
-        const siblings = targetEl.parentElement.children;
-        for(let sibling of siblings) {
-            sibling.classList.remove('selected');
-        }
-        targetEl.classList.add('selected');
-    }
-
-    // Automatically go to next step
-    setTimeout(() => {
-        nextStep(step);
-    }, 400); // short delay for visual feedback
-}
-
-
-
-function calculateResult() {
-    const areaInput = document.getElementById('area-input').value;
-    if (!areaInput || areaInput < 100) {
-        alert('Please enter a valid area starting from 100 SqFt.');
-        return;
-    }
-    
-    // Validate previous steps
-    if (!userConfig.type || !userConfig.budget || !userConfig.style) {
-        alert('Please complete all previous steps before generating an estimate.');
-        showStep(1);
-        return;
-    }
-
-    userConfig.area = parseInt(areaInput);
-    
-    // document.getElementById('out-budget').innerText = userConfig.budget;
-
-    showStep(6);
-}
-
-function sendWhatsApp() {
-    const name = document.getElementById('cust-name').value.trim() || 'Valued Customer';
-    const loc = document.getElementById('cust-loc').value.trim() || 'Not Provided';
-    
-    const message = `Hi 👋 Thank you for contacting The One Furniture\n\nWe have received your requirements ✨\n\nOur team will guide you step-by-step for:\n✅ Design\n✅ Material\n✅ Budget planning\n\nYour Selection:\nName: ${name}\n📍 Location: ${loc}\n📏 Area: ${userConfig.area} sqft (${userConfig.rooms})\nBudget Range: ${userConfig.budget}\nDesign Style: ${userConfig.style}\nProject Type: ${userConfig.type}\n\nYou will receive a detailed estimate shortly 📋\n\n🔥 "Clarity + Control + Convenience"\n\nYou will get connected shortly`;
-
-    const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = "+919309558584";
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-}

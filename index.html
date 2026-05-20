@@ -4,14 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The One Furniture | Premium Interior Design Company</title>
-    <meta name="description"
-        content="The One Furniture — a premium interior design company crafting timeless, luxurious spaces. We design residential, commercial, and hospitality interiors that inspire.">
-    <!-- Google Fonts — Playfair Display + Lato -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <title>The One Furniture | Best Interior Designers in Vasai</title>
+    <meta name="description" content="The One Furniture — Premium interior designers in Vasai. Crafting beautiful, custom, and budget-friendly modular kitchen, wardrobes, living room, and turnkey designs.">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -20,709 +15,844 @@
 <body>
 
     <!-- ===================== NAVBAR ===================== -->
-    <header class="navbar">
+    <header class="navbar" id="mainNavbar">
         <div class="container nav-container">
-            <a href="#" class="logo" style="display: block; width: 170px; height: 42px; overflow: hidden; position: relative;">
-                <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 42px; width: auto; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.05);">
+            <a href="#" class="logo-container" id="navLogo">
+                <!-- Image Logo -->
+                <img src="logo.jpeg" alt="The One Furniture Logo" class="logo-icon" style="object-fit: contain; border-radius: var(--radius-sm);">
+                <div class="logo-text">
+                    <span class="logo-title">THE ONE</span>
+                    <span class="logo-sub">Furniture</span>
+                </div>
             </a>
             <nav class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#packages">Packages</a>
                 <a href="#services">Services</a>
-                <a href="#about">Studio</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#process">Process</a>
+                <a href="#estimate">Estimate</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
             </nav>
-            <div class="nav-actions">
-                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-                    <i class="fa-solid fa-bars"></i> Menu
-                </button>
-            </div>
+            <a href="#contact" class="btn btn-primary" id="quoteNavBtn">Get Free Quote</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <!-- ===================== FULLSCREEN OVERLAY MENU ===================== -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <span class="mobile-menu-logo" style="display: inline-block; width: 160px; height: 46px; overflow: hidden; background: white; border-radius: 4px; position: relative;">
-                <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 46px; width: auto;">
-            </span>
-            <button class="close-menu" id="closeMenu" aria-label="Close menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="home">
+        <!-- Split backgrounds -->
+        <div class="hero-bg-img">
+            <img src="images/hero_luxury_interior.png" alt="Luxury Living Room Interior Design">
         </div>
-        <nav class="mobile-nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">Studio</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="mobile-menu-footer">
-            <p>© 2026 The One Furniture</p>
-            <div class="mobile-menu-social">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Pinterest</a>
-            </div>
-        </div>
-    </div>
+        <div class="hero-bg-overlay"></div>
 
-    <!-- ===================== CONFIGURATOR APP ===================== -->
-    <section class="hero configurator-hero">
-        <div style="position: absolute; top: 85px; left: 0; width: 100%; background: var(--accent); color: var(--white); padding: 10px 0; font-size: 0.85rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; z-index: 10; border-bottom: var(--border);">
-            <marquee behavior="scroll" direction="left" scrollamount="6">Enjoy 10% off on site visit use code Welcome10</marquee>
-        </div>
-        <div class="hero-image">
-            <div class="hero-overlay"></div>
-            <img src="images/hero_luxury_interior.png" alt="Luxury Interior">
-        </div>
-
-        <div id="heroContent" class="hero-content">
-            <div class="hero-eyebrow">Premium Interior Design Studio</div>
-            <h1>Elevate Your<br><em>Living</em> Space</h1>
-            <p class="hero-description">
-                Experience the art of fine living. We curate bespoke interiors that seamlessly blend elegance, comfort, and unparalleled craftsmanship.
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#services" class="link-btn">Explore Services</a>
-            </div>
-        </div>
-
-        <div class="estimator-cta-wrap">
-            <div class="estimator-pulse-ring"></div>
-            <div class="estimator-pulse-ring estimator-pulse-ring--delay"></div>
-            <button id="startEstimatorBtn" class="estimator-cta-btn">
-                <span class="estimator-btn-icon"><i class="fa-solid fa-calculator"></i></span>
-                <span class="estimator-btn-text">
-                    <span class="estimator-btn-label">FREE Estimate</span>
-                    <span class="estimator-btn-sub">Get your interior cost now →</span>
-                </span>
-            </button>
-        </div>
-
-        <div class="container configurator-wrapper">
-            <div class="configurator-container" id="configuratorContainer" style="display: none;">
-                <div class="configurator-header">
-                    <h2>Interior Design Estimator</h2>
-                    <p>Customize your space in 5 simple steps</p>
-                    <div class="progress-bar">
-                        <div class="progress" id="config-progress" style="width: 16%;"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Hero Content (Left) -->
+                <div class="hero-content-wrapper">
+                    <div class="hero-content">
+                        <h1>Interior Designers in<br><span class="gradient-text">Vasai</span></h1>
+                        <p class="hero-description" style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 2rem; max-width: 500px;">
+                            We design homes that reflect your identity. The One Furniture brings you premium, customized, and budget-friendly interior designs with complete transparent pricing and execution.
+                        </p>
                     </div>
                 </div>
 
-                <div class="steps-wrapper">
-                    <!-- Step 1: Project Type -->
-                    <div class="config-step active" id="step-1">
-                        <h3>1. Select Project Type</h3>
-                        <div class="options-grid">
-                            <div class="option-card" onclick="selectConfig('type', 'Furniture', 1, this)">
-                                <i class="fa-solid fa-couch"></i><span>Furniture</span>
-                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on fabricating and installing specific items.</p>
-                            </div>
-                            <div class="option-card" onclick="selectConfig('type', 'Interior', 1, this)">
-                                <i class="fa-solid fa-paint-roller"></i><span>Interiors</span>
-                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on designing and finishing the aesthetics of a space.</p>
-                            </div>
-                            <div class="option-card" onclick="selectConfig('type', 'Turnkey', 1, this)">
-                                <i class="fa-solid fa-house-chimney"></i><span>Turnkey</span>
-                                <p class="option-desc" style="font-size:0.85rem; color:#666; margin-top:8px; line-height:1.4;">Focused on managing the entire project from shell to handover.</p>
-                            </div>
-                        </div>
+                <!-- Designs for Every Budget Multi-Step Form (Right) -->
+                <div class="hero-form-card" id="estimatorCard">
+                    <div class="pill-badge">Free Consultation</div>
+                    <h2>Designs for Every Budget</h2>
+
+                    <!-- Step Dots Indicator -->
+                    <div class="step-indicator" id="stepIndicator">
+                        <div class="step-indicator-progress" id="stepProgress"></div>
+                        <div class="step-dot active" data-step="1">1</div>
+                        <div class="step-dot" data-step="2">2</div>
+                        <div class="step-dot" data-step="3">3</div>
+                        <div class="step-dot" data-step="4">4</div>
                     </div>
 
-                    <!-- Step 2: Budget Range -->
-                    <div class="config-step" id="step-2">
-                        <h3>2. Select Budget Range</h3>
-                        <div class="pricing-grid" style="margin-top:2rem;">
-                            <!-- Standard -->
-                            <div class="price-card option-card" style="cursor:pointer; border-radius:0;" data-rate="1500" data-fee="200" onclick="selectConfig('budget', 'Standard', 2, this)">
-                                <div class="price-card-header">
-                                    <span class="package-tag">Standard</span>
-                                    <div class="price-amount">₹1,500 <span>/sqft</span></div>
+                    <form id="heroMultistepForm">
+                        <!-- Step 1: Contact Details -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" class="form-input" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <div class="phone-field-wrapper">
+                                    <div class="phone-prefix">IN +91</div>
+                                    <input type="tel" id="phoneNumber" class="form-input" placeholder="98765 43210" pattern="[0-9]{10}" required>
                                 </div>
-                                <ul class="price-features">
-                                    <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×2, 2×4 (up to ₹40/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> Cement putty + Tractor Emulsion paint</li>
-                                    <li><i class="fa-solid fa-check"></i> Gypsum corner ceiling design</li>
-                                    <li><i class="fa-solid fa-check"></i> Normal COB lights & panel switches</li>
-                                    <li><i class="fa-solid fa-check"></i> Wallpaper / texture / wall moulding</li>
-                                    <li><i class="fa-solid fa-check"></i> MR Grade ply with laminate finish</li>
-                                    <li><i class="fa-solid fa-check"></i> Ozone / Ebco fittings</li>
-                                    <li><i class="fa-solid fa-check"></i> Hollow core doors with laminate</li>
-                                    <li><i class="fa-solid fa-check"></i> Granite kitchen top (₹100/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> Mild Steel railings</li>
-                                </ul>
                             </div>
-
-                            <!-- Affordable -->
-                            <div class="price-card featured option-card" style="cursor:pointer; border-radius:0;" data-rate="2000" data-fee="275" onclick="selectConfig('budget', 'Affordable', 2, this)">
-                                <div class="price-card-header">
-                                    <span class="package-tag">Affordable</span>
-                                    <span class="popular-badge">Most Popular</span>
-                                    <div class="price-amount">₹2,000 <span>/sqft</span></div>
-                                </div>
-                                <ul class="price-features">
-                                    <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×4, 2.5×5 (up to ₹60/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> Acrylic putty smooth finish + Premium Emulsion</li>
-                                    <li><i class="fa-solid fa-check"></i> POP complete ceiling with coves</li>
-                                    <li><i class="fa-solid fa-check"></i> Profile lights, colour switches</li>
-                                    <li><i class="fa-solid fa-check"></i> PVC / WPC / Charcoal wall panels</li>
-                                    <li><i class="fa-solid fa-check"></i> BWR / HDHMR ply with polish acrylic finish</li>
-                                    <li><i class="fa-solid fa-check"></i> Hettich / Godrej fittings</li>
-                                    <li><i class="fa-solid fa-check"></i> Solid core flush door with veneer</li>
-                                    <li><i class="fa-solid fa-check"></i> Granite / Tiles kitchen top (₹120–150/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> S.S 304 stainless steel railings</li>
-                                </ul>
+                            <div class="whatsapp-banner" id="whatsappBannerToggle">
+                                <input type="checkbox" id="whatsappUpdates" checked>
+                                <label for="whatsappUpdates" style="margin-bottom:0; cursor:pointer;"><i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; vertical-align: middle; margin-right: 4px;"></i> Get updates on WhatsApp</label>
                             </div>
+                            <button type="button" class="btn btn-primary" style="width:100%;" id="btnNext1">Next <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
 
-                            <!-- Premium -->
-                            <div class="price-card option-card" style="cursor:pointer; border-radius:0;" data-rate="2500" data-fee="350" onclick="selectConfig('budget', 'Premium', 2, this)">
-                                <div class="price-card-header">
-                                    <span class="package-tag">Premium</span>
-                                    <div class="price-amount">₹2,500 <span>/sqft</span></div>
-                                </div>
-                                <ul class="price-features">
-                                    <li><i class="fa-solid fa-check"></i> Vitrified 4×4, 4×6 or Italian Marble (+₹400/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> POP punning + Royal Aspire paint</li>
-                                    <li><i class="fa-solid fa-check"></i> Multi-layer POP ceiling with full design</li>
-                                    <li><i class="fa-solid fa-check"></i> Track lights, designer black switches</li>
-                                    <li><i class="fa-solid fa-check"></i> Wooden panelling feature walls</li>
-                                    <li><i class="fa-solid fa-check"></i> BWP Marine ply with Duco / PU finish</li>
-                                    <li><i class="fa-solid fa-check"></i> Hafele / Blum fittings, designer handles</li>
-                                    <li><i class="fa-solid fa-check"></i> Solid core panel door + veneer/skin + smart lock</li>
-                                    <li><i class="fa-solid fa-check"></i> Quartz kitchen top (₹200–250/sqft)</li>
-                                    <li><i class="fa-solid fa-check"></i> Toughened glass railings (₹1200/rft)</li>
-                                </ul>
+                        <!-- Step 2: City & Pincode -->
+                        <div class="form-step" data-step="2">
+                            <div class="form-group">
+                                <label for="formCity">City</label>
+                                <input type="text" id="formCity" class="form-input" placeholder="Enter your city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formPincode">Pincode</label>
+                                <input type="text" id="formPincode" class="form-input" placeholder="Enter pincode" pattern="[0-9]{6}" required>
+                            </div>
+                            <div class="form-step-actions">
+                                <button type="button" class="btn btn-outline" id="btnPrev2"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                                <button type="button" class="btn btn-primary" id="btnNext2">Next <i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
+
+                        <!-- Step 3: Service Type & Budget -->
+                        <div class="form-step" data-step="3">
+                            <div class="form-group">
+                                <label for="formServiceType">Type of Service</label>
+                                <select id="formServiceType" class="form-input" required style="background: white;">
+                                    <option value="" disabled selected hidden>Select service type</option>
+                                    <option value="Full Home Interior">Full Home Interior</option>
+                                    <option value="Modular Kitchen">Modular Kitchen</option>
+                                    <option value="Bedroom Interior">Bedroom Interior</option>
+                                    <option value="Living Room Interior">Living Room Interior</option>
+                                    <option value="Bathroom Interior">Bathroom Interior</option>
+                                    <option value="Wardrobe Design">Wardrobe Design</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEstimatedBudget">Estimated Budget</label>
+                                <select id="formEstimatedBudget" class="form-input" required style="background: white;">
+                                    <option value="" disabled selected hidden>Select budget range</option>
+                                    <option value="₹5-8 Lakhs">₹5-8 Lakhs</option>
+                                    <option value="₹8-12 Lakhs">₹8-12 Lakhs</option>
+                                    <option value="₹12-15 Lakhs">₹12-15 Lakhs</option>
+                                    <option value="₹15+ Lakhs">₹15+ Lakhs</option>
+                                </select>
+                            </div>
+                            <div class="form-step-actions">
+                                <button type="button" class="btn btn-outline" id="btnPrev3"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                                <button type="button" class="btn btn-primary" id="btnNext3">Next <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Possession Timeline -->
+                        <div class="form-step" data-step="4">
+                            <div class="form-group">
+                                <label for="formPossessionTimeline">Possession Timeline</label>
+                                <select id="formPossessionTimeline" class="form-input" required style="background: white;">
+                                    <option value="" disabled selected hidden>Select timeline</option>
+                                    <option value="Already Taken a possession">Already Taken a possession</option>
+                                    <option value="Within 1 month">Within 1 month</option>
+                                    <option value="Within 1-3 Month">Within 1-3 Month</option>
+                                    <option value="After 3 Month">After 3 Month</option>
+                                    <option value="Not Sure">Not Sure</option>
+                                </select>
+                            </div>
+                            <div class="form-step-actions">
+                                <button type="button" class="btn btn-outline" id="btnPrev4"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                                <button type="submit" class="btn btn-primary" id="btnSubmitForm">Submit Form <i class="fa-solid fa-check"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Form Output -->
+                    <div class="success-view" id="formSuccessView" style="display: none;">
+                        <i class="fa-solid fa-circle-check success-icon"></i>
+                        <h3>Your Preferences Saved!</h3>
+                        <p>Thank you for submitting. Click below to get your budget quote on WhatsApp.</p>
+                        <div class="success-summary-box" id="leadSummary">
+                            <!-- filled by script -->
+                        </div>
+                        <button type="button" class="btn btn-gradient" style="width:100%;" id="btnWhatsAppRedirect">
+                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                        </button>
                     </div>
 
-                    <!-- Step 3: Design Style -->
-                    <div class="config-step" id="step-3">
-                        <h3>3. Select Design Style</h3>
-                        <div class="options-grid styles-grid">
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Modern', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Modern</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Minimal', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Minimal</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Classical', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Classical</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Industrial', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Industrial</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Bohemian', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Bohemian</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('style', 'Other', 3, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Other</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 4: Select Rooms -->
-                    <div class="config-step" id="step-4">
-                        <h3>4. Select Rooms</h3>
-                        <div class="options-grid styles-grid" id="rooms-container">
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Full Home', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Full Home</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Kitchen', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Kitchen</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Hall', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Hall</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Master Bedroom', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Master Bed</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Kids Bedroom', 4, this)">
-                                <div class="style-bg" style="background-image: url('images/kids_bed.png');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Kids Bed</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Guest Bedroom', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Guest Bed</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Bathroom', 4, this)">
-                                <div class="style-bg" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Bathroom</span>
-                            </div>
-                            <div class="option-card style-card" onclick="selectConfig('rooms', 'Balcony', 4, this)">
-                                <div class="style-bg" style="background-image: url('images/balcony.png');"></div>
-                                <div class="style-overlay"></div>
-                                <span>Balcony</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 5: Enter Area -->
-                    <div class="config-step" id="step-5">
-                        <h3>5. Enter Flat Area (sqft)</h3>
-                        <div class="input-container">
-                            <input type="number" id="area-input" placeholder="e.g. 1200" min="100">
-                        </div>
-                        <div class="step-actions">
-                            <button class="btn btn-primary" onclick="calculateResult()">Generate Estimate</button>
-                        </div>
-                    </div>
-
-                    <!-- Step 6: Output -->
-                    <div class="config-step" id="step-6">
-                        <h3>🎉 Your Preferences are Saved!</h3>
-                        <div class="output-container">
-                            <div class="output-row">
-                                <span>Estimated Cost</span>
-                                <h2 style="font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-                                    <span>₹</span> 
-                                    <span style="font-size: 1.1rem; font-family: var(--font-body); font-weight: 500;">Get your personalized estimate via WhatsApp</span>
-                                </h2>
-                                <small>(Material + Labour)</small>
-                            </div>
-
-                        </div>
-                        <div class="whatsapp-prompt-box">
-                            <input type="text" id="cust-name" placeholder="Your Name">
-                            <input type="text" id="cust-loc" placeholder="Your Location">
-                            <button class="btn whatsapp-submit-btn" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Click to Send WhatsApp</button>
-                        </div>
+                    <div class="secure-tag" id="secureTag">
+                        <i class="fa-solid fa-lock"></i> Your information is 100% secure
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== TICKER STRIP ===================== -->
-    <div class="ticker-strip">
-        <div class="ticker-track" id="tickerTrack">
-            <div class="ticker-item"><span class="dot"></span>Residential Design</div>
-            <div class="ticker-item"><span class="dot"></span>Commercial Interiors</div>
-            <div class="ticker-item"><span class="dot"></span>Turnkey Projects</div>
-            <div class="ticker-item"><span class="dot"></span>Space Planning</div>
-            <div class="ticker-item"><span class="dot"></span>3D Visualization</div>
-            <div class="ticker-item"><span class="dot"></span>Renovation & Fit-out</div>
-            <div class="ticker-item"><span class="dot"></span>Hospitality Design</div>
-            <div class="ticker-item"><span class="dot"></span>Custom Furniture</div>
-            <!-- Duplicate for seamless loop -->
-            <div class="ticker-item"><span class="dot"></span>Residential Design</div>
-            <div class="ticker-item"><span class="dot"></span>Commercial Interiors</div>
-            <div class="ticker-item"><span class="dot"></span>Turnkey Projects</div>
-            <div class="ticker-item"><span class="dot"></span>Space Planning</div>
-            <div class="ticker-item"><span class="dot"></span>3D Visualization</div>
-            <div class="ticker-item"><span class="dot"></span>Renovation & Fit-out</div>
-            <div class="ticker-item"><span class="dot"></span>Hospitality Design</div>
-            <div class="ticker-item"><span class="dot"></span>Custom Furniture</div>
-        </div>
-    </div>
-
-    <!-- ===================== WHY CHOOSE US / USP ===================== -->
-    <section class="usp-section section-padding">
+    <!-- ===================== USP ICON STRIP ===================== -->
+    <section class="usp-strip">
         <div class="container">
-            <div class="section-header text-center reveal" style="margin-bottom:3rem;">
-                <div class="section-header-left" style="width:100%;">
-                    <h2>Why Choose Us in Mumbai</h2>
+            <div class="usp-strip-grid">
+                <div class="usp-strip-item">
+                    <div class="usp-strip-icon-box">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="usp-strip-text">
+                        <h3>45 Days Move-In</h3>
+                        <p>Guarantee</p>
+                    </div>
+                </div>
+                <div class="usp-strip-item">
+                    <div class="usp-strip-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="usp-strip-text">
+                        <h3>Flat 10-Year</h3>
+                        <p>Warranty</p>
+                    </div>
+                </div>
+                <div class="usp-strip-item">
+                    <div class="usp-strip-icon-box">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+                    <div class="usp-strip-text">
+                        <h3>No Hidden</h3>
+                        <p>Cost</p>
+                    </div>
                 </div>
             </div>
-            <div class="usp-grid">
-                <div class="usp-card reveal">
-                    <div class="usp-card-img">
-                        <img src="images/usp_inhouse_team.png" alt="In-House Design Team">
-                        <div class="usp-card-img-overlay"></div>
-                        <div class="usp-icon"><i class="fa-solid fa-user-tie"></i></div>
+        </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE US ===================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2>1200+</h2>
+                    <div class="stat-divider"></div>
+                    <p>Delivered Homes</p>
+                </div>
+                <div class="stat-card">
+                    <h2>15+</h2>
+                    <div class="stat-divider"></div>
+                    <p>Interior Designers</p>
+                </div>
+                <div class="stat-card">
+                    <h2>2+</h2>
+                    <div class="stat-divider"></div>
+                    <p>Experience Centres</p>
+                </div>
+                <div class="stat-card">
+                    <h2>4.8/5 <i class="fa-solid fa-star" style="color: #fbbf24; font-size: 1.8rem; vertical-align: middle;"></i></h2>
+                    <div class="stat-divider"></div>
+                    <p>CSAT Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE US IN MUMBAI ===================== -->
+    <section class="section-padding" id="why-choose-us" style="background-color: #ffffff; border-bottom: 1px solid var(--border-light);">
+        <div class="container">
+            <h2 class="team-main-heading" style="text-align: center; margin-bottom: 3.5rem;">Why Choose Us in Mumbai</h2>
+            
+            <div class="why-choose-grid">
+                <!-- Card 1: In-House Team -->
+                <div class="why-choose-card">
+                    <div class="why-choose-img-box">
+                        <img src="images/usp_inhouse_team.png" alt="In-House Team">
+                        <div class="why-choose-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
                     </div>
-                    <div class="usp-card-body">
+                    <div class="why-choose-body">
                         <h3>In-House Team</h3>
                         <p>Industry experience professional interior designer — no outsourcing, full accountability under one roof.</p>
                     </div>
                 </div>
-                <div class="usp-card reveal" style="transition-delay:0.1s;">
-                    <div class="usp-card-img">
+
+                <!-- Card 2: Manufacturing Support -->
+                <div class="why-choose-card">
+                    <div class="why-choose-img-box">
                         <img src="images/usp_manufacturing_unit.png" alt="Manufacturing Support">
-                        <div class="usp-card-img-overlay"></div>
-                        <div class="usp-icon"><i class="fa-solid fa-industry"></i></div>
+                        <div class="why-choose-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
                     </div>
-                    <div class="usp-card-body">
+                    <div class="why-choose-body">
                         <h3>Manufacturing Support</h3>
                         <p>Manufacturing support tie up 50+ — direct from production to your home, zero middlemen.</p>
                     </div>
                 </div>
-                <div class="usp-card reveal" style="transition-delay:0.2s;">
-                    <div class="usp-card-img">
+
+                <!-- Card 3: Streamlined Process -->
+                <div class="why-choose-card">
+                    <div class="why-choose-img-box">
                         <img src="images/usp_middleman_free.png" alt="Streamlined Process">
-                        <div class="usp-card-img-overlay"></div>
-                        <div class="usp-icon"><i class="fa-solid fa-bars-progress"></i></div>
+                        <div class="why-choose-icon">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
                     </div>
-                    <div class="usp-card-body">
+                    <div class="why-choose-body">
                         <h3>Streamlined Process</h3>
                         <p>Experience a hassle-free journey from initial design concept to flawless execution with transparent timelines.</p>
                     </div>
                 </div>
-                <div class="usp-card reveal" style="transition-delay:0.3s;">
-                    <div class="usp-card-img">
+
+                <!-- Card 4: Turnkey Solution -->
+                <div class="why-choose-card">
+                    <div class="why-choose-img-box">
                         <img src="images/usp_turnkey_solution.png" alt="Turnkey Solution">
-                        <div class="usp-card-img-overlay"></div>
-                        <div class="usp-icon"><i class="fa-solid fa-key"></i></div>
+                        <div class="why-choose-icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
                     </div>
-                    <div class="usp-card-body">
+                    <div class="why-choose-body">
                         <h3>Turnkey Solution</h3>
                         <p>Start to end solution for your entire project — concept, design, execution, delivery, all in one place.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ===================== SERVICES ===================== -->
-    <section id="services" class="services section-padding">
+    <!-- ===================== HOMES FOR EVERY BUDGET ===================== -->
+    <section class="section-padding bg-light" id="packages">
         <div class="container">
-            <div class="section-header reveal">
-                <div class="section-header-left">
-                    <span class="section-label">Services Renders</span>
-                    <h2>Our Services</h2>
+            <div class="packages-section-header">
+                <div class="packages-sec-title">
+                    <span class="packages-sec-badge">OUR PACKAGES</span>
                 </div>
-                <p class="section-desc">Two specialised service lines — crafted for your lifestyle and budget.</p>
+                <div class="packages-sec-desc">All-inclusive per sqft rates. No hidden costs.</div>
             </div>
 
-            <div class="services-grid-two-col">
-                <!-- Service 1: Interior Design -->
-                <div class="service-card-detailed reveal">
-                    <div class="service-card-header">
-                        <div class="service-num-large">01</div>
-                        <div>
-                            <span class="service-scope-tag">Residential Only</span>
-                            <h3>Interior Design Services</h3>
-                            <p class="service-scope-sub">Home / Villas / Flats</p>
+            <div class="price-cards-grid">
+                <!-- STANDARD -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <span class="price-card-tier">STANDARD</span>
+                        <div class="price-card-amount">
+                            <span class="currency">₹</span><span class="amount">1,500</span><span class="per-sqft">/sqft onwards</span>
                         </div>
                     </div>
-                    <ul class="service-feature-list">
-                        <li><i class="fa-solid fa-check"></i> Drafting concept to design services</li>
-                        <li><i class="fa-solid fa-check"></i> Space plan to furniture works</li>
-                        <li><i class="fa-solid fa-check"></i> Civil to custom production</li>
-                        <li><i class="fa-solid fa-check"></i> Décor, electric, plumbing, paint, carpentry &amp;
-                            furnishing</li>
-                        <li><i class="fa-solid fa-check"></i> Modular to custom furniture</li>
-                        <li><i class="fa-solid fa-check"></i> End-to-end turnkey solution</li>
+                    <ul class="price-card-features">
+                        <li><i class="fa-solid fa-check check-icon"></i> Vitrified tiles 2x2, 2x4 (up to ₹40/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Cement putty + Tractor Emulsion paint</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Gypsum corner ceiling design</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Normal COB lights & panel switches</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Wallpaper / texture / wall moulding</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> MR Grade ply with laminate finish</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Ozone / Ebco fittings</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Hollow core doors with laminate</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Granite kitchen top (₹100/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Mild Steel railings</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline svc-btn">Get Quote <i
-                            class="fa-solid fa-arrow-right"></i></a>
+                    <div class="price-card-footer">
+                        <button class="btn btn-price-outline" onclick="scrollToEstimator('Full Home Interior')">GET QUOTE</button>
+                    </div>
                 </div>
+
+                <!-- AFFORDABLE -->
+                <div class="price-card featured">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="price-card-header">
+                        <span class="price-card-tier">AFFORDABLE</span>
+                        <div class="price-card-amount">
+                            <span class="currency">₹</span><span class="amount">2,000</span><span class="per-sqft">/sqft onwards</span>
+                        </div>
+                    </div>
+                    <ul class="price-card-features">
+                        <li><i class="fa-solid fa-check check-icon"></i> Vitrified tiles 2x4, 2.5x5 (up to ₹60/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Acrylic putty smooth finish + Premium Emulsion</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> POP complete ceiling with coves</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Profile lights, colour switches</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> PVC / WPC / Charcoal wall panels</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> BWR / HDHMR ply with polish acrylic finish</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Hettich / Godrej fittings</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Solid core flush door with veneer</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Granite / Tiles kitchen top (₹120-150/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> S.S 304 stainless steel railings</li>
+                    </ul>
+                    <div class="price-card-footer">
+                        <button class="btn btn-price-solid" onclick="scrollToEstimator('Full Home Interior')">GET QUOTE</button>
+                    </div>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="price-card">
+                    <div class="price-card-header">
+                        <span class="price-card-tier">PREMIUM</span>
+                        <div class="price-card-amount">
+                            <span class="currency">₹</span><span class="amount">2,500</span><span class="per-sqft">/sqft onwards</span>
+                        </div>
+                    </div>
+                    <ul class="price-card-features">
+                        <li><i class="fa-solid fa-check check-icon"></i> Vitrified 4x4, 4x6 or Italian Marble (+₹400/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> POP punning + Royal Aspire paint</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Multi-layer POP ceiling with full design</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Track lights, designer black switches</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Wooden panelling feature walls</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> BWP Marine ply with Duco / PU finish</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Hafele / Blum fittings, designer handles</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Solid core panel door + veneer/skin + smart lock</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Quartz kitchen top (₹200-250/sqft)</li>
+                        <li><i class="fa-solid fa-check check-icon"></i> Toughened glass railings (₹1200/rft)</li>
+                    </ul>
+                    <div class="price-card-footer">
+                        <button class="btn btn-price-outline" onclick="scrollToEstimator('Full Home Interior')">GET QUOTE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== OUR SERVICES SECTION ===================== -->
+    <section class="section-padding" id="services" style="background-color: white;">
+        <div class="container">
+            <div class="services-section-header">
+                <div class="services-header-left">
+                    <div class="packages-sec-title">
+                        <span class="packages-sec-badge" style="letter-spacing: 1.5px; font-weight: 700;">SERVICES RENDERS</span>
+                    </div>
+                    <h2 class="team-main-heading" style="text-align: left; margin-top: 0.5rem; margin-bottom: 0;">Our Services</h2>
+                </div>
+                <div class="services-header-right">
+                    Two specialised service lines — crafted for your lifestyle and budget.
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Interior Design Services -->
+                <div class="service-card">
+                    <div class="service-bg-num">01</div>
+                    <div class="service-card-header">
+                        <span class="service-badge">RESIDENTIAL ONLY</span>
+                        <h3>Interior Design Services</h3>
+                        <p class="service-subtitle">HOME / VILLAS / FLATS</p>
+                    </div>
+                    <ul class="service-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Drafting concept to design services</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Space plan to furniture works</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Civil to custom production</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Décor, electric, plumbing, paint, carpentry & furnishing</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Modular to custom furniture</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>End-to-end turnkey solution</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-quote">GET QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
                 <!-- Service 2: Modular Kitchen & Wardrobe -->
-                <div class="service-card-detailed reveal" style="transition-delay:0.1s;">
+                <div class="service-card">
+                    <div class="service-bg-num">02</div>
                     <div class="service-card-header">
-                        <div class="service-num-large">02</div>
-                        <div>
-                            <span class="service-scope-tag">B2C Direct</span>
-                            <h3>Modular Kitchen &amp; Wardrobe</h3>
-                            <p class="service-scope-sub">Factory-Direct Modular</p>
+                        <span class="service-badge">B2C DIRECT</span>
+                        <h3>Modular Kitchen & Wardrobe</h3>
+                        <p class="service-subtitle">FACTORY-DIRECT MODULAR</p>
+                    </div>
+                    <ul class="service-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Custom made modular kitchen & wardrobe services</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>Within 7-10 days quick delivery</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span>PU, Laminate & Acrylic — multiple finish options</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-quote">GET QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GET AN ESTIMATE (CALCULATORS) ===================== -->
+    <section class="section-padding bg-light" id="estimate">
+        <div class="container">
+            <div class="text-center">
+                <div class="pill-badge"><i class="fa-solid fa-calculator"></i> Quick Cost Calculator</div>
+                <h2 class="section-title">Get an <span>Estimate</span> for Your Home</h2>
+                <p class="section-subtitle">Calculate the cost for your dream interior in minutes with our instant estimator</p>
+            </div>
+
+            <div class="estimator-grid">
+                <!-- Full Home -->
+                <div class="estimate-card">
+                    <div class="estimate-icon-box">
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </div>
+                    <h3>Full Home</h3>
+                    <p class="estimate-subtitle">Complete interior solutions for your entire home</p>
+                    <ul class="estimate-features">
+                        <li><i class="fa-solid fa-check"></i> All rooms included</li>
+                        <li><i class="fa-solid fa-check"></i> Best value package</li>
+                    </ul>
+                    <button class="btn btn-gradient" onclick="scrollToEstimator('Villa / Other')">
+                        <i class="fa-solid fa-calculator"></i> Calculate Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="estimate-card">
+                    <div class="estimate-icon-box">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Kitchen</h3>
+                    <p class="estimate-subtitle">Modular kitchen designs tailored to your needs</p>
+                    <ul class="estimate-features">
+                        <li><i class="fa-solid fa-check"></i> Modular designs</li>
+                        <li><i class="fa-solid fa-check"></i> Premium finishes</li>
+                    </ul>
+                    <button class="btn btn-gradient" onclick="scrollToEstimator('2 BHK')">
+                        <i class="fa-solid fa-calculator"></i> Calculate Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Wardrobe -->
+                <div class="estimate-card">
+                    <div class="estimate-icon-box">
+                        <i class="fa-solid fa-door-closed"></i>
+                    </div>
+                    <h3>Wardrobe</h3>
+                    <p class="estimate-subtitle">Custom wardrobe solutions for every room</p>
+                    <ul class="estimate-features">
+                        <li><i class="fa-solid fa-check"></i> Custom designs</li>
+                        <li><i class="fa-solid fa-check"></i> Space optimization</li>
+                    </ul>
+                    <button class="btn btn-gradient" onclick="scrollToEstimator('1 BHK')">
+                        <i class="fa-solid fa-calculator"></i> Calculate Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS (PROCESS) ===================== -->
+    <section class="section-padding" id="process">
+        <div class="container">
+            <div class="text-center">
+                <div class="pill-badge"><i class="fa-solid fa-list-check"></i> Simple Process</div>
+                <h2 class="section-title">How it <span>works</span></h2>
+                <p class="section-subtitle">From consultation to move-in, we make your interior design journey seamless</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-grid">
+                    <!-- Step 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle-wrapper">
+                            <div class="timeline-circle">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <span class="timeline-step-badge">1</span>
+                        </div>
+                        <h4>Meet a designer</h4>
+                        <p>Get expert consultation</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle-wrapper">
+                            <div class="timeline-circle">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <span class="timeline-step-badge">2</span>
+                        </div>
+                        <h4>Book The One</h4>
+                        <p class="price-milestone">(5% payment)</p>
+                    </div>
+
+                    <!-- Step 3 (Active) -->
+                    <div class="timeline-item active">
+                        <div class="timeline-circle-wrapper">
+                            <div class="timeline-circle">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <span class="timeline-step-badge">3</span>
+                        </div>
+                        <h4>Work Starts</h4>
+                        <p class="price-milestone">(60% payment)</p>
+                        <span class="timeline-active-badge">Execution begins</span>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle-wrapper">
+                            <div class="timeline-circle">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <span class="timeline-step-badge">4</span>
+                        </div>
+                        <h4>Final installations</h4>
+                        <p class="price-milestone">(100% payment)</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-circle-wrapper">
+                            <div class="timeline-circle">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <span class="timeline-step-badge">5</span>
+                        </div>
+                        <h4>Move in and enjoy!</h4>
+                        <p>Your dream home ready</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== DOWNLOAD GUIDE SECTION ===================== -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="download-guide-container">
+                <div class="download-guide-grid">
+                    <div class="download-guide-img">
+                        <img src="images/about.png" alt="Comfortable Beige Sofa and Plants Interior Design">
+                    </div>
+                    <div class="download-guide-content">
+                        <div class="pill-badge"><i class="fa-solid fa-gift"></i> Free Download</div>
+                        <h2>Download Home Interior <span>Guide</span></h2>
+                        <p>Get expert tips, design ideas, and cost estimates for your dream home interior. Free downloadable PDF guide with everything you need to know.</p>
+                        <ul class="download-guide-list">
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> Design inspiration</li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> Budget breakdown</li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> Material selection</li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> Expert practices</li>
+                        </ul>
+                        <a href="FAQs addition.pdf" download class="btn btn-gradient">
+                            <i class="fa-solid fa-download"></i> Download Free Guide <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <div class="download-subtext">
+                            <i class="fa-solid fa-shield-halved"></i> No credit card required • Instant download
                         </div>
                     </div>
-                    <ul class="service-feature-list">
-                        <li><i class="fa-solid fa-check"></i> Custom made modular kitchen &amp; wardrobe services</li>
-                        <li><i class="fa-solid fa-check"></i> Within 7–10 days quick delivery</li>
-                        <li><i class="fa-solid fa-check"></i> PU, Laminate &amp; Acrylic — multiple finish options</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline svc-btn">Get Quote <i
-                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== CUSTOMER ON-BOARDING PROCESS ===================== -->
-    <section id="process" class="onboard-section section-padding bg-light" style="display:none;">
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="section-padding" id="reviews">
         <div class="container">
-            <div class="section-header text-center reveal" style="margin-bottom:3.5rem;">
-                <div class="section-header-left" style="width:100%">
-                    <span class="section-label" style="justify-content:center;">How We Work</span>
-                    <h2>Customer On-Boarding Process</h2>
-                    <p class="section-desc" style="max-width:560px;margin:1rem auto 0;">A transparent 12-step journey
-                        from first meeting to final handover — so you always know what comes next.</p>
+            <div class="packages-section-header" style="border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem; margin-bottom: 3rem; text-align: center;">
+                <div class="packages-sec-title">
+                    <span class="packages-sec-badge" style="letter-spacing: 1.5px; font-weight: 700;">WHAT PEOPLE SAY</span>
                 </div>
+                <h2 class="team-main-heading">Customer Reviews</h2>
             </div>
 
-            <div class="onboard-grid">
-
-                <!-- Step 01 -->
-                <div class="onboard-card reveal" style="transition-delay:0.04s;">
-                    <div class="onboard-num">01</div>
-                    <h3>Understanding Customer Requirement</h3>
-                    <ul>
-                        <li>First meeting with the client</li>
-                        <li>Discuss needs and expectations</li>
-                        <li>Understand budget and timeline</li>
-                        <li>Confirm project timeline</li>
-                        <li>Note lifestyle, preferences, and space usage</li>
-                    </ul>
+            <div class="google-reviews-grid">
+                <!-- Card 1: Supriya Mhashelkar -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="google-review-avatar" style="background-color: #5c3d35;">S</div>
+                        <div class="google-review-client">
+                            <h3>Supriya Mhashelkar</h3>
+                            <span>4 reviews · 1 photo</span>
+                        </div>
+                        <div class="google-review-icon">
+                            <span class="g-quote"><i class="fa-solid fa-quote-right"></i></span>
+                            <span class="g-logo"><i class="fa-brands fa-google"></i></span>
+                        </div>
+                    </div>
+                    <div class="google-review-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="review-time">5 months ago</span>
+                    </div>
+                    <p class="google-review-text">
+                        "I'm truly impressed with the quality of work done. From the initial consultation to project completion, manoj and he's team provided exceptional support and guidance. Their..."
+                    </p>
+                    <a href="https://g.co/kgs/xyz" target="_blank" class="read-more-link">Read more</a>
                 </div>
 
-                <!-- Step 02 -->
-                <div class="onboard-card reveal" style="transition-delay:0.08s;">
-                    <div class="onboard-num">02</div>
-                    <h3>Concept &amp; Theme Discussion</h3>
-                    <ul>
-                        <li>Show different interior design themes</li>
-                        <li>Understand client's style and preferences</li>
-                        <li>Discuss colors, materials, and finishes</li>
-                        <li>Suggest the best-suited design concept</li>
-                        <li>Align design with budget and lifestyle</li>
-                    </ul>
+                <!-- Card 2: Lalit Pawar -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="google-review-avatar" style="background-color: #5d4b43;">L</div>
+                        <div class="google-review-client">
+                            <h3>Lalit Pawar</h3>
+                            <span>2 reviews · 7 photos</span>
+                        </div>
+                        <div class="google-review-icon">
+                            <span class="g-quote"><i class="fa-solid fa-quote-right"></i></span>
+                            <span class="g-logo"><i class="fa-brands fa-google"></i></span>
+                        </div>
+                    </div>
+                    <div class="google-review-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="review-time">4 years ago</span>
+                    </div>
+                    <p class="google-review-text">
+                        "High in quality, range of products, customer friendly staff and value of money. Very happy with my new sofa, absolutely loved the service, delivered on time. Good place for furniture shopping"
+                    </p>
                 </div>
 
-                <!-- Step 03 -->
-                <div class="onboard-card reveal" style="transition-delay:0.12s;">
-                    <div class="onboard-num">03</div>
-                    <h3>Site Visit &amp; Measurement</h3>
-                    <ul>
-                        <li>Designer visits the site</li>
-                        <li>Take accurate measurements</li>
-                        <li>Check site condition</li>
-                        <li>Capture photo and video for reference</li>
-                        <li>Collect all technical details for design planning</li>
-                    </ul>
+                <!-- Card 3: Manish Haldankar -->
+                <div class="google-review-card">
+                    <div class="google-review-header">
+                        <div class="google-review-avatar" style="background-color: #1b5e20;">M</div>
+                        <div class="google-review-client">
+                            <h3>Manish Haldankar</h3>
+                            <span>Local Guide · 9 reviews</span>
+                        </div>
+                        <div class="google-review-icon">
+                            <span class="g-quote"><i class="fa-solid fa-quote-right"></i></span>
+                            <span class="g-logo"><i class="fa-brands fa-google"></i></span>
+                        </div>
+                    </div>
+                    <div class="google-review-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="review-time">4 years ago</span>
+                    </div>
+                    <p class="google-review-text">
+                        "Very good products with reasonable price, nice collections...Really must visit center and the best thing is service"
+                    </p>
                 </div>
-
-                <!-- Step 04 -->
-                <div class="onboard-card reveal" style="transition-delay:0.04s;">
-                    <div class="onboard-num">04</div>
-                    <h3>Concept Drafting &amp; Designing</h3>
-                    <ul>
-                        <li>Prepare the actual design concept</li>
-                        <li>Create layout and design drawings</li>
-                        <li>Finalize theme, colors, and materials</li>
-                        <li>Share design ideas with the client</li>
-                        <li>Make changes based on client feedback</li>
-                    </ul>
-                </div>
-
-                <!-- Step 05 -->
-                <div class="onboard-card reveal" style="transition-delay:0.08s;">
-                    <div class="onboard-num">05</div>
-                    <h3>BOQ / BOM — Rough Estimation</h3>
-                    <ul>
-                        <li>Prepare BOQ / BOM (list of materials)</li>
-                        <li>Estimate approximate project cost</li>
-                        <li>Explain cost breakup to the client</li>
-                        <li>Adjust scope as per budget if required</li>
-                        <li>Get approval to move ahead</li>
-                    </ul>
-                </div>
-
-                <!-- Step 06 -->
-                <div class="onboard-card reveal" style="transition-delay:0.12s;">
-                    <div class="onboard-num">06</div>
-                    <h3>Final Quote</h3>
-                    <ul>
-                        <li>Prepare final BOQ and quotation</li>
-                        <li>Confirm final design, materials, and pricing</li>
-                        <li>Share complete cost details</li>
-                        <li>Get client's final approval</li>
-                        <li>Proceed to execution stage</li>
-                    </ul>
-                </div>
-
-                <!-- Step 07 -->
-                <div class="onboard-card reveal" style="transition-delay:0.04s;">
-                    <div class="onboard-num">07</div>
-                    <h3>2D Drawing Making</h3>
-                    <ul>
-                        <li>Prepare detailed 2D drawings</li>
-                        <li>Layout planning and elevations</li>
-                        <li>Furniture and cabinet details</li>
-                        <li>Finalize material placements</li>
-                        <li>Use drawings for execution clarity</li>
-                    </ul>
-                </div>
-
-                <!-- Step 08 -->
-                <div class="onboard-card reveal" style="transition-delay:0.08s;">
-                    <div class="onboard-num">08</div>
-                    <h3>3D Drawing Making</h3>
-                    <ul>
-                        <li>Create 3D views based on approved 2D drawings</li>
-                        <li>Show actual colors, materials, and finishes</li>
-                        <li>Help client visualize the final look</li>
-                        <li>Make revisions if required</li>
-                        <li>Get final design approval</li>
-                    </ul>
-                </div>
-
-                <!-- Step 09 -->
-                <div class="onboard-card reveal" style="transition-delay:0.12s;">
-                    <div class="onboard-num">09</div>
-                    <h3>Material Procurement @ Market</h3>
-                    <ul>
-                        <li>Visit market with the client</li>
-                        <li>Select materials, finishes, and fittings</li>
-                        <li>Finalize brands and specifications</li>
-                        <li>Procure approved materials</li>
-                        <li>Ensure quality and budget control</li>
-                    </ul>
-                </div>
-
-                <!-- Step 10 -->
-                <div class="onboard-card reveal" style="transition-delay:0.04s;">
-                    <div class="onboard-num">10</div>
-                    <h3>Work Execution</h3>
-                    <ul>
-                        <li>Start actual on-site work</li>
-                        <li>Follow approved drawings and designs</li>
-                        <li>Work under expert supervision</li>
-                        <li>Regular quality checks</li>
-                        <li>Timely progress updates to client</li>
-                    </ul>
-                </div>
-
-                <!-- Step 11 -->
-                <div class="onboard-card reveal" style="transition-delay:0.08s;">
-                    <div class="onboard-num">11</div>
-                    <h3>Photoshoot</h3>
-                    <ul>
-                        <li>Professional photoshoot after completion</li>
-                        <li>Capture final interiors and details</li>
-                        <li>Use images for records and social media</li>
-                        <li>Share selected photos with the client</li>
-                    </ul>
-                </div>
-
-                <!-- Step 12 -->
-                <div class="onboard-card onboard-card--final reveal" style="transition-delay:0.12s;">
-                    <div class="onboard-num">12</div>
-                    <h3>Handover 🎉</h3>
-                    <ul>
-                        <li>Final site inspection with the client</li>
-                        <li>Handover of completed project</li>
-                        <li>Keys handed over to the client</li>
-                        <li>Small handover celebration</li>
-                        <li>Project successfully closed</li>
-                    </ul>
-                </div>
-
-            </div><!-- end onboard-grid -->
+            </div>
         </div>
-    </section>
-
-    <!-- ===================== ABOUT / STUDIO ===================== -->
-    <section id="about" class="about section-padding">
-        <div class="container about-container">
-            <div class="about-image-wrapper reveal-left">
-                <div class="about-image">
-                    <img src="images/about.png"
-                        alt="The One Furniture Studio">
+    <!-- ===================== ABOUT US SECTION ===================== -->
+    <section class="section-padding" id="about" style="background-color: white;">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left: Who We Are text content -->
+                <div class="about-content">
+                    <div class="packages-sec-title" style="margin-bottom: 1rem;">
+                        <span class="packages-sec-badge" style="letter-spacing: 1.5px; font-weight: 700;">ABOUT US</span>
+                    </div>
+                    <h2 class="team-main-heading" style="margin-bottom: 2rem; text-align: left;">Who We Are</h2>
+                    
+                    <p class="about-paragraph">
+                        The One Furniture is a modern furniture and interior solutions brand based in Vasai West, Mumbai. With a rich legacy and industry experience dating back to 2005 that spans from Dubai to Mumbai, we have quickly established ourselves as a trusted destination for high-quality, stylish, and functional furniture solutions for both residential and commercial spaces.
+                    </p>
+                    <p class="about-paragraph">
+                        The brand operates under Ramjisheth Furniture Private Limited, a growing furniture manufacturing and trading company incorporated in 2021. Built on the idea of delivering complete furniture and interior solutions under one roof — from living room sofas and bedroom wardrobes to office furniture and customized décor solutions.
+                    </p>
+                    <p class="about-paragraph">
+                        Founded with a vision to simplify furniture buying and interior design, The One Furniture focuses on a direct-to-customer approach, eliminating unnecessary middlemen and making quality furniture more accessible and affordable.
+                    </p>
+                    <p class="about-paragraph">
+                        Since its inception, the company has grown steadily by leveraging local craftsmanship, modern production techniques, and a customer-first mindset. With a dedicated team and a growing client base across Mumbai, Navi Mumbai, and surrounding regions, the brand continues to expand its reach while maintaining high standards of quality and service.
+                    </p>
                 </div>
-                <div class="experience-badge">
-                    <span class="number">Est.</span>
-                    <span class="text">2021<br>Vasai West, Mumbai</span>
-                </div>
-            </div>
-            <div class="about-content reveal" style="transition-delay: 0.15s;">
-                <span class="section-label">About Us</span>
-                <h2>Who We Are</h2>
-                <p>The One Furniture is a modern furniture and interior solutions brand based in Vasai West, Mumbai. 
-                    With a rich legacy and industry experience dating back to 2005 that spans <strong>from Dubai to Mumbai</strong>, we have quickly established ourselves as a trusted
-                    destination for high-quality, stylish, and functional furniture solutions for both residential
-                    and commercial spaces.</p>
-                <p>The brand operates under <strong>Ramjisheth Furniture Private Limited</strong>, a growing
-                    furniture manufacturing and trading company incorporated in 2021. Built on the idea of delivering
-                    complete furniture and interior solutions under one roof — from living room sofas and bedroom
-                    wardrobes to office furniture and customized décor solutions.</p>
-                <p>Founded with a vision to simplify furniture buying and interior design, The One Furniture
-                    focuses on a <strong>direct-to-customer approach</strong>, eliminating unnecessary middlemen
-                    and making quality furniture more accessible and affordable.</p>
-                <p>Since its inception, the company has grown steadily by leveraging local craftsmanship,
-                    modern production techniques, and a customer-first mindset. With a dedicated team and a
-                    growing client base across <strong>Mumbai, Navi Mumbai, and surrounding regions</strong>,
-                    the brand continues to expand its reach while maintaining high standards of quality and service.</p>
 
-                <div class="about-metrics">
-                    <div class="metric-item">
-                        <div class="metric-num">2005</div>
-                        <div class="metric-label">Industry Experience Since</div>
+                <!-- Right: Stats & What We Do Card -->
+                <div class="about-card-wrapper">
+                    <!-- Stats Grid -->
+                    <div class="about-stats-grid">
+                        <div class="about-stat-card">
+                            <span class="about-stat-number">2005</span>
+                            <span class="about-stat-label">Industry Experience Since</span>
+                        </div>
+                        <div class="about-stat-card">
+                            <span class="about-stat-number">100%</span>
+                            <span class="about-stat-label">Direct-to-Customer</span>
+                        </div>
                     </div>
 
-                    <div class="metric-item">
-                        <div class="metric-num">100%</div>
-                        <div class="metric-label">Direct-to-Customer</div>
+                    <!-- What We Do Box -->
+                    <div class="about-do-card">
+                        <h3>What We Do</h3>
+                        <ul class="about-do-list">
+                            <li>
+                                <span class="about-do-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Custom furniture design and manufacturing</span>
+                            </li>
+                            <li>
+                                <span class="about-do-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Home interior solutions</span>
+                            </li>
+                            <li>
+                                <span class="about-do-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Office and commercial furniture</span>
+                            </li>
+                            <li>
+                                <span class="about-do-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>Modular and modern furniture concepts</span>
+                            </li>
+                            <li>
+                                <span class="about-do-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                <span>End-to-end furnishing projects</span>
+                            </li>
+                        </ul>
+                        <p class="about-do-subtext">
+                            Every product is designed keeping in mind comfort, durability, and aesthetics — ensuring customers receive furniture that enhances their everyday living experience.
+                        </p>
                     </div>
                 </div>
-
-                <div class="story-specializations" style="margin-top: 2.5rem; margin-bottom: 2.5rem;">
-                    <h3 style="margin-bottom:1.2rem; font-size:1.3rem;">What We Do</h3>
-                    <ul class="story-list">
-                        <li><i class="fa-solid fa-check"></i> Custom furniture design and manufacturing</li>
-                        <li><i class="fa-solid fa-check"></i> Home interior solutions</li>
-                        <li><i class="fa-solid fa-check"></i> Office and commercial furniture</li>
-                        <li><i class="fa-solid fa-check"></i> Modular and modern furniture concepts</li>
-                        <li><i class="fa-solid fa-check"></i> End-to-end furnishing projects</li>
-                    </ul>
-                    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--dark-gray);">Every product is designed keeping in mind comfort, durability, and aesthetics — ensuring customers receive furniture that enhances their everyday living experience.</p>
-                </div>
-
-                <a href="#contact" class="btn btn-outline">Work With Us</a>
             </div>
         </div>
     </section>
 
-    <!-- ===================== QUALITY COMMITMENT ===================== -->
-
-
-    <!-- ===================== MISSION & VISION ===================== -->
-    <section id="mission" class="mv-section section-padding bg-light">
+    <!-- ===================== MISSION & VISION SECTION ===================== -->
+    <section class="section-padding" id="mission-vision">
         <div class="container">
-            <div class="section-header text-center reveal" style="margin-bottom:3.5rem;">
-                <div class="section-header-left" style="width:100%">
-
-                    <h2>Our Mission &amp; Vision</h2>
-                </div>
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 class="mission-section-title">Our Mission & Vision</h2>
+                <div class="mission-divider"></div>
             </div>
-            <div class="mv-grid">
+
+            <div class="mission-vision-grid">
                 <!-- Vision -->
-                <div class="mv-card reveal">
-                    <div class="mv-icon-wrap">
+                <div class="mission-card">
+                    <div class="mission-card-icon-wrapper dark">
                         <i class="fa-solid fa-eye"></i>
                     </div>
-                    <div class="mv-body">
+                    <div class="mission-card-content">
                         <h3>Vision</h3>
-                        <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
-                            "Every Customer has a right to middle-man free product in the best quality ."
+                        <p class="mission-card-text">
+                            "Every Customer has a right to middle-man free product in the best quality."
                         </p>
                     </div>
                 </div>
+
                 <!-- Mission -->
-                <div class="mv-card mv-card--mission reveal" style="transition-delay:0.12s;">
-                    <div class="mv-icon-wrap">
+                <div class="mission-card">
+                    <div class="mission-card-icon-wrapper light">
                         <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    <div class="mv-body">
+                    <div class="mission-card-content">
                         <h3>Mission</h3>
-                        <p style="font-family: var(--font-body); font-style: normal; font-size: 1.05rem; color: var(--dark-gray); line-height: 1.6; margin: 0;">
-                            "To Solve mass community furniture needs- both in price &amp; Style ."
+                        <p class="mission-card-text">
+                            "To Solve mass community furniture needs- both in price & Style."
                         </p>
                     </div>
                 </div>
@@ -730,624 +860,454 @@
         </div>
     </section>
 
-    <!-- ===================== TEAM SUPPORT MATRIX ===================== -->
-    <section id="team" class="team-section section-padding">
+    <!-- ===================== OUR TEAM SECTION ===================== -->
+    <section class="section-padding" id="team" style="background-color: white;">
         <div class="container">
-            <div class="section-header reveal">
-                <div class="section-header-left">
-                    <span class="section-label">Our People</span>
-                    <h2>Team Support Matrix</h2>
+            <!-- Part 1: Team Support Matrix -->
+            <div class="team-section-header">
+                <div class="team-header-left">
+                    <span class="team-subtitle-tag">OUR PEOPLE</span>
+                    <h2 class="team-main-heading">Team Support Matrix</h2>
                 </div>
-                <p class="section-desc">The experts behind every project.</p>
+                <div class="team-header-right">The experts behind every project.</div>
             </div>
-            <div class="team-grid">
 
-                <!-- Member 1 -->
-                <div class="team-card reveal">
-                    <div class="team-avatar">
-                        <img src="persons/Mr.Manoj Chavan .png" alt="Mr. Manoj Chavan">
+            <div class="team-matrix-grid">
+                <!-- Manoj Chavan -->
+                <div class="team-member-card">
+                    <div class="team-member-img-wrap">
+                        <img src="persons/Mr.Manoj Chavan .png" alt="Mr. Manoj Chavan" class="img-manoj">
                     </div>
-                    <div class="team-info">
-                        <h3>Mr. Manoj Chavan</h3>
-                        <span class="team-role">Principal Designer</span>
-                    </div>
+                    <h3>Mr. Manoj Chavan</h3>
+                    <span class="team-member-role">PRINCIPAL DESIGNER</span>
                 </div>
 
-                <!-- Member 2 -->
-                <div class="team-card reveal" style="transition-delay:0.08s;">
-                    <div class="team-avatar">
+                <!-- Sanket C -->
+                <div class="team-member-card">
+                    <div class="team-member-img-wrap">
                         <img src="persons/Mr.sanket c.png" alt="Mr. Sanket C.">
                     </div>
-                    <div class="team-info">
-                        <h3>Mr. Sanket C.</h3>
-                        <span class="team-role">Principal Designer</span>
-                    </div>
+                    <h3>Mr. Sanket C.</h3>
+                    <span class="team-member-role">PRINCIPAL DESIGNER</span>
                 </div>
 
-                <!-- Member 3 -->
-                <div class="team-card reveal" style="transition-delay:0.16s;">
-                    <div class="team-avatar">
+                <!-- Saish Gondhali -->
+                <div class="team-member-card">
+                    <div class="team-member-img-wrap">
                         <img src="persons/ID. Saish Gondhali  .png" alt="ID. Saish Gondhali">
                     </div>
-                    <div class="team-info">
-                        <h3>ID. Saish Gondhali</h3>
-                        <span class="team-role">HOD</span>
-                    </div>
+                    <h3>ID. Saish Gondhali</h3>
+                    <span class="team-member-role">HOD</span>
                 </div>
 
-                <!-- Member 4 -->
-                <div class="team-card reveal" style="transition-delay:0.24s;">
-                    <div class="team-avatar">
-                        <img src="persons/Heena Mande   .png" alt="A/C. Heena Mande">
+                <!-- Heena Mande -->
+                <div class="team-member-card">
+                    <div class="team-member-img-wrap">
+                        <img src="persons/Heena Mande   .png" alt="A/C. Heena Mande" class="img-heena">
                     </div>
-                    <div class="team-info">
-                        <h3>A/C. Heena Mande</h3>
-                        <span class="team-role">Chief Finance Advisor</span>
-                    </div>
+                    <h3>A/C. Heena Mande</h3>
+                    <span class="team-member-role">CHIEF FINANCE ADVISOR</span>
                 </div>
-
             </div>
-            
-            <!-- Full Team Picture -->
-            <div class="team-group-pic reveal" style="margin-top: 5rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h3 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--accent); margin-bottom: 2rem;">Our Team</h3>
-                <img src="persons/team.png" alt="The One Furniture Team" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow-md); transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+
+            <!-- Part 2: Our Team Group Photo -->
+            <div class="team-group-photo-wrapper">
+                <h2 class="team-group-title">Our Team</h2>
+                <div class="team-group-img-box">
+                    <img src="persons/team.png" alt="The One Furniture Team">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== OFFICE LOCATIONS ===================== -->
-    <section id="locations" class="locations-section section-padding bg-light">
+    <!-- ===================== SUPPORT SYSTEM SECTION ===================== -->
+    <section class="section-padding bg-light" id="support-system">
         <div class="container">
-            <div class="section-header reveal">
-                <div class="section-header-left">
-                    <span class="section-label">Find Us</span>
-                    <h2>Our Support System</h2>
+            <div class="team-section-header">
+                <div class="team-header-left">
+                    <span class="team-subtitle-tag">FIND US</span>
+                    <h2 class="team-main-heading">Our Support System</h2>
                 </div>
-                <p class="section-desc">Four locations serving you across Mumbai &amp; Palghar.</p>
-            </div>
-            <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-
-                <!-- Location 1: Design Studio -->
-                <div class="location-card reveal">
-                    <div class="location-image" style="width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/The One Interior.jpeg" alt="The One Furniture Design Studio Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div class="location-tag">Branch Office</div>
-                    <h3>The One Furniture</h3>
-                    <address>
-                        Office no. 204, Dattani Prism IT Park-1,<br>
-                        Behind Dattani Mall, Bhabola Road,<br>
-                        Vasai-West, Palghar – 401202
-                    </address>
-                    <a href="https://www.google.co.in/maps/place/The+One+Furniture+-+Top+Furniture+%26+Interior+Shop+In+Vasai-Virar/@19.3590455,72.6587194,12z/data=!4m10!1m2!2m1!1sone+furniture+vasia!3m6!1s0x3be7af3407be5d7b:0xe82d1a710b283774!8m2!3d19.3590455!4d72.8111547!15sChNvbmUgZnVybml0dXJlIHZhc2FpWhUiE29uZSBmdXJuaXR1cmUgdmFzYWmSAQ9mdXJuaXR1cmVfc3RvcmXgAQA!16s%2Fg%2F11qg50z7c4?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
-                        class="location-map-btn">
-                        <i class="fa-solid fa-map-pin"></i> View on Map
-                    </a>
-                </div>
-
-                <!-- Location 2: Head Office -->
-                <div class="location-card reveal" style="transition-delay:0.08s;">
-                    <div class="location-image" style="width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.2rem; border-radius: 6px;">
-                        <img src="images/Ramjisheth Furniture Pvt. Ltd..jpeg" alt="Ramjisheth Furniture Pvt. Ltd. Head Office" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div class="location-tag">Head Office</div>
-                    <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
-                    <address>
-                        Sanman CHS, Gandhi nagar,<br>
-                        Bandra East, Mumbai<br>
-                        Maharashtra 400051
-                    </address>
-                    <a href="https://www.google.co.in/maps/place/Ramjisheth+Furniture+Pvt+Ltd-+Best+middle+man+free+furniture+trader+in+mumbai/@19.072558,72.8675731,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7afb6e05fb6df:0x321481d018609e89!8m2!3d19.0725529!4d72.870148!16s%2Fg%2F11nnvtb0hm?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
-                        class="location-map-btn">
-                        <i class="fa-solid fa-map-pin"></i> View on Map
-                    </a>
-                </div>
-
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <section id="pricing" class="pricing-section section-padding">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-header-left">
-                    <span class="section-label">Our Packages</span>
-                </div>
-                <p class="section-desc">All-inclusive per sqft rates. No hidden costs.</p>
+                <div class="team-header-right">Four locations serving you across Mumbai & Palghar.</div>
             </div>
 
-            <!-- Package cards -->
-            <div class="pricing-grid">
-                <!-- Standard -->
-                <div class="price-card reveal">
-                    <div class="price-card-header">
-                        <span class="package-tag">Standard</span>
-                        <div class="price-amount">₹1,500 <span>/sqft onwards</span></div>
+            <div class="support-system-grid">
+                <!-- Card 1: Branch Office -->
+                <div class="support-card">
+                    <div class="support-card-img-box">
+                        <img src="images/The One Interior.jpeg" alt="The One Furniture Office">
                     </div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×2, 2×4 (up to ₹40/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> Cement putty + Tractor Emulsion paint</li>
-                        <li><i class="fa-solid fa-check"></i> Gypsum corner ceiling design</li>
-                        <li><i class="fa-solid fa-check"></i> Normal COB lights & panel switches</li>
-                        <li><i class="fa-solid fa-check"></i> Wallpaper / texture / wall moulding</li>
-                        <li><i class="fa-solid fa-check"></i> MR Grade ply with laminate finish</li>
-                        <li><i class="fa-solid fa-check"></i> Ozone / Ebco fittings</li>
-                        <li><i class="fa-solid fa-check"></i> Hollow core doors with laminate</li>
-                        <li><i class="fa-solid fa-check"></i> Granite kitchen top (₹100/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> Mild Steel railings</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline pkg-btn">Get Quote</a>
+                    <div class="support-card-body">
+                        <span class="support-card-badge">BRANCH OFFICE</span>
+                        <h3>The One Furniture</h3>
+                        <p class="support-card-address">
+                            Office no. 204, Dattani Prism IT Park-1, Behind Dattani Mall, Bhabola Road, Vasai-West, Palghar - 401202
+                        </p>
+                        <a href="https://www.google.co.in/maps/place/The+One+Furniture+-+Top+Furniture+%26+Interior+Shop+In+Vasai-Virar/@19.3590455,72.6587194,12z/data=!4m10!1m2!2m1!1sone+furniture+vasia!3m6!1s0x3be7af3407be5d7b:0xe82d1a710b283774!8m2!3d19.3590455!4d72.8111547!15sChNvbmUgZnVybml0dXJlIHZhc2FpWhUiE29uZSBmdXJuaXR1cmUgdmFzYWmSAQ9mdXJuaXR1cmVfc3RvcmXgAQA!16s%2Fg%2F11qg50z7c4?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link-btn">
+                            <i class="fa-solid fa-location-dot"></i> VIEW ON MAP
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Affordable — featured -->
-                <div class="price-card featured reveal" style="transition-delay:0.08s;">
-                    <div class="price-card-header">
-                        <span class="package-tag">Affordable</span>
-                        <span class="popular-badge">Most Popular</span>
-                        <div class="price-amount">₹2,000 <span>/sqft onwards</span></div>
+                <!-- Card 2: Head Office -->
+                <div class="support-card">
+                    <div class="support-card-img-box">
+                        <img src="images/Ramjisheth Furniture Pvt. Ltd..jpeg" alt="Ramjisheth Furniture Head Office">
                     </div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Vitrified tiles 2×4, 2.5×5 (up to ₹60/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> Acrylic putty smooth finish + Premium Emulsion</li>
-                        <li><i class="fa-solid fa-check"></i> POP complete ceiling with coves</li>
-                        <li><i class="fa-solid fa-check"></i> Profile lights, colour switches</li>
-                        <li><i class="fa-solid fa-check"></i> PVC / WPC / Charcoal wall panels</li>
-                        <li><i class="fa-solid fa-check"></i> BWR / HDHMR ply with polish acrylic finish</li>
-                        <li><i class="fa-solid fa-check"></i> Hettich / Godrej fittings</li>
-                        <li><i class="fa-solid fa-check"></i> Solid core flush door with veneer</li>
-                        <li><i class="fa-solid fa-check"></i> Granite / Tiles kitchen top (₹120–150/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> S.S 304 stainless steel railings</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary pkg-btn">Get Quote</a>
-                </div>
-
-                <!-- Premium -->
-                <div class="price-card reveal" style="transition-delay:0.16s;">
-                    <div class="price-card-header">
-                        <span class="package-tag">Premium</span>
-                        <div class="price-amount">₹2,500 <span>/sqft onwards</span></div>
+                    <div class="support-card-body">
+                        <span class="support-card-badge">HEAD OFFICE</span>
+                        <h3>Ramjisheth Furniture Pvt. Ltd.</h3>
+                        <p class="support-card-address">
+                            Sanman CHS, Gandhi nagar, Bandra East, Mumbai Maharashtra 400051
+                        </p>
+                        <a href="https://www.google.co.in/maps/place/Ramjisheth+Furniture+Pvt+Ltd-+Best+middle+man+free+furniture+trader+in+mumbai/@19.072558,72.8675731,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7afb6e05fb6df:0x321481d018609e89!8m2!3d19.0725529!4d72.870148!16s%2Fg%2F11nnvtb0hm?entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link-btn">
+                            <i class="fa-solid fa-location-dot"></i> VIEW ON MAP
+                        </a>
                     </div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Vitrified 4×4, 4×6 or Italian Marble (+₹400/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> POP punning + Royal Aspire paint</li>
-                        <li><i class="fa-solid fa-check"></i> Multi-layer POP ceiling with full design</li>
-                        <li><i class="fa-solid fa-check"></i> Track lights, designer black switches</li>
-                        <li><i class="fa-solid fa-check"></i> Wooden panelling feature walls</li>
-                        <li><i class="fa-solid fa-check"></i> BWP Marine ply with Duco / PU finish</li>
-                        <li><i class="fa-solid fa-check"></i> Hafele / Blum fittings, designer handles</li>
-                        <li><i class="fa-solid fa-check"></i> Solid core panel door + veneer/skin + smart lock</li>
-                        <li><i class="fa-solid fa-check"></i> Quartz kitchen top (₹200–250/sqft)</li>
-                        <li><i class="fa-solid fa-check"></i> Toughened glass railings (₹1200/rft)</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline pkg-btn">Get Quote</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ===================== TESTIMONIAL ===================== -->
-    <section class="testimonial section-padding bg-light">
-                <div class="container reveal">
-                    <div class="section-header text-center reveal">
-                        <span class="section-label" style="justify-content:center;">What People Say</span>
-                        <h2 style="margin-bottom:3rem;">Customer Reviews</h2>
-                    </div>
-                    
-                    <div class="testimonial-grid">
-                        
-                        <!-- Review 1 -->
-                        <div class="testimonial-card">
-                            <div class="client-info">
-                                <div class="client-avatar-letter" style="background:#5D4037;">S</div>
-                                <div class="client-details">
-                                    <h4>Supriya Mhashelkar</h4>
-                                    <p>4 reviews · 1 photo</p>
-                                </div>
-                                <i class="fa-brands fa-google google-icon"></i>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="review-time">5 months ago</span>
-                            </div>
-                            <p class="review-text text-clamp" id="review1">"I’m truly impressed with the quality of work done. From the initial consultation to project completion, manoj and he's team provided exceptional support and guidance. Their creativity, dedication, and timely execution made the entire process smooth and stress-free. The final outcome meet my expectations.<br><br>Manoj were supportive at every step and made sure everything turned out just the way we imagined.<br><br>Really happy with the result. Thank you for the excellent service!"</p>
-                            <button class="read-more-btn" onclick="document.getElementById('review1').classList.toggle('expanded'); this.innerText = this.innerText === 'Read more' ? 'Read less' : 'Read more';">Read more</button>
-                        </div>
-
-                        <!-- Review 2 -->
-                        <div class="testimonial-card">
-                            <div class="client-info">
-                                <div class="client-avatar-letter" style="background:#795548;">L</div>
-                                <div class="client-details">
-                                    <h4>Lalit Pawar</h4>
-                                    <p>2 reviews · 7 photos</p>
-                                </div>
-                                <i class="fa-brands fa-google google-icon"></i>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="review-time">4 years ago</span>
-                            </div>
-                            <p class="review-text">"High in quality, range of products, customer friendly staff and value of money. Very happy with my new sofa, absolutely loved the service, delivered on time. Good place for furniture shopping"</p>
-                        </div>
-
-                        <!-- Review 3 -->
-                        <div class="testimonial-card">
-                            <div class="client-info">
-                                <div class="client-avatar-letter" style="background:#2E7D32;">M</div>
-                                <div class="client-details">
-                                    <h4>Manish Haldankar</h4>
-                                    <p>Local Guide · 9 reviews</p>
-                                </div>
-                                <i class="fa-brands fa-google google-icon"></i>
-                            </div>
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="review-time">4 years ago</span>
-                            </div>
-                            <p class="review-text">"Very good products with reasonable price, nice collections..Really must visit center and the best thing is service"</p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
 
     <!-- ===================== FAQ SECTION ===================== -->
-    <section class="faq-section section-padding bg-light">
-                <div class="container">
-                    <div class="section-header reveal">
-                        <div class="section-header-left">
-                            <span class="section-label">Common Questions</span>
-                            <h2>Frequently Asked Questions</h2>
+    <section class="faq-section section-padding bg-light" id="faq">
+        <div class="container">
+            <div class="packages-section-header" style="border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem; margin-bottom: 3rem;">
+                <div class="packages-sec-title">
+                    <span class="packages-sec-badge">COMMON QUESTIONS</span>
+                </div>
+                <h2 class="team-main-heading">Frequently Asked Questions</h2>
+                <div class="packages-sec-desc">Everything you need to know before starting your project.</div>
+            </div>
+
+            <div class="faq-grid">
+                <!-- Left column -->
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What is the typical budget range for an interior design project?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our projects span a wide range depending on scope and finishes:</p>
+                            <ul>
+                                <li>Under ₹5,00,000 — Basic fit-out &amp; soft furnishing</li>
+                                <li>₹5,00,000 – ₹10,00,000 — Standard modular design</li>
+                                <li>₹10,00,000 – ₹25,00,000 — Full residential design</li>
+                                <li>₹25,00,000 – ₹50,00,000 — Premium design with custom furniture</li>
+                                <li>₹50,00,000 – ₹1,00,00,000+ — Luxury turnkey projects</li>
+                            </ul>
+                            <p>We work with every budget and always recommend a consultation first so we can tailor the proposal to your needs.</p>
                         </div>
-                        <p class="section-desc">Everything you need to know before starting your project.</p>
                     </div>
 
-                    <div class="faq-grid">
-
-                        <!-- Left column -->
-                        <div class="faq-column">
-
-                            <div class="faq-item reveal">
-                                <button class="faq-question" aria-expanded="false">
-                                    What is the typical budget range for an interior design project?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Our projects span a wide range depending on scope and finishes:</p>
-                                    <ul>
-                                        <li>Under ₹5,00,000 — Basic fit-out &amp; soft furnishing</li>
-                                        <li>₹5,00,000 – ₹10,00,000 — Standard modular design</li>
-                                        <li>₹10,00,000 – ₹25,00,000 — Full residential design</li>
-                                        <li>₹25,00,000 – ₹50,00,000 — Premium design with custom furniture</li>
-                                        <li>₹50,00,000 – ₹1,00,00,000+ — Luxury turnkey projects</li>
-                                    </ul>
-                                    <p>We work with every budget and always recommend a consultation first so we can
-                                        tailor the proposal to your needs.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.06s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    What design styles do you offer?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We are fluent in all major interior design styles including:</p>
-                                    <ul>
-                                        <li><strong>Modern & Contemporary</strong> — clean lines, neutral palettes</li>
-                                        <li><strong>Minimalist</strong> — less is more, decluttered spaces</li>
-                                        <li><strong>Scandinavian</strong> — warm woods, functional elegance</li>
-                                        <li><strong>Mid-Century Modern</strong> — retro with organic forms</li>
-                                        <li><strong>Industrial</strong> — raw materials, exposed elements</li>
-                                        <li><strong>Traditional & Classic</strong> — rich details, timeless appeal</li>
-                                        <li><strong>Eclectic & Transitional</strong> — a curated mix of styles</li>
-                                    </ul>
-                                    <p>During consultation, we help you identify your preferred style through mood
-                                        boards and visual references.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.12s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    Which flat configurations do you typically work with?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We handle all residential configurations:</p>
-                                    <ul>
-                                        <li>1 BHK, 2 BHK, 3 BHK, 4 BHK apartments</li>
-                                        <li>Villas &amp; independent houses</li>
-                                        <li>Duplexes &amp; penthouses</li>
-                                        <li>Commercial &amp; office spaces</li>
-                                        <li>Hospitality &amp; F&amp;B outlets</li>
-                                    </ul>
-                                    <p>Whether it is a compact studio or a sprawling villa, our team designs for every
-                                        space optimally.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.18s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    What is your typical project timeline?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Timelines vary by project size and complexity, but general estimates are:</p>
-                                    <ul>
-                                        <li><strong>1 BHK / 2 BHK</strong> — 6 to 10 weeks</li>
-                                        <li><strong>3 BHK / 4 BHK</strong> — 10 to 16 weeks</li>
-                                        <li><strong>Villa / Large Residence</strong> — 16 to 28 weeks</li>
-                                        <li><strong>Commercial Turnkey</strong> — Depends on area and scope</li>
-                                    </ul>
-                                    <p>We share a detailed project schedule after the initial consultation and concept
-                                        approval.</p>
-                                </div>
-                            </div>
-
-
-</div>
-
-                        <!-- Right column -->
-                        <div class="faq-column">
-
-                            <div class="faq-item reveal" style="transition-delay:0.06s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    What rooms / areas can you design for us?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We design every area of your home or commercial space, including:</p>
-                                    <ul>
-                                        <li>Living Room — sofa, TV unit, false ceiling, lighting, partitions</li>
-                                        <li>Dining Room — table, chairs, bar unit, wallpaper &amp; paint</li>
-                                        <li>Kitchen — modular layouts, appliances, countertops, storage</li>
-                                        <li>Master &amp; other Bedrooms — bed, wardrobes, study, dressing</li>
-                                        <li>Bathrooms — vanity, fixtures, tiles, accessories</li>
-                                        <li>Home Office, Pooja Room, Kids' Room, Balcony &amp; more</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.12s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    What possession status do you work with?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We work at any stage of your property journey:</p>
-                                    <ul>
-                                        <li><strong>Bare Shell</strong> — we design from scratch alongside construction
-                                        </li>
-                                        <li><strong>Under Construction</strong> — we plan ahead so execution is seamless
-                                            on possession</li>
-                                        <li><strong>Ready to Move In</strong> — we begin immediately with full fit-out
-                                        </li>
-                                        <li><strong>Existing Home / Renovation</strong> — we assess the space and
-                                            redesign with minimal disruption</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.18s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    What flooring and material options do you offer?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We source from premium vendors across all material categories:</p>
-                                    <ul>
-                                        <li><strong>Flooring</strong> — Marble, Tiles, Engineered Wood, Vinyl, Carpet
-                                        </li>
-                                        <li><strong>Walls</strong> — Wallpaper, Textured Paint, Paneling, Stone cladding
-                                        </li>
-                                        <li><strong>Furniture</strong> — Custom-made, modular, and curated from top
-                                            brands</li>
-                                        <li><strong>Lighting</strong> — Recessed, pendant, cove, statement &amp; smart
-                                            lighting</li>
-                                    </ul>
-                                    <p>All materials are selected to match your chosen design style and budget.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item reveal" style="transition-delay:0.24s;">
-                                <button class="faq-question" aria-expanded="false">
-                                    How do I get started with The One Furniture?
-                                    <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Getting started is simple — just 3 steps:</p>
-                                    <ul>
-                                        <li><strong>1. Fill the enquiry form</strong> — share your name, location, flat
-                                            config, possession status &amp; scope of work</li>
-                                        <li><strong>2. Free consultation</strong> — our designer meets you (in person or
-                                            virtually) to understand your vision</li>
-                                        <li><strong>3. Proposal &amp; kickoff</strong> — we present concept designs, get
-                                            your approval, and begin execution</li>
-                                    </ul>
-                                    <p>Use the contact form above or WhatsApp us on <strong>+91 93095 58584</strong> to
-                                        get started today.</p>
-                                </div>
-                            </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What design styles do you offer?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We are fluent in all major interior design styles including:</p>
+                            <ul>
+                                <li><strong>Modern & Contemporary</strong> — clean lines, neutral palettes</li>
+                                <li><strong>Minimalist</strong> — less is more, decluttered spaces</li>
+                                <li><strong>Scandinavian</strong> — warm woods, functional elegance</li>
+                                <li><strong>Mid-Century Modern</strong> — retro with organic forms</li>
+                                <li><strong>Industrial</strong> — raw materials, exposed elements</li>
+                                <li><strong>Traditional & Classic</strong> — rich details, timeless appeal</li>
+                                <li><strong>Eclectic & Transitional</strong> — a curated mix of styles</li>
+                            </ul>
+                            <p>During consultation, we help you identify your preferred style through mood boards and visual references.</p>
                         </div>
+                    </div>
 
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Which flat configurations do you typically work with?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We handle all residential configurations:</p>
+                            <ul>
+                                <li>1 BHK, 2 BHK, 3 BHK, 4 BHK apartments</li>
+                                <li>Villas &amp; independent houses</li>
+                                <li>Duplexes &amp; penthouses</li>
+                                <li>Commercial &amp; office spaces</li>
+                                <li>Hospitality &amp; F&amp;B outlets</li>
+                            </ul>
+                            <p>Whether it is a compact studio or a sprawling villa, our team designs for every space optimally.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What is your typical project timeline?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Timelines vary by project size and complexity, but general estimates are:</p>
+                            <ul>
+                                <li><strong>1 BHK / 2 BHK</strong> — 6 to 10 weeks</li>
+                                <li><strong>3 BHK / 4 BHK</strong> — 10 to 16 weeks</li>
+                                <li><strong>Villa / Large Residence</strong> — 16 to 28 weeks</li>
+                                <li><strong>Commercial Turnkey</strong> — Depends on area and scope</li>
+                            </ul>
+                            <p>We share a detailed project schedule after the initial consultation and concept approval.</p>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-    <!-- ===================== CONTACT SECTION ===================== -->
-    <section id="contact" class="contact-section section-padding bg-light">
-                <div class="container">
-                    <div class="contact-grid">
-                        <div class="contact-info-block reveal-left">
-                            <span class="section-label">Reach Out</span>
-                            <h2>Contact Us</h2>
-                            <p>Ready to transform your space? Share your vision with us and our team will get back to
-                                you within
-                                24 hours.</p>
-                            <ul class="contact-details">
-                                <li>
-                                    <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
-                                    <div>
-                                        <strong>Design Studio</strong>
-                                        <span>Office no. 204, Dattani Prism IT Park-1, Behind Dattani Mall, Bhabola Road,
-                                            Vasai-West, Palghar – 401202</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
-                                    <div>
-                                        <strong>Phone / WhatsApp</strong>
-                                        <span>+91 93095 58584</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                                    <div>
-                                        <strong>Email</strong>
-                                        <span>info@theonefurniture.in</span>
-                                    </div>
-                                </li>
+                <!-- Right column -->
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What rooms / areas can you design for us?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We design every area of your home or commercial space, including:</p>
+                            <ul>
+                                <li>Living Room — sofa, TV unit, false ceiling, lighting, partitions</li>
+                                <li>Dining Room — table, chairs, bar unit, wallpaper &amp; paint</li>
+                                <li>Kitchen — modular layouts, appliances, countertops, storage</li>
+                                <li>Master &amp; other Bedrooms — bed, wardrobes, study, dressing</li>
+                                <li>Bathrooms — vanity, fixtures, tiles, accessories</li>
+                                <li>Home Office, Pooja Room, Kids' Room, Balcony &amp; more</li>
                             </ul>
                         </div>
-                        <div class="contact-form-block reveal" style="transition-delay:0.15s;">
-                            <form class="contact-form" id="contactForm">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" id="name" placeholder="Your full name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="location">Location</label>
-                                        <input type="text" id="location" placeholder="City / Area" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="flat-config">Flat Configuration</label>
-                                        <select id="flat-config" required>
-                                            <option value="">Select configuration...</option>
-                                            <option value="1bhk">1 BHK</option>
-                                            <option value="2bhk">2 BHK</option>
-                                            <option value="3bhk">3 BHK</option>
-                                            <option value="4bhk">4 BHK</option>
-                                            <option value="villa">Villa / Independent House</option>
-                                            <option value="duplex">Duplex</option>
-                                            <option value="penthouse">Penthouse</option>
-                                            <option value="commercial">Commercial Space</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="possession">Possession Status</label>
-                                        <select id="possession" required>
-                                            <option value="">Select status...</option>
-                                            <option value="ready">Ready to Move In</option>
-                                            <option value="under-construction">Under Construction</option>
-                                            <option value="renovation">Existing — Needs Renovation</option>
-                                            <option value="bare-shell">Bare Shell</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="scope">Scope of Work</label>
-                                    <textarea id="scope" rows="5"
-                                        placeholder="Briefly describe your project — what rooms need design, your style preferences, budget range, timeline, or any specific requirements..."></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
-                            </form>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What possession status do you work with?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work at any stage of your property journey:</p>
+                            <ul>
+                                <li><strong>Bare Shell</strong> — we design from scratch alongside construction</li>
+                                <li><strong>Under Construction</strong> — we plan ahead so execution is seamless on possession</li>
+                                <li><strong>Ready to Move In</strong> — we begin immediately with full fit-out</li>
+                                <li><strong>Existing Home / Renovation</strong> — we assess the space and redesign with minimal disruption</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What flooring and material options do you offer?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We source from premium vendors across all material categories:</p>
+                            <ul>
+                                <li><strong>Flooring</strong> — Marble, Tiles, Engineered Wood, Vinyl, Carpet</li>
+                                <li><strong>Walls</strong> — Wallpaper, Textured Paint, Paneling, Stone cladding</li>
+                                <li><strong>Furniture</strong> — Custom-made, modular, and curated from top brands</li>
+                                <li><strong>Lighting</strong> — Recessed, pendant, cove, statement &amp; smart lighting</li>
+                            </ul>
+                            <p>All materials are selected to match your chosen design style and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I get started with The One Furniture?
+                            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Getting started is simple — just 3 steps:</p>
+                            <ul>
+                                <li><strong>1. Fill the enquiry form</strong> — share your name, location, flat config, possession status &amp; scope of work</li>
+                                <li><strong>2. Free consultation</strong> — our designer meets you (in person or virtually) to understand your vision</li>
+                                <li><strong>3. Proposal &amp; kickoff</strong> — we present concept designs, get your approval, and begin execution</li>
+                            </ul>
+                            <p>Use the contact form below or WhatsApp us on <strong>+91 93095 58584</strong> to get started today.</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
+
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="section-padding" id="contact" style="background-color: #fafafa;">
+        <div class="container">
+            <div class="contact-split-grid">
+                <!-- Left: Contact info -->
+                <div class="contact-info-col">
+                    <span class="contact-subtitle-badge">Reach Out</span>
+                    <h2 class="contact-main-heading">Contact Us</h2>
+                    <p class="contact-intro-text">
+                        Ready to transform your space? Share your vision with us and our team will get back to you within 24 hours.
+                    </p>
+
+                    <div class="contact-details-list">
+                        <!-- Item 1: Address -->
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="detail-label">DESIGN STUDIO</span>
+                                <p class="detail-val">Office no. 204, Dattani Prism IT Park-1, Behind Dattani Mall, Bhabola Road, Vasai-West, Palghar - 401202</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Phone -->
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="detail-label">PHONE / WHATSAPP</span>
+                                <p class="detail-val">+91 93095 58584</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Email -->
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span class="detail-label">EMAIL</span>
+                                <p class="detail-val">info@theonefurniture.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-card">
+                    <form id="contactPageForm">
+                        <div class="contact-form-row two-cols">
+                            <div class="form-group">
+                                <label for="contactName" class="form-label-caps">NAME</label>
+                                <input type="text" id="contactName" class="form-input" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLocation" class="form-label-caps">LOCATION</label>
+                                <input type="text" id="contactLocation" class="form-input" placeholder="City / Area" required>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-row two-cols">
+                            <div class="form-group">
+                                <label for="contactBHK" class="form-label-caps">FLAT CONFIGURATION</label>
+                                <select id="contactBHK" class="form-input" required style="background: white;">
+                                    <option value="" disabled selected hidden>Select configuration...</option>
+                                    <option value="1 BHK">1 BHK</option>
+                                    <option value="2 BHK">2 BHK</option>
+                                    <option value="3 BHK">3 BHK</option>
+                                    <option value="4 BHK">4 BHK</option>
+                                    <option value="Villa / Custom">Villa / Custom Space</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactStatus" class="form-label-caps">POSSESSION STATUS</label>
+                                <select id="contactStatus" class="form-input" required style="background: white;">
+                                    <option value="" disabled selected hidden>Select status...</option>
+                                    <option value="Ready to Move">Ready to Move</option>
+                                    <option value="Under Construction">Under Construction</option>
+                                    <option value="Renovation">Renovation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactScope" class="form-label-caps">SCOPE OF WORK</label>
+                            <textarea id="contactScope" class="form-input" rows="4" placeholder="Briefly describe your project — what rooms need design, your style preferences, budget range, timeline, or any specific requirements..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-contact-submit">SEND ENQUIRY</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
         <div class="container">
-            <!-- "LET'S CONNECT" hero section -->
-            <div class="footer-connect reveal">
-                <div class="footer-connect-inner">
-                    <h2 class="footer-headline">LET'S<br><span>DESIGN.</span></h2>
-                    <div class="footer-connect-right">
-                        <p>Have a project in mind? Let's talk about creating a space that truly reflects your vision and
-                            lifestyle.</p>
-                        <a href="mailto:info@theonefurniture.in" class="btn btn-outline"
-                            style="color:var(--black); border-color:var(--border);">Email Us</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer grid -->
             <div class="footer-grid">
-                <div class="footer-col brand-col">
-                    <a href="#" class="footer-logo" style="display: block; width: 190px; height: 50px; overflow: hidden; position: relative; margin-bottom: 1.5rem;">
-                        <img src="logo.jpeg" alt="The One Furniture Logo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(2.8); height: 50px; width: auto; mix-blend-mode: multiply; filter: contrast(1.1) brightness(1.05);">
+                <!-- Column 1: Brand -->
+                <div class="footer-brand-col">
+                    <a href="#" class="logo-container" style="margin-bottom: 1.25rem;">
+                        <!-- Image Logo -->
+                        <img src="logo.jpeg" alt="The One Furniture Logo" class="logo-icon" style="object-fit: contain; border-radius: var(--radius-sm);">
+                        <div class="logo-text">
+                            <span class="logo-title" style="color: white;">THE ONE</span>
+                            <span class="logo-sub" style="color: rgba(255,255,255,0.6);">Furniture</span>
+                        </div>
                     </a>
-                    <p>A premium interior design studio crafting timeless, luxurious spaces that inspire and transform
-                        the way you live. Since 2005, Dubai to Vasai.</p>
-                    <div class="social-links" style="display:flex; gap:1.2rem; margin-top:1.2rem; align-items:center;">
-                        <a href="#" aria-label="Facebook" style="font-size:1.5rem; color:var(--dark-gray); transition:0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--dark-gray)'"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram" style="font-size:1.5rem; color:var(--dark-gray); transition:0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--dark-gray)'"><i class="fa-brands fa-instagram"></i></a>
+                    <p class="footer-desc">Premium interior design solutions for modern homes. Transform your space with expert designers.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
+
+                <!-- Column 2: Quick Links -->
                 <div class="footer-col">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">Our Studio</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">About Us</a></li>
+                        <li><a href="#offerings">Our Services</a></li>
+                        <li><a href="#packages">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
+
+                <!-- Column 3: Services -->
                 <div class="footer-col">
                     <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">Residential Design</a></li>
-                        <li><a href="#services">Commercial Interiors</a></li>
-                        <li><a href="#services">Hospitality Design</a></li>
-                        <li><a href="#services">Turnkey Solutions</a></li>
-                        <li><a href="#services">Renovation & Fit-out</a></li>
+                    <ul class="footer-links-list">
+                        <li><a href="#offerings">Modular Kitchen</a></li>
+                        <li><a href="#offerings">Wardrobes</a></li>
+                        <li><a href="#offerings">Living Room</a></li>
+                        <li><a href="#offerings">Bedroom</a></li>
                     </ul>
                 </div>
+
+                <!-- Column 4: Contact -->
                 <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li><i class="fa-solid fa-location-dot"></i> Vasai-West, Palghar – 401202</li>
-                        <li><i class="fa-solid fa-phone"></i> +91 93095 58584</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@theonefurniture.in</li>
-                        <li><i class="fa-regular fa-clock"></i> Mon–Sat: 9AM – 7PM</li>
+                    <h3>Contact</h3>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong>Visit Us</strong>
+                                <span>Office no. 204, Dattani Prism IT Park-1, Vasai-West - 401202</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Email Us</strong>
+                                <span>info@theonefurniture.in</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom" style="text-align: center; padding-top: 1rem;">
-                <p style="color:var(--mid-gray); font-size:0.75rem;">&copy; 2024 Ramjisheth Pvt Ltd. All rights reserved.</p>
-                <p style="color:var(--mid-gray); font-size:0.75rem; margin-top: 0.5rem;">Design with Passion. Build with Precision.</p>
+            <!-- Bottom Copyright Bar -->
+            <div class="footer-bottom-bar">
+                <p>&copy; 2024 The One Furniture. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator">Scroll to Top</div>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919309558584" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/919309558584?text=Hi%20The%20One%20Furniture!%20%F0%9F%91%8B%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20interior%20and%20furniture%20services.%20%E2%9C%85" target="_blank" class="whatsapp-floating" title="Chat with us on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
