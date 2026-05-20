@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ===================== NAVBAR ===================== -->
     <header class="navbar" id="mainNavbar">
@@ -225,22 +226,22 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h2>1200+</h2>
+                    <h2><span class="counter-val" data-target="1200">0</span>+</h2>
                     <div class="stat-divider"></div>
                     <p>Delivered Homes</p>
                 </div>
                 <div class="stat-card">
-                    <h2>15+</h2>
+                    <h2><span class="counter-val" data-target="15">0</span>+</h2>
                     <div class="stat-divider"></div>
                     <p>Interior Designers</p>
                 </div>
                 <div class="stat-card">
-                    <h2>2+</h2>
+                    <h2><span class="counter-val" data-target="2">0</span>+</h2>
                     <div class="stat-divider"></div>
                     <p>Experience Centres</p>
                 </div>
                 <div class="stat-card">
-                    <h2>4.8/5 <i class="fa-solid fa-star" style="color: #fbbf24; font-size: 1.8rem; vertical-align: middle;"></i></h2>
+                    <h2><span class="counter-val" data-target="4.8" data-decimals="1">0.0</span>/5 <i class="fa-solid fa-star" style="color: #fbbf24; font-size: 1.8rem; vertical-align: middle;"></i></h2>
                     <div class="stat-divider"></div>
                     <p>CSAT Rating</p>
                 </div>
@@ -248,14 +249,13 @@
         </div>
     </section>
 
-    <!-- ===================== WHY CHOOSE US IN MUMBAI ===================== -->
     <section class="section-padding" id="why-choose-us" style="background-color: #ffffff; border-bottom: 1px solid var(--border-light);">
         <div class="container">
-            <h2 class="team-main-heading" style="text-align: center; margin-bottom: 3.5rem;">Why Choose Us in Mumbai</h2>
+            <h2 class="team-main-heading reveal fade-up" style="text-align: center; margin-bottom: 3.5rem;">Why Choose Us in Mumbai</h2>
             
             <div class="why-choose-grid">
                 <!-- Card 1: In-House Team -->
-                <div class="why-choose-card">
+                <div class="why-choose-card reveal fade-up delay-1">
                     <div class="why-choose-img-box">
                         <img src="images/usp_inhouse_team.png" alt="In-House Team">
                         <div class="why-choose-icon">
@@ -269,7 +269,7 @@
                 </div>
 
                 <!-- Card 2: Manufacturing Support -->
-                <div class="why-choose-card">
+                <div class="why-choose-card reveal fade-up delay-2">
                     <div class="why-choose-img-box">
                         <img src="images/usp_manufacturing_unit.png" alt="Manufacturing Support">
                         <div class="why-choose-icon">
@@ -283,7 +283,7 @@
                 </div>
 
                 <!-- Card 3: Streamlined Process -->
-                <div class="why-choose-card">
+                <div class="why-choose-card reveal fade-up delay-3">
                     <div class="why-choose-img-box">
                         <img src="images/usp_middleman_free.png" alt="Streamlined Process">
                         <div class="why-choose-icon">
@@ -297,7 +297,7 @@
                 </div>
 
                 <!-- Card 4: Turnkey Solution -->
-                <div class="why-choose-card">
+                <div class="why-choose-card reveal fade-up delay-4">
                     <div class="why-choose-img-box">
                         <img src="images/usp_turnkey_solution.png" alt="Turnkey Solution">
                         <div class="why-choose-icon">
@@ -406,7 +406,7 @@
     <!-- ===================== OUR SERVICES SECTION ===================== -->
     <section class="section-padding" id="services" style="background-color: white;">
         <div class="container">
-            <div class="services-section-header">
+            <div class="services-section-header reveal fade-up">
                 <div class="services-header-left">
                     <div class="packages-sec-title">
                         <span class="packages-sec-badge" style="letter-spacing: 1.5px; font-weight: 700;">SERVICES RENDERS</span>
@@ -420,7 +420,7 @@
 
             <div class="services-grid">
                 <!-- Service 1: Interior Design Services -->
-                <div class="service-card">
+                <div class="service-card reveal fade-right">
                     <div class="service-bg-num">01</div>
                     <div class="service-card-header">
                         <span class="service-badge">RESIDENTIAL ONLY</span>
@@ -457,7 +457,7 @@
                 </div>
 
                 <!-- Service 2: Modular Kitchen & Wardrobe -->
-                <div class="service-card">
+                <div class="service-card reveal fade-left">
                     <div class="service-bg-num">02</div>
                     <div class="service-card-header">
                         <span class="service-badge">B2C DIRECT</span>
@@ -754,7 +754,7 @@
         <div class="container">
             <div class="about-grid">
                 <!-- Left: Who We Are text content -->
-                <div class="about-content">
+                <div class="about-content reveal fade-right">
                     <div class="packages-sec-title" style="margin-bottom: 1rem;">
                         <span class="packages-sec-badge" style="letter-spacing: 1.5px; font-weight: 700;">ABOUT US</span>
                     </div>
@@ -793,7 +793,7 @@
                 </div>
 
                 <!-- Right: Stats & Specialization Card -->
-                <div class="about-card-wrapper">
+                <div class="about-card-wrapper reveal fade-left">
                     <!-- Stats Grid -->
                     <div class="about-stats-grid">
                         <div class="about-stat-card">

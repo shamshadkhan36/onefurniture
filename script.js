@@ -355,4 +355,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 7. SCROLL-TRIGGERED REVEAL OBSERVER
+    // ==========================================
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    }
+
+    // ==========================================
+    // 8. DYNAMIC NUMBER COUNTER ANIMATION
+    // ==========================================
+    const statsSection = document.querySelector('.stats-section');
+    const counterVals = document.querySelectorAll('.counter-val');
+    
+    if (statsSection && counterVals.length > 0) {
+        const countObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        countObserver.observe(statsSection);
+    }
+    
+    function animateCounters() {
+        counterVals.forEach(el => {
+            const target = parseFloat(el.getAttribute('data-target'));
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+            const duration = 1500; // 1.5 seconds animation
+            let startTime = null;
+            
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                
+                // Ease out quad
+                const easeProgress = progress * (2 - progress);
+                const value = easeProgress * target;
+                
+                el.textContent = value.toFixed(decimals);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target.toFixed(decimals);
+                }
+            }
+            
+            requestAnimationFrame(step);
+        });
+    }
+
+    // ==========================================
+    // 9. TOP SCROLL PROGRESS BAR
+    // ==========================================
+    const progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / docHeight) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    }
+
 });
