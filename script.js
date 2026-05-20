@@ -22,24 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Simple mobile menu toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinksContainer.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (navLinksContainer.classList.contains('active')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars';
-            }
         });
 
         // Close mobile menu when a link is clicked
         const navLinks = navLinksContainer.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
                 navLinksContainer.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.className = 'fa-solid fa-bars';
-                }
             });
         });
     }
