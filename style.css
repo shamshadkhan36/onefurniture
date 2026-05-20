@@ -1636,8 +1636,36 @@ img {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .navbar .btn {
-        display: none; /* simple hamburger hidden menu fallback */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+        gap: 1.25rem;
+        z-index: 999;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--navy-text);
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--bg-light);
+        width: 100%;
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    .navbar .btn {
+        display: none;
     }
     .menu-toggle {
         display: block;

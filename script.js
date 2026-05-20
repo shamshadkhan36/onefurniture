@@ -26,20 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const icon = menuToggle.querySelector('i');
             if (navLinksContainer.classList.contains('active')) {
                 icon.className = 'fa-solid fa-xmark';
-                navLinksContainer.style.display = 'flex';
-                navLinksContainer.style.flexDirection = 'column';
-                navLinksContainer.style.position = 'absolute';
-                navLinksContainer.style.top = '100%';
-                navLinksContainer.style.left = '0';
-                navLinksContainer.style.width = '100%';
-                navLinksContainer.style.backgroundColor = 'white';
-                navLinksContainer.style.padding = '1.5rem';
-                navLinksContainer.style.borderBottom = '1px solid var(--border-light)';
-                navLinksContainer.style.boxShadow = 'var(--shadow-md)';
             } else {
                 icon.className = 'fa-solid fa-bars';
-                navLinksContainer.style.display = '';
             }
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = navLinksContainer.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fa-solid fa-bars';
+                }
+            });
         });
     }
 
