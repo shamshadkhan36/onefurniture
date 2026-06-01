@@ -733,7 +733,9 @@ img {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
     gap: 2rem;
     text-align: center;
 }
