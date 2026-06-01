@@ -244,12 +244,12 @@ img {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 1rem;
 }
 
 .logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
 }
 
 .logo-text {
@@ -258,7 +258,7 @@ img {
 }
 
 .logo-title {
-    font-size: 1.65rem;
+    font-size: 1.85rem;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.05em;
@@ -266,7 +266,7 @@ img {
 }
 
 .logo-sub {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.25em;
     color: var(--text-muted);
