@@ -1,2 +1,1 @@
-# Ignore large video files
-images/*.mp4
+# Large video files allowed
