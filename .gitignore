@@ -1,0 +1,2 @@
+# Ignore large video files
+images/*.mp4

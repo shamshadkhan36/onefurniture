@@ -504,4 +504,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 10. CATALOG FILTER LOGIC
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.catalog-tab-btn');
+    const catalogCards = document.querySelectorAll('.catalog-card');
+
+    if (tabBtns.length > 0 && catalogCards.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                catalogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
 });
