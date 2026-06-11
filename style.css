@@ -2496,14 +2496,18 @@ img {
 
 .support-card-img-box {
     width: 100%;
-    height: 250px;
+    height: 320px;
     overflow: hidden;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .support-card-img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .support-card-body {
