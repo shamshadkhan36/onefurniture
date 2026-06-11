@@ -3622,5 +3622,59 @@ img {
     font-weight: 600;
 }
 
+/* ======== PROCESS VIDEO SECTION ======== */
+.process-video-wrapper {
+    margin-top: 4.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.process-video-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: var(--navy-text);
+    border: 6px solid var(--white);
+    outline: 1px solid var(--border-light);
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.process-video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.process-video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.process-video-info {
+    margin-top: 2rem;
+}
+
+.process-video-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy-text);
+    margin-bottom: 0.5rem;
+}
+
+.process-video-info p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
 
 
