@@ -694,8 +694,9 @@ img {
 }
 
 .usp-strip-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -1673,7 +1674,7 @@ img {
         background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,235,248,0.3) 100%);
         padding: 6.5rem 0 4rem 0;
     }
-    .usp-strip-grid, .stats-grid, .packages-grid, .offer-grid, .estimator-grid, .timeline-grid {
+    .stats-grid, .packages-grid, .offer-grid, .estimator-grid, .timeline-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
@@ -1754,7 +1755,7 @@ img {
     .packages-main-heading {
         font-size: 1.8rem;
     }
-    .usp-strip-grid, .stats-grid, .packages-grid, .offer-grid, .estimator-grid, .timeline-grid {
+    .stats-grid, .packages-grid, .offer-grid, .estimator-grid, .timeline-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
