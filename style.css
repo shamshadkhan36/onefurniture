@@ -697,7 +697,7 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .usp-strip-item {
@@ -3487,41 +3487,6 @@ img {
         font-size: 1.5rem !important;
         margin-bottom: 1.25rem !important;
     }
-}
-
-/* ======== DESIGN CATALOG & SHOWCASE ======== */
-.catalog-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.catalog-tab-btn {
-    background: var(--white);
-    border: 1px solid var(--border-light);
-    color: var(--text-muted);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 0.75rem 1.75rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.catalog-tab-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.catalog-tab-btn.active {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: var(--white);
-    border-color: transparent;
-    box-shadow: 0 4px 15px rgba(211, 82, 94, 0.25);
 }
 
 .catalog-grid {
