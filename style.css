@@ -3647,7 +3647,6 @@ img {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    background-color: var(--navy-text);
     border: 6px solid var(--white);
     outline: 1px solid var(--border-light);
     aspect-ratio: 16 / 9;
@@ -3686,6 +3685,65 @@ img {
     color: var(--text-muted);
     font-weight: 500;
 }
+
+/* ======== LIGHTBOX MODAL STYLES ======== */
+.lightbox-container {
+    max-width: 650px !important;
+    padding: 1rem !important;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.lightbox-image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 82vh;
+    display: block;
+    object-fit: contain;
+}
+
+/* Catalog Overlay Flex Grid */
+.catalog-overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.catalog-overlay-content .btn-sm {
+    width: 130px;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    padding: 8px 14px;
+}
+
+.catalog-overlay-content .btn-enquire {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
+    border-color: transparent !important;
+    color: var(--white) !important;
+}
+
+.catalog-overlay-content .btn-enquire:hover {
+    background: linear-gradient(135deg, #20ba5a 0%, #0e7568 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+}
+
 
 
 

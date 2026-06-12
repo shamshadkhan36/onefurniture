@@ -531,4 +531,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // 11. LIGHTBOX MODAL CONTROLLER
+    // ==========================================
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+
+    function openLightbox(imgSrc) {
+        if (!lightboxModal || !lightboxImage) return;
+        lightboxImage.src = imgSrc;
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightboxModal) return;
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Dynamic click delegation for zoom buttons
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.view-large-btn');
+        if (btn) {
+            e.preventDefault();
+            e.stopPropagation();
+            const src = btn.getAttribute('data-src');
+            openLightbox(src);
+        }
+    });
+
+    if (closeLightboxBtn) {
+        closeLightboxBtn.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxModal) {
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                closeLightbox();
+            }
+        });
+    }
+
 });
+
