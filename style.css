@@ -1200,13 +1200,18 @@ img {
 }
 
 .download-guide-content h2 {
-    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
     font-weight: 800;
     margin-bottom: 1rem;
     color: var(--navy-text);
+    line-height: 1.35;
 }
 
-.download-guide-content h2 span {
+.download-guide-content h2 .download-text {
+    color: var(--secondary);
+}
+
+.download-guide-content h2 .faq-text {
     color: var(--primary);
 }
 
