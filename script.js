@@ -322,11 +322,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.scrollToEstimator = function (bhkValue) {
-        const estimateSection = document.getElementById('estimate');
-        if (!estimateSection) return;
+        const contactSection = document.getElementById('contact');
+        if (!contactSection) return;
 
-        // Smooth scroll to configurator section
-        estimateSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Smooth scroll to contact section
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Auto-select BHK / service type in the contact form if contactBHK exists
+        const contactBhkSelect = document.getElementById('contactBHK');
+        if (contactBhkSelect && bhkValue) {
+            if (bhkValue.includes('1 BHK')) {
+                contactBhkSelect.value = '1 BHK';
+            } else if (bhkValue.includes('2 BHK')) {
+                contactBhkSelect.value = '2 BHK';
+            } else if (bhkValue.includes('3 BHK')) {
+                contactBhkSelect.value = '3 BHK';
+            } else if (bhkValue.includes('4 BHK')) {
+                contactBhkSelect.value = '4 BHK';
+            } else if (bhkValue.includes('Villa') || bhkValue.includes('Full Home')) {
+                contactBhkSelect.value = 'Villa / Custom';
+            }
+        }
+        return;
 
         // Access configurator elements and configure them based on bhkValue
         const projectTypeCards = document.querySelectorAll('.config-card[data-group="project-type"]');
