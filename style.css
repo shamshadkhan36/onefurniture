@@ -730,6 +730,17 @@ img {
     color: var(--text-muted);
 }
 
+@media (max-width: 991px) {
+    .usp-strip-grid {
+        flex-direction: column;
+        align-items: flex-start;
+        width: max-content;
+        max-width: 100%;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+}
+
 /* ======== WHY CHOOSE US (STATS) ======== */
 .stats-section {
     background-color: var(--secondary);
