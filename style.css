@@ -1683,8 +1683,19 @@ img {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    .hero-bg-img, .hero-bg-overlay {
-        display: none; /* remove background split visual on tablet/mobile */
+    .hero-bg-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        clip-path: none;
+        opacity: 0.45;
+    }
+    .hero-bg-overlay {
+        display: block;
+        width: 100%;
+        height: 100%;
+        clip-path: none;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.85) 100%);
     }
     .hero {
         background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,235,248,0.3) 100%);
