@@ -2364,27 +2364,11 @@ img {
 }
 
 .team-matrix-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
-    margin-bottom: 5rem;
-}
-
-.team-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-}
-
-.team-row.row-3 {
     max-width: 800px;
-}
-
-.team-row.row-2 {
-    max-width: 600px;
+    margin: 0 auto 5rem auto;
 }
 
 .team-member-card {
@@ -2398,14 +2382,39 @@ img {
     align-items: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
     transition: var(--transition);
-    flex: 1 1 200px;
-    max-width: 230px;
+    width: 100%;
 }
 
-@media (max-width: 575px) {
+/* Position cards for desktop (3 in first row, 2 centered in second row) */
+.team-member-card:nth-child(1) { grid-column: span 2; }
+.team-member-card:nth-child(2) { grid-column: span 2; }
+.team-member-card:nth-child(3) { grid-column: span 2; }
+.team-member-card:nth-child(4) { grid-column: 2 / span 2; }
+.team-member-card:nth-child(5) { grid-column: 4 / span 2; }
+
+/* Responsive layout for tablets and medium screens (2-2-1 layout) */
+@media (max-width: 767px) {
+    .team-matrix-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 520px;
+        gap: 1.5rem;
+    }
+    .team-member-card:nth-child(1) { grid-column: span 2; }
+    .team-member-card:nth-child(2) { grid-column: span 2; }
+    .team-member-card:nth-child(3) { grid-column: span 2; }
+    .team-member-card:nth-child(4) { grid-column: span 2; }
+    .team-member-card:nth-child(5) { grid-column: 2 / span 2; }
+}
+
+/* Responsive layout for mobile (1 card per row) */
+@media (max-width: 479px) {
+    .team-matrix-grid {
+        grid-template-columns: 1fr;
+        max-width: 290px;
+        gap: 1.25rem;
+    }
     .team-member-card {
-        flex: 1 1 100%;
-        max-width: 100%;
+        grid-column: auto !important;
     }
 }
 
